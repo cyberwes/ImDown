@@ -21,9 +21,9 @@ class Downer {
     var hostExperiences: [Experience] = []
     var attendExperiences: [Experience] = []
     init(
-        currentExperience: Experience = Experience(id: 1, eventName: "make coffee", host: "Wesley", date: "Wednesday November 16", description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
-        hostExperiences: Experience = Experience(id: 2, eventName: "Knitting a hat", host: "Wesley", date: "Thursday November 17", description: lorem, location: "Sydney, 2000", imageName: "Baking"),
-        attendExperiences: Experience = Experience(id: 3, eventName: "Bake a Cake", host: "Sarah", date: "Friday November 18", description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
+        currentExperience: Experience = Experience(id: 1, eventName: "make coffee", host: "Wesley", date: "16/11/23", description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
+        hostExperiences: Experience = Experience(id: 2, eventName: "Knitting a hat", host: "Wesley", date: "16/11/23", description: lorem, location: "Sydney, 2000", imageName: "Baking"),
+        attendExperiences: Experience = Experience(id: 3, eventName: "Bake a Cake", host: "Sarah", date: "16/11/23", description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
         self.currentExperience = currentExperience;
         self.hostExperiences.append(hostExperiences);
         self.hostExperiences.append(attendExperiences);

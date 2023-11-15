@@ -40,10 +40,11 @@ struct AttendeeView: View {
                                 .foregroundColor(Color.white)
                             Spacer()
                         }
-                        Text(experience.description)
-                            .foregroundColor(Color.white)
-                            .padding(.vertical, 4.0);
-                        
+                        HStack {
+                            Text(experience.description)
+                                .foregroundColor(Color.white)
+                                .padding(.vertical, 2.0);
+                        }
                         HStack {
                             Text(experience.location)
                                 .font(.body)
