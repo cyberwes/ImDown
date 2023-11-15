@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AttendeeView: View {
+    
+    var experienceArray: [Experience];
+    
     var body: some View {
         VStack {
             HStack {
@@ -19,38 +22,40 @@ struct AttendeeView: View {
             }
             .padding()
             ScrollView {
-                VStack {
-                    HStack {
-                        Text("Event Name")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                ForEach(experienceArray, id: \.self) {experience in
+                    VStack {
+                        HStack {
+                            Text(experience.eventName.uppercased())
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                            Spacer()
+                            Text("Hosted by " + experience.host)
+                                .foregroundColor(Color.white)
+                        }
+                        HStack {
+                            Text(experience.date)
+                                .font(.body)
+                                .fontWeight(.light)
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
+                        Text(experience.description)
                             .foregroundColor(Color.white)
-                        Spacer()
-                        Text("Hosted by Sarah")
-                            .foregroundColor(Color.white)
+                            .padding(.vertical, 4.0);
+                        
+                        HStack {
+                            Text(experience.location)
+                                .font(.body)
+                                .fontWeight(.light)
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
                     }
-                    HStack {
-                        Text("Time | Date")
-                            .font(.body)
-                            .fontWeight(.light)
-                            .foregroundColor(Color.white)
-                        Spacer()
-                    }
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-                        .foregroundColor(Color.white)
-                        .padding(.vertical, 4.0);
-
-                    HStack {
-                        Text("Suburb Location")
-                            .font(.body)
-                            .fontWeight(.light)
-                            .foregroundColor(Color.white)
-                        Spacer()
-                    }
+                    .padding()
+                    .background(Color.black)
+                    .cornerRadius(15.0)
                 }
-                .padding()
-                .background(Color.black)
-                .cornerRadius(15.0)
             }
             .padding()
             Spacer()
@@ -59,5 +64,5 @@ struct AttendeeView: View {
 }
 
 #Preview {
-    AttendeeView()
+    AttendeeView(experienceArray: Downer().attendExperiences)
 }

@@ -12,7 +12,7 @@ struct ImDownApp: App {
         
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(User: Downer())
         }
     }
 }

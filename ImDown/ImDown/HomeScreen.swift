@@ -8,21 +8,18 @@
 var TextColor = Color.white;
 var ButtonColor = Color.black;
 
-var eventName = "EVENT NAME";
-var host = "Hosted by Sarah";
-var date = "21:00 | Wed Nov 9";
-var description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-var location = "Suburb, 2000"
-
 import SwiftUI
 
 struct HomeScreen: View {
+    
+    var experience: Experience
+    
     var body: some View {
         ZStack{
-            Image("Baking").resizable().scaledToFill()
+            experience.image.resizable().scaledToFill()
             VStack{
                 HStack {
-                    Text(eventName)
+                    Text(experience.eventName.uppercased())
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
@@ -57,7 +54,7 @@ struct HomeScreen: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Text(host)
+                    Text("Hosted by " + experience.host)
                         .font(.headline)
                         .foregroundColor(TextColor)
                         .padding(12)
@@ -68,18 +65,18 @@ struct HomeScreen: View {
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 VStack {
                     HStack {
-                        Text(date)
+                        Text(experience.date)
                             .font(.body)
                             .fontWeight(.light)
                             .foregroundColor(TextColor)
                         Spacer()
                     }
-                    Text(description)
+                    Text(experience.description)
                         .foregroundColor(TextColor)
                         .padding(.vertical, 4.0);
 
                     HStack {
-                        Text(location)
+                        Text(experience.location)
                             .font(.body)
                             .fontWeight(.light)
                             .foregroundColor(TextColor)
@@ -116,5 +113,7 @@ struct HomeScreen: View {
         
 
 #Preview {
-    HomeScreen()
+    HomeScreen(
+        experience: Downer().currentExperience
+    )
 }

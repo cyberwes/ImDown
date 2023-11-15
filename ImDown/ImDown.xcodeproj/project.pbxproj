@@ -19,6 +19,8 @@
 		4C4304B22B0476A100C34098 /* HostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304B12B0476A100C34098 /* HostView.swift */; };
 		4C4304B42B0476A900C34098 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304B32B0476A900C34098 /* ChatView.swift */; };
 		4C4304B62B0476B100C34098 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304B52B0476B100C34098 /* ProfileView.swift */; };
+		4C55748E2B04C3ED00252E36 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55748D2B04C3ED00252E36 /* Experience.swift */; };
+		4C5574902B04C64100252E36 /* Downer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55748F2B04C64100252E36 /* Downer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		4C4304B12B0476A100C34098 /* HostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostView.swift; sourceTree = "<group>"; };
 		4C4304B32B0476A900C34098 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		4C4304B52B0476B100C34098 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4C55748D2B04C3ED00252E36 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
+		4C55748F2B04C64100252E36 /* Downer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				4C4304B12B0476A100C34098 /* HostView.swift */,
 				4C4304B32B0476A900C34098 /* ChatView.swift */,
 				4C4304B52B0476B100C34098 /* ProfileView.swift */,
+				4C55748D2B04C3ED00252E36 /* Experience.swift */,
+				4C55748F2B04C64100252E36 /* Downer.swift */,
 			);
 			path = ImDown;
 			sourceTree = "<group>";
@@ -275,7 +281,9 @@
 				4C4304832B046A4300C34098 /* MainView.swift in Sources */,
 				4C4304B22B0476A100C34098 /* HostView.swift in Sources */,
 				4C4304812B046A4300C34098 /* ImDownApp.swift in Sources */,
+				4C55748E2B04C3ED00252E36 /* Experience.swift in Sources */,
 				4C4304B02B04769A00C34098 /* AttendeeView.swift in Sources */,
+				4C5574902B04C64100252E36 /* Downer.swift in Sources */,
 				4C4304B42B0476A900C34098 /* ChatView.swift in Sources */,
 				4C4304B62B0476B100C34098 /* ProfileView.swift in Sources */,
 				4C4304AD2B04728A00C34098 /* HomeScreen.swift in Sources */,
