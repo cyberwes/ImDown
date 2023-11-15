@@ -50,7 +50,6 @@
 		4C43049B2B046A4400C34098 /* ImDownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImDownUITests.swift; sourceTree = "<group>"; };
 		4C43049D2B046A4400C34098 /* ImDownUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImDownUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4C4304AC2B04728A00C34098 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HomeScreen.swift; sourceTree = "<group>"; wrapsLines = 1; };
-		4C4304AE2B04751D00C34098 /* Woman-decorating-cake.jpg.webp */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Woman-decorating-cake.jpg.webp"; path = "../../../Downloads/Woman-decorating-cake.jpg.webp"; sourceTree = "<group>"; };
 		4C4304AF2B04769A00C34098 /* AttendeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeeView.swift; sourceTree = "<group>"; };
 		4C4304B12B0476A100C34098 /* HostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostView.swift; sourceTree = "<group>"; };
 		4C4304B32B0476A900C34098 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -137,7 +136,6 @@
 		4C43049A2B046A4400C34098 /* ImDownUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4C4304AE2B04751D00C34098 /* Woman-decorating-cake.jpg.webp */,
 				4C43049B2B046A4400C34098 /* ImDownUITests.swift */,
 				4C43049D2B046A4400C34098 /* ImDownUITestsLaunchTests.swift */,
 			);

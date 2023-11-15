@@ -12,16 +12,16 @@ struct ProfileView: View {
         VStack{
             Image("Baking").resizable().padding(.vertical, -10.0).scaledToFit()
             VStack{
-                Text("First Last")
+                Text("Wesley Hahn")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color.white)
                 HStack {
-                    Image(systemName: "location.fill")
-                        .foregroundColor(Color.white)
-                    Text("Suburb 2000")
+                    Text("28 | he/him | Rosebery 2018")
                         .font(.body)
                         .fontWeight(.light)
+                        .foregroundColor(Color.white)
+                    Image(systemName: "location.fill")
                         .foregroundColor(Color.white)
                 }
             }
