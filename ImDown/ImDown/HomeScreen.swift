@@ -24,7 +24,6 @@ struct HomeScreen: View {
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-
                     Spacer()
                     
                     Button(action: {}, label: {
@@ -51,6 +50,21 @@ struct HomeScreen: View {
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 }
                 .frame(width: 350)
+                HStack {
+                    Image(systemName: "calendar")
+                        .foregroundColor(Color.white)
+                    Text(experience.date)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.white)
+                    Image(systemName: "location")
+                        .foregroundColor(Color.white)
+                    Text(experience.location)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.white)
+                    Spacer()
+                }
+                .frame(width: 350)
+                .shadow(radius: 4)
                 Spacer()
                 HStack {
                     Spacer()
@@ -65,27 +79,14 @@ struct HomeScreen: View {
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 VStack {
                     HStack {
-                        Text(experience.date)
-                            .font(.body)
-                            .fontWeight(.light)
+                        Text(experience.description)
                             .foregroundColor(TextColor)
-                        Spacer()
-                    }
-                    Text(experience.description)
-                        .foregroundColor(TextColor)
-                        .padding(.vertical, 4.0);
-
-                    HStack {
-                        Text(experience.location)
-                            .font(.body)
-                            .fontWeight(.light)
-                            .foregroundColor(TextColor)
-                        Spacer()
+                            .padding(.vertical, 4.0);
                     }
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                         Text("I'm Down!")
                             .font(.title)
-                            .fontWeight(.bold)
+                            .fontWeight(.semibold)
                             .foregroundColor(TextColor)
                     })
                     .frame(width: 325, height: 50)
@@ -96,13 +97,7 @@ struct HomeScreen: View {
                 }
                 .padding()
                 .frame(width:350.0)
-                .background(Color(Color(
-                    red: 0.5,
-                    green: 0.5,
-                    blue: 0.5,
-                    opacity: 0.4
-                )))
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                .shadow(radius: 4.0)
                 .cornerRadius(15.0)
             }
             .padding()
