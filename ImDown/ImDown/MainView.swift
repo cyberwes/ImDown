@@ -20,7 +20,7 @@ struct MainView: View {
                 Label("Attend", systemImage: "calendar.badge.checkmark")
             }.tag(2)
             HostView(experienceArray: User.hostExperiences).tabItem {
-                Label("Host", systemImage: "h.square.on.square")
+                Label("Host", systemImage: "square.and.pencil")
             }.tag(3)
             ChatView().tabItem {
                 Label("Chat", systemImage: "message")

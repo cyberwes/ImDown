@@ -7,6 +7,7 @@
 
 var TextColor = Color.white;
 var ButtonColor = Color.black;
+var width = 350.0
 
 import SwiftUI
 
@@ -49,7 +50,7 @@ struct HomeScreen: View {
                     .cornerRadius(20)
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 }
-                .frame(width: 350)
+                .frame(width: width)
                 HStack {
                     Image(systemName: "calendar")
                         .foregroundColor(Color.white)
@@ -63,7 +64,7 @@ struct HomeScreen: View {
                         .foregroundColor(Color.white)
                     Spacer()
                 }
-                .frame(width: 350)
+                .frame(width: width)
                 .shadow(radius: 4)
                 Spacer()
                 HStack {
@@ -75,29 +76,30 @@ struct HomeScreen: View {
                         .background(ButtonColor)
                         .cornerRadius(30)
                 }
-                .frame(width: 350)
+                .frame(width: width)
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 VStack {
                     HStack {
                         Text(experience.description)
+                            .fontWeight(.semibold)
                             .foregroundColor(TextColor)
                             .padding(.vertical, 4.0);
                     }
+                    .shadow(radius: 4.0)
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Text("I'm Down!")
+                        Text("I⚡️m Down!")
                             .font(.title)
                             .fontWeight(.semibold)
                             .foregroundColor(TextColor)
                     })
-                    .frame(width: 325, height: 50)
+                    .frame(width: width, height: 50)
                     .background(ButtonColor)
                     .cornerRadius(25.0)
                     .shadow(radius: 10)
                     .padding(1.0)
                 }
                 .padding()
-                .frame(width:350.0)
-                .shadow(radius: 4.0)
+                .frame(width:width)
                 .cornerRadius(15.0)
             }
             .padding()
