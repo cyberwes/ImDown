@@ -17,10 +17,10 @@ struct MainView: View {
                 Label("Home", systemImage: "house")
             }.tag(1)
             AttendeeView(experienceArray: User.attendExperiences).tabItem {
-                Label("Attend", systemImage: "calendar.badge.checkmark")
+                Label("Attending", systemImage: "calendar.badge.checkmark")
             }.tag(2)
             HostView(experienceArray: User.hostExperiences).tabItem {
-                Label("Host", systemImage: "square.and.pencil")
+                Label("Hosting", systemImage: "h.square.on.square")
             }.tag(3)
             ChatView().tabItem {
                 Label("Chat", systemImage: "message")
