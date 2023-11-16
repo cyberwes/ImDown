@@ -13,14 +13,14 @@ import SwiftUI
 
 struct HomeScreen: View {
     
-    var experience: Experience
+    var User: Downer
     
     var body: some View {
         ZStack{
-            experience.image.resizable().scaledToFill()
+            User.currentExperience.image.resizable().scaledToFill()
             VStack{
                 HStack {
-                    Text(experience.eventName.uppercased())
+                    Text(User.currentExperience.eventName.uppercased())
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
@@ -43,12 +43,12 @@ struct HomeScreen: View {
                 HStack {
                     Image(systemName: "calendar")
                         .foregroundColor(Color.white)
-                    Text(experience.date)
+                    Text(User.currentExperience.date)
                         .fontWeight(.semibold)
                         .foregroundColor(Color.white)
                     Image(systemName: "location")
                         .foregroundColor(Color.white)
-                    Text(experience.location)
+                    Text(User.currentExperience.location)
                         .fontWeight(.semibold)
                         .foregroundColor(Color.white)
                     Spacer()
@@ -58,7 +58,7 @@ struct HomeScreen: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Text("Hosted by " + experience.host)
+                    Text("Hosted by " + User.currentExperience.host)
                         .font(.headline)
                         .foregroundColor(TextColor)
                         .padding(12)
@@ -69,13 +69,15 @@ struct HomeScreen: View {
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 VStack {
                     HStack {
-                        Text(experience.description)
+                        Text(User.currentExperience.description)
                             .fontWeight(.semibold)
                             .foregroundColor(TextColor)
                             .padding(.vertical, 4.0);
                     }
                     .shadow(radius: 4.0)
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        User.attend()
+                    }, label: {
                         Text("I⚡️m Down!")
                             .font(.title)
                             .fontWeight(.semibold)
@@ -100,6 +102,6 @@ struct HomeScreen: View {
 
 #Preview {
     HomeScreen(
-        experience: Downer().currentExperience
+        User: Downer()
     )
 }

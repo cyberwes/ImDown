@@ -9,14 +9,15 @@ import Foundation
 
 var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Set do eiusmod tempor incididunt ut labore et dolor magna aliqua."
 
+@Observable
 class Downer {
-    var firstName: String;
-    var lastName: String;
-    var imageName: String;
-    var about: String;
-    var pronouns: String;
-    var age: String;
-    var location: String;
+    var firstName: String = "";
+    var lastName: String = "";
+    var imageName: String = "";
+    var about: String = "";
+    var pronouns: String = "";
+    var age: String = "";
+    var location: String = "";
     var currentExperience: Experience
     var hostExperiences: [Experience] = []
     var attendExperiences: [Experience] = []
@@ -27,9 +28,6 @@ class Downer {
         self.currentExperience = currentExperience;
         self.hostExperiences.append(hostExperiences);
         self.hostExperiences.append(attendExperiences);
-        self.attendExperiences.append(currentExperience);
-        self.attendExperiences.append(attendExperiences);
-        self.attendExperiences.append(hostExperiences);
         self.firstName = "Wesley";
         self.lastName = "Hahn";
         self.imageName = "Baker";
@@ -37,5 +35,10 @@ class Downer {
         self.age = "28";
         self.pronouns = "he/him";
         self.location = "Rosebery, 2018";
+    }
+    
+    func attend() {
+        self.attendExperiences.append(currentExperience)
+        currentExperience = Experience(id: 0, eventName: "", host: "", date: "", description: "", location: "", imageName: "")
     }
 }

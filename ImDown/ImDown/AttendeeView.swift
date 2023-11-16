@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AttendeeView: View {
     
-    var experienceArray: [Experience];
+    @State var User: Downer;
     
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct AttendeeView: View {
             }
             .padding()
             ScrollView {
-                ForEach(experienceArray, id: \.self) {experience in
+                ForEach(User.attendExperiences, id: \.self) {experience in
                     VStack {
                         HStack {
                             Text(experience.eventName.uppercased())
@@ -65,5 +65,5 @@ struct AttendeeView: View {
 }
 
 #Preview {
-    AttendeeView(experienceArray: Downer().attendExperiences)
+    AttendeeView(User: Downer())
 }

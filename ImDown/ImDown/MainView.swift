@@ -13,10 +13,10 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
-            HomeScreen(experience: User.currentExperience).tabItem {
+            HomeScreen(User: User).tabItem {
                 Label("Home", systemImage: "house")
             }.tag(1)
-            AttendeeView(experienceArray: User.attendExperiences).tabItem {
+            AttendeeView(User: User).tabItem {
                 Label("Attending", systemImage: "calendar.badge.checkmark")
             }.tag(2)
             HostView(experienceArray: User.hostExperiences).tabItem {
