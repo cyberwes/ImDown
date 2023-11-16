@@ -29,17 +29,6 @@ struct HomeScreen: View {
                     
                     Button(action: {}, label: {
                         VStack{
-                            Image(systemName: "line.3.horizontal.decrease")
-                                .foregroundColor(Color.black)
-                                .frame(width: 40, height: 40)
-                            ;
-                        }
-                    } )
-                    .background(Color.white)
-                    .cornerRadius(20.0)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                    Button(action: {}, label: {
-                        VStack{
                             Image(systemName: "square.and.pencil")
                                 .foregroundColor(Color.black)
                                 .frame(width: 40, height: 40)
