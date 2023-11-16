@@ -38,3 +38,17 @@ class Experience: Hashable {
         return lhs.id == rhs.id
     }
 }
+
+class IDGenerator {
+    private var id: Int
+
+        init(id: Int = 0) {
+            self.id = id
+        }
+
+        func newId() -> Int {
+            let newId = self.id + 1
+            self.id = newId
+            return newId
+        }
+}

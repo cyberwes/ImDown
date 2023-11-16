@@ -11,6 +11,7 @@ var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Set do eiu
 
 @Observable
 class Downer {
+    var ID: IDGenerator = IDGenerator(id: 2)
     var firstName: String = "";
     var lastName: String = "";
     var imageName: String = "";
@@ -22,9 +23,9 @@ class Downer {
     var hostExperiences: [Experience] = []
     var attendExperiences: [Experience] = []
     init(
-        currentExperience: Experience = Experience(id: 1, eventName: "make coffee", host: "Wesley", date: "16/11/23", description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
-        hostExperiences: Experience = Experience(id: 2, eventName: "Knitting a hat", host: "Wesley", date: "16/11/23", description: lorem, location: "Sydney, 2000", imageName: "Baking"),
-        attendExperiences: Experience = Experience(id: 3, eventName: "Bake a Cake", host: "Sarah", date: "16/11/23", description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
+        currentExperience: Experience = Experience(id: 0, eventName: "make coffee", host: "Wesley", date: "16/11/23", description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
+        hostExperiences: Experience = Experience(id: 1, eventName: "Knitting a hat", host: "Wesley", date: "16/11/23", description: lorem, location: "Sydney, 2000", imageName: "Baking"),
+        attendExperiences: Experience = Experience(id: 2, eventName: "Bake a Cake", host: "Sarah", date: "16/11/23", description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
         self.currentExperience = currentExperience;
         self.hostExperiences.append(hostExperiences);
         self.hostExperiences.append(attendExperiences);
@@ -40,5 +41,9 @@ class Downer {
     func attend() {
         self.attendExperiences.append(currentExperience)
         currentExperience = Experience(id: 0, eventName: "", host: "", date: "", description: "", location: "", imageName: "")
+    }
+    
+    func host(eventName: String, date: String, description: String, location: String, imageName: String) {
+        self.hostExperiences.append(Experience(id: ID.newId(), eventName: eventName, host: self.firstName, date: date, description: description, location: location, imageName: imageName))
     }
 }
