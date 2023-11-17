@@ -22,7 +22,7 @@ struct NewExperience: View {
     var body: some View {
         ZStack {
             VStack {
-                Image("Baking").resizable().frame(height: 100)
+                Image("Baking").resizable().scaledToFill().frame(height: 100)
                 Spacer()
             }
             VStack {
