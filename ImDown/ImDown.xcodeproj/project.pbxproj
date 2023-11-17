@@ -23,6 +23,7 @@
 		4C55748E2B04C3ED00252E36 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55748D2B04C3ED00252E36 /* Experience.swift */; };
 		4C5574902B04C64100252E36 /* Downer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55748F2B04C64100252E36 /* Downer.swift */; };
 		4CFB05B42B05ADAE0076F956 /* NewExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB05B32B05ADAE0076F956 /* NewExperience.swift */; };
+		CFCDA1292B0702D4006B4093 /* MysterycardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCDA1282B0702D4006B4093 /* MysterycardLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		4C55748D2B04C3ED00252E36 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		4C55748F2B04C64100252E36 /* Downer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downer.swift; sourceTree = "<group>"; };
 		4CFB05B32B05ADAE0076F956 /* NewExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExperience.swift; sourceTree = "<group>"; };
+		CFCDA1282B0702D4006B4093 /* MysterycardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysterycardLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				4C4304842B046A4400C34098 /* Assets.xcassets */,
 				4C4304862B046A4400C34098 /* Preview Content */,
 				4C4304AC2B04728A00C34098 /* HomeScreen.swift */,
+				CFCDA1282B0702D4006B4093 /* MysterycardLayout.swift */,
 				4C4304AF2B04769A00C34098 /* AttendeeView.swift */,
 				4C4304B12B0476A100C34098 /* HostView.swift */,
 				4C4304B32B0476A900C34098 /* ChatView.swift */,
@@ -291,6 +294,7 @@
 				4CFB05B42B05ADAE0076F956 /* NewExperience.swift in Sources */,
 				4C4304B02B04769A00C34098 /* AttendeeView.swift in Sources */,
 				4C5574902B04C64100252E36 /* Downer.swift in Sources */,
+				CFCDA1292B0702D4006B4093 /* MysterycardLayout.swift in Sources */,
 				4C4304B42B0476A900C34098 /* ChatView.swift in Sources */,
 				4C4304B62B0476B100C34098 /* ProfileView.swift in Sources */,
 				2386C6432B06EB6F00004EE8 /* AreyouDown.swift in Sources */,
