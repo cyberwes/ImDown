@@ -9,18 +9,23 @@ import SwiftUI
 
 struct AreyouDown: View {
     var body: some View {
-        //backgroundColor()
-        Text("Are you Down?")
-            .font(.largeTitle)
-            .fontWeight(.bold)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .padding(30)
-            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-    }
+        VStack{
+            Text("ARE YOU DOWN?")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .foregroundColor(.white)
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("primary"))
+       
+        }
+    
 }
 
 #Preview {
     AreyouDown()
 }
-//5E69FF Primary
+
 
