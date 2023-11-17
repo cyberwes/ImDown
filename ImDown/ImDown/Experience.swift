@@ -12,7 +12,7 @@ class Experience: Hashable {
     var id: Int
     var eventName: String
     var host: String;
-    var date: String;
+    var date: Date;
     var description: String;
     var location: String;
     private var imageName: String;
@@ -20,7 +20,7 @@ class Experience: Hashable {
         Image(imageName)
     }
     
-    init(id: Int, eventName: String, host: String, date: String, description: String, location: String, imageName: String) {
+    init(id: Int, eventName: String, host: String, date: Date, description: String, location: String, imageName: String) {
         self.id = id;
         self.eventName = eventName
         self.host = host

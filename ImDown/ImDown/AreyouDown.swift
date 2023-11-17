@@ -11,8 +11,7 @@ struct AreyouDown: View {
     var body: some View {
         VStack{
             Text("ARE YOU DOWN?")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+                .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                 .frame(maxWidth: .infinity, alignment: .center)
                 .foregroundColor(.white)
             

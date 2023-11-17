@@ -110,8 +110,7 @@ struct NewExperience: View {
                 HStack {
                     Spacer()
                     Button("Confirm") {
-                        let formattedDate = time + " " + date
-                        User.host(eventName: name, date: formattedDate, description: description, location: location, imageName: imageName)
+                        User.host(eventName: name, date: Date.now, description: description, location: location, imageName: imageName)
                         print(name)
                         name = ""
                         date = ""

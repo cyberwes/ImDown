@@ -41,7 +41,7 @@ struct HomeScreen: View {
                         HStack {
                             Image(systemName: "calendar")
                                 .foregroundColor(Color.white)
-                            Text(User.currentExperience.date)
+                            Text(Formatter.formatDate(User.currentExperience.date))
                                 .font(Font.custom("SFMono-Regular", size: 16.0))                            .foregroundColor(Color.white)
                             Spacer()
                         }

@@ -15,6 +15,7 @@
 		4C16B9C72B08258A00C21228 /* SF-Mono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */; };
 		4C16B9D32B082C5700C21228 /* SF-Compact-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C16B9D22B082BF800C21228 /* SF-Compact-Display-Bold.otf */; };
 		4C2E4CFA2B082F2100280A2F /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C2E4CF92B082F2100280A2F /* SF-Mono-Regular.otf */; };
+		4C2E4CFC2B08335E00280A2F /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E4CFB2B08335E00280A2F /* Formatter.swift */; };
 		4C4304812B046A4300C34098 /* ImDownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304802B046A4300C34098 /* ImDownApp.swift */; };
 		4C4304832B046A4300C34098 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304822B046A4300C34098 /* MainView.swift */; };
 		4C4304852B046A4400C34098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		4C16B9D02B082A7500C21228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4C16B9D22B082BF800C21228 /* SF-Compact-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Bold.otf"; sourceTree = "<group>"; };
 		4C2E4CF92B082F2100280A2F /* SF-Mono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Mono-Regular.otf"; path = "../../../../../../Library/Fonts/SF-Mono-Regular.otf"; sourceTree = "<group>"; };
+		4C2E4CFB2B08335E00280A2F /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		4C43047D2B046A4300C34098 /* ImDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4304802B046A4300C34098 /* ImDownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImDownApp.swift; sourceTree = "<group>"; };
 		4C4304822B046A4300C34098 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				4CFB05B32B05ADAE0076F956 /* NewExperience.swift */,
 				2386C6422B06EB6F00004EE8 /* AreyouDown.swift */,
 				23404D1F2B07014E00B3B165 /* AreyouDownFill.swift */,
+				4C2E4CFB2B08335E00280A2F /* Formatter.swift */,
 			);
 			path = ImDown;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				4C5574902B04C64100252E36 /* Downer.swift in Sources */,
 				368F31162B06FEAC0045912E /* MysteryCards.swift in Sources */,
 				4C4304B42B0476A900C34098 /* ChatView.swift in Sources */,
+				4C2E4CFC2B08335E00280A2F /* Formatter.swift in Sources */,
 				4C4304B62B0476B100C34098 /* ProfileView.swift in Sources */,
 				2386C6432B06EB6F00004EE8 /* AreyouDown.swift in Sources */,
 				4C4304AD2B04728A00C34098 /* HomeScreen.swift in Sources */,

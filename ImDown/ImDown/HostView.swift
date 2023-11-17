@@ -15,8 +15,7 @@ struct HostView: View {
         VStack {
             HStack {
                 Text("HOSTING")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                 
                 Spacer()
                 
@@ -38,8 +37,7 @@ struct HostView: View {
                     VStack {
                         HStack {
                             Text(experience.eventName.uppercased())
-                                .font(.title2)
-                                .fontWeight(.bold)
+                                .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
                                 .foregroundColor(Color.white)
                             Spacer()
                             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
@@ -47,9 +45,18 @@ struct HostView: View {
                             })
                         }
                         HStack {
-                            Text(experience.date)
-                                .font(.body)
-                                .fontWeight(.light)
+                            Image(systemName: "calendar")
+                                .foregroundColor(Color.white)
+                            Text(Formatter.formatDate(experience.date))
+                                .font(Font.custom("SFMono-Regular", size: 16.0))
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
+                        HStack {
+                            Image(systemName: "location")
+                                .foregroundColor(Color.white)
+                            Text(experience.location.uppercased())
+                                .font(Font.custom("SFMono-Regular", size: 16.0))
                                 .foregroundColor(Color.white)
                             Spacer()
                         }
@@ -58,16 +65,9 @@ struct HostView: View {
                                 .foregroundColor(Color.white)
                                 .padding(.vertical, 2.0);
                         }
-                        HStack {
-                            Text(experience.location)
-                                .font(.body)
-                                .fontWeight(.light)
-                                .foregroundColor(Color.white)
-                            Spacer()
-                        }
                     }
                     .padding()
-                    .background(Color("tertiary"))
+                    .background(Color("primary"))
                     .cornerRadius(15.0)
                 }
             }
