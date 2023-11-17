@@ -54,7 +54,7 @@ struct AttendeeView: View {
                         }
                     }
                     .padding()
-                    .background(Color.black)
+                    .background(Color("tertiary"))
                     .cornerRadius(15.0)
                 }
             }

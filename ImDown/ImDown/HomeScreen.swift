@@ -6,7 +6,7 @@
 //
 
 var TextColor = Color.white;
-var ButtonColor = Color.black;
+var ButtonColor = Color("tertiary");
 var width = 350.0
 
 import SwiftUI
