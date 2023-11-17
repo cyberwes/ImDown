@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2386C6432B06EB6F00004EE8 /* AreyouDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2386C6422B06EB6F00004EE8 /* AreyouDown.swift */; };
 		368F31162B06FEAC0045912E /* MysteryCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F31152B06FEAC0045912E /* MysteryCards.swift */; };
+		4C16B9C42B08252400C21228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
+		4C16B9C52B08252400C21228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
+		4C16B9C72B08258A00C21228 /* SF-Mono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */; };
+		4C16B9D32B082C5700C21228 /* SF-Compact-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C16B9D22B082BF800C21228 /* SF-Compact-Display-Bold.otf */; };
+		4C2E4CFA2B082F2100280A2F /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C2E4CF92B082F2100280A2F /* SF-Mono-Regular.otf */; };
 		4C4304812B046A4300C34098 /* ImDownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304802B046A4300C34098 /* ImDownApp.swift */; };
 		4C4304832B046A4300C34098 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304822B046A4300C34098 /* MainView.swift */; };
 		4C4304852B046A4400C34098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
@@ -46,6 +51,10 @@
 /* Begin PBXFileReference section */
 		2386C6422B06EB6F00004EE8 /* AreyouDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreyouDown.swift; sourceTree = "<group>"; };
 		368F31152B06FEAC0045912E /* MysteryCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryCards.swift; sourceTree = "<group>"; };
+		4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Light.otf"; sourceTree = "<group>"; };
+		4C16B9D02B082A7500C21228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4C16B9D22B082BF800C21228 /* SF-Compact-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Bold.otf"; sourceTree = "<group>"; };
+		4C2E4CF92B082F2100280A2F /* SF-Mono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Mono-Regular.otf"; path = "../../../../../../Library/Fonts/SF-Mono-Regular.otf"; sourceTree = "<group>"; };
 		4C43047D2B046A4300C34098 /* ImDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4304802B046A4300C34098 /* ImDownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImDownApp.swift; sourceTree = "<group>"; };
 		4C4304822B046A4300C34098 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -91,6 +100,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C16B9D12B082BEF00C21228 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4C2E4CF92B082F2100280A2F /* SF-Mono-Regular.otf */,
+				4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */,
+				4C16B9D22B082BF800C21228 /* SF-Compact-Display-Bold.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		4C4304742B046A4300C34098 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +133,8 @@
 		4C43047F2B046A4300C34098 /* ImDown */ = {
 			isa = PBXGroup;
 			children = (
+				4C16B9D12B082BEF00C21228 /* fonts */,
+				4C16B9D02B082A7500C21228 /* Info.plist */,
 				4C4304802B046A4300C34098 /* ImDownApp.swift */,
 				4C4304822B046A4300C34098 /* MainView.swift */,
 				4C4304842B046A4400C34098 /* Assets.xcassets */,
@@ -261,7 +282,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C16B9C72B08258A00C21228 /* SF-Mono-Light.otf in Resources */,
 				4C4304882B046A4400C34098 /* Preview Assets.xcassets in Resources */,
+				4C2E4CFA2B082F2100280A2F /* SF-Mono-Regular.otf in Resources */,
+				4C16B9D32B082C5700C21228 /* SF-Compact-Display-Bold.otf in Resources */,
 				4C4304852B046A4400C34098 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C16B9C42B08252400C21228 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C16B9C52B08252400C21228 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +491,7 @@
 				DEVELOPMENT_TEAM = RHDH3SJ292;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImDown/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -494,6 +521,7 @@
 				DEVELOPMENT_TEAM = RHDH3SJ292;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImDown/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

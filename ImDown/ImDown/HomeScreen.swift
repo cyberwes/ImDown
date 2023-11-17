@@ -6,8 +6,8 @@
 //
 
 var TextColor = Color.white;
-var ButtonColor = Color("tertiary");
-var width = 350.0
+var ButtonColor = Color("primary");
+var width = 360.0
 
 import SwiftUI
 
@@ -23,8 +23,7 @@ struct HomeScreen: View {
                     VStack{
                         HStack {
                             Text(User.currentExperience.eventName.uppercased())
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
+                                .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                                 .foregroundColor(Color.white)
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                             Spacer()
@@ -43,12 +42,16 @@ struct HomeScreen: View {
                             Image(systemName: "calendar")
                                 .foregroundColor(Color.white)
                             Text(User.currentExperience.date)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.white)
+                                .font(Font.custom("SFMono-Regular", size: 16.0))                            .foregroundColor(Color.white)
+                            Spacer()
+                        }
+                        .frame(width: width)
+                        .shadow(radius: 4)
+                        HStack {
                             Image(systemName: "location")
                                 .foregroundColor(Color.white)
                             Text(User.currentExperience.location)
-                                .fontWeight(.semibold)
+                                .font(Font.custom("SFMono-Regular", size: 16.0))
                                 .foregroundColor(Color.white)
                             Spacer()
                         }
@@ -58,7 +61,7 @@ struct HomeScreen: View {
                         HStack {
                             Spacer()
                             Text("Hosted by " + User.currentExperience.host)
-                                .font(.headline)
+                                .font(Font.custom("SFMono-Regular", size: 16.0))
                                 .foregroundColor(TextColor)
                                 .padding(12)
                                 .background(ButtonColor)
@@ -77,8 +80,8 @@ struct HomeScreen: View {
                             Button(action: {
                                 User.attend()
                             }, label: {
-                                Text("I⚡️m Down!")
-                                    .font(.title)
+                                Text("I'm Down!")
+                                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                                     .fontWeight(.semibold)
                                     .foregroundColor(TextColor)
                             })
