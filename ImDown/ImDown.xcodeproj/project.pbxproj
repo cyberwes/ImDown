@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2386C6432B06EB6F00004EE8 /* AreyouDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2386C6422B06EB6F00004EE8 /* AreyouDown.swift */; };
+		4C07902E2B07076D00156E2F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C07902D2B07076D00156E2F /* UserData.swift */; };
 		4C4304812B046A4300C34098 /* ImDownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304802B046A4300C34098 /* ImDownApp.swift */; };
 		4C4304832B046A4300C34098 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304822B046A4300C34098 /* MainView.swift */; };
 		4C4304852B046A4400C34098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		2386C6422B06EB6F00004EE8 /* AreyouDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreyouDown.swift; sourceTree = "<group>"; };
+		4C07902D2B07076D00156E2F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		4C43047D2B046A4300C34098 /* ImDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4304802B046A4300C34098 /* ImDownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImDownApp.swift; sourceTree = "<group>"; };
 		4C4304822B046A4300C34098 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				4C55748F2B04C64100252E36 /* Downer.swift */,
 				4CFB05B32B05ADAE0076F956 /* NewExperience.swift */,
 				2386C6422B06EB6F00004EE8 /* AreyouDown.swift */,
+				4C07902D2B07076D00156E2F /* UserData.swift */,
 			);
 			path = ImDown;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				4C55748E2B04C3ED00252E36 /* Experience.swift in Sources */,
 				4CFB05B42B05ADAE0076F956 /* NewExperience.swift in Sources */,
 				4C4304B02B04769A00C34098 /* AttendeeView.swift in Sources */,
+				4C07902E2B07076D00156E2F /* UserData.swift in Sources */,
 				4C5574902B04C64100252E36 /* Downer.swift in Sources */,
 				4C4304B42B0476A900C34098 /* ChatView.swift in Sources */,
 				4C4304B62B0476B100C34098 /* ProfileView.swift in Sources */,
