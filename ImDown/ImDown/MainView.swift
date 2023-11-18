@@ -13,7 +13,7 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
-            AreyouDownFill().tabItem {
+            HomeScreen(User: User).tabItem {
                 Label("Home", systemImage: "house")
             }.tag(1)
             AttendeeView(User: User).tabItem {

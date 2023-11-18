@@ -64,6 +64,7 @@ struct NewExperience: View {
                 TextField(experience.description, text: $description)
                     .padding(.horizontal)
                     .shadow(radius: 4)
+                    .foregroundColor(.white)
                 HStack {
                     Spacer()
                     Button(action: {

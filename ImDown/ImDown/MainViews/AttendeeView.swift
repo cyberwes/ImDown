@@ -30,7 +30,7 @@ struct AttendeeView: View {
                                         .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
                                         .foregroundColor(Color.white)
                                     Spacer()
-                                    Text("Hosted by " + experience.host.firstName)
+                                    Text("Hosted by " + experience.host.firstName.capitalized)
                                         .foregroundColor(Color.white)
                                 }
                                 HStack {
