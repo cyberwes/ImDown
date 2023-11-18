@@ -17,7 +17,7 @@ struct ImDownApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView(User: User)
+            AreyouDown(User: User)
         }
     }
 }

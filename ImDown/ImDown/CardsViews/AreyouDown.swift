@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct AreyouDown: View {
+    
+    var User: Downer
+    
     var body: some View {
         NavigationView {
-            NavigationLink(destination: AreyouDownFill()) {
+            NavigationLink(destination: MainView(User: User)) {
                 Text("ARE YOU DOWN?")
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                     .foregroundColor(.white)
@@ -22,7 +25,7 @@ struct AreyouDown: View {
 }
 
 #Preview {
-    AreyouDown()
+    AreyouDown(User: Downer(userKey: "wesleyhahn"))
 }
 
 

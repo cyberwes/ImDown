@@ -23,7 +23,7 @@ struct ProfileView: View {
                 
                 HStack {
                     
-                    Text(User.age + " | " + User.pronouns + " | " + User.location)
+                    Text(User.age + " | " + User.pronouns.capitalized + " | " + User.location.uppercased())
                         .font(Font.custom("SFMono-Regular", size: 16.0))
                         .foregroundColor(Color.white)
                     
