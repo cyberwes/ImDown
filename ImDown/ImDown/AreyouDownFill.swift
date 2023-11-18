@@ -50,11 +50,7 @@ struct AreyouDownFill: View {
                 else {
                     Text("Host")
                 }
-                
-                
                 Spacer()
-                
-                
             }
         }
     }
