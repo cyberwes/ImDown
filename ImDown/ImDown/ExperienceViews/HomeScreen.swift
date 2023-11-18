@@ -28,7 +28,7 @@ struct HomeScreen: View {
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                             Spacer()
                             
-                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "", host: Downer(userKey: "wesleyhahn").firstName, date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
+                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "", host: Downer(userKey: "wesleyhahn").profile,attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
                                 Image(systemName: "square.and.pencil")
                                     .foregroundColor(Color.black)
                                     .frame(width: 40, height: 40)
@@ -60,7 +60,7 @@ struct HomeScreen: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            Text("Hosted by " + User.currentExperience.host)
+                            Text("Hosted by " + User.currentExperience.host.firstName)
                                 .font(Font.custom("SFMono-Regular", size: 16.0))
                                 .foregroundColor(TextColor)
                                 .padding(12)
@@ -102,7 +102,7 @@ struct HomeScreen: View {
                 VStack {
                     HStack {
                         Spacer()
-                        NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "", host: User.firstName, date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
+                        NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
                             Image(systemName: "square.and.pencil")
                                 .foregroundColor(Color.black)
                                 .frame(width: 40, height: 40)

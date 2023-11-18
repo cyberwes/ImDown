@@ -24,13 +24,13 @@ struct AttendeeView: View {
                 ScrollView {
                     ForEach(User.attendExperiences, id: \.self) {experience in
                         NavigationLink(destination: ExperienceView(experience: experience, User: User), label: {
-                            VStack {
+                            VStack(alignment: .leading) {
                                 HStack {
                                     Text(experience.eventName.uppercased())
                                         .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
                                         .foregroundColor(Color.white)
                                     Spacer()
-                                    Text("Hosted by " + experience.host)
+                                    Text("Hosted by " + experience.host.firstName)
                                         .foregroundColor(Color.white)
                                 }
                                 HStack {
@@ -49,11 +49,9 @@ struct AttendeeView: View {
                                         .foregroundColor(Color.white)
                                     Spacer()
                                 }
-                                HStack {
-                                    Text(experience.description)
-                                        .foregroundColor(Color.white)
-                                        .padding(.vertical, 2.0);
-                                }
+                                Text(experience.description)
+                                    .foregroundColor(Color.white)
+                                    .padding(.vertical, 2.0);
                             }
                             .padding()
                             .background(Color("primary"))

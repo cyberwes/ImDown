@@ -52,7 +52,7 @@ struct NewExperience: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Text("Hosted by " + User.firstName.capitalized)
+                    Text("Hosted by " + User.profile.firstName.capitalized)
                         .font(Font.custom("SFMono-Regular", size: 16.0))
                         .foregroundColor(TextColor)
                         .padding(12)
@@ -97,5 +97,5 @@ struct NewExperience: View {
 }
 
 #Preview {
-    NewExperience(User: Downer(userKey: "wesleyhahn"), experience: Experience(id: 10, eventName: "New Experience", host: Downer(userKey: "wesleyhahn").firstName, date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))
+    NewExperience(User: Downer(userKey: "wesleyhahn"), experience: Experience(id: 10, eventName: "New Experience", host: Profile(userKey: "wesleyhahn"), attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))
 }

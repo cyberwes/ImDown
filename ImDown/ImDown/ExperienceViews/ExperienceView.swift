@@ -49,7 +49,7 @@ struct ExperienceView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            Text("Hosted by " + experience.host)
+                            Text("Hosted by " + experience.host.firstName)
                                 .font(Font.custom("SFMono-Regular", size: 16.0))
                                 .foregroundColor(TextColor)
                                 .padding(12)
@@ -68,7 +68,7 @@ struct ExperienceView: View {
                             .shadow(radius: 4.0)
                             Button(action: {
                                 User.unattend(experience: experience)
-                                self.experience = Experience(id: User.ID.newId(), eventName: "", host: "", date: Date.now, description: "", location: "", imageName: "")
+                                self.experience = Experience(id: User.ID.newId(), eventName: "", host: Profile(), attend: Profile(), date: Date.now, description: "", location: "", imageName: "")
                             }, label: {
                                 Text("I'm Out 😔")
                                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))

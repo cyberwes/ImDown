@@ -17,13 +17,13 @@ struct ProfileView: View {
             
             VStack{
                 
-                Text(User.firstName + " " + User.lastName)
+                Text(User.profile.firstName.uppercased() + " " + User.profile.lastName.uppercased())
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                     .foregroundColor(Color.white)
                 
                 HStack {
                     
-                    Text(User.age + " | " + User.pronouns + " | " + User.location)
+                    Text(User.profile.age + " | " + User.profile.pronouns + " | " + User.profile.location)
                         .font(Font.custom("SFMono-Regular", size: 16.0))
                         .foregroundColor(Color.white)
                     
@@ -50,10 +50,9 @@ struct ProfileView: View {
                 HStack {
                     Text("ABOUT")
                         .font(Font.custom("SFCompactDisplay-Bold", size: 16.0))
-                        .padding(.leading, 20.0)
                     Spacer()
                 }
-                Text(User.about)
+                Text(User.profile.about)
             }
             .padding()
             Spacer()

@@ -13,37 +13,25 @@ var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Set do eiu
 class Downer {
     var userKey: String
     var ID: IDGenerator = IDGenerator(id: 2)
-    var firstName: String = "";
-    var lastName: String = "";
-    var imageName: String = "";
-    var about: String = "";
-    var pronouns: String = "";
-    var age: String = "";
-    var location: String = "";
+    var profile: Profile
     var currentExperience: Experience
     var hostExperiences: [Experience] = []
     var attendExperiences: [Experience] = []
     init( userKey: String,
-        currentExperience: Experience = Experience(id: 0, eventName: "make coffee", host: "Wesley", date: Date.now, description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
-        hostExperiences: Experience = Experience(id: 1, eventName: "Knitting a hat", host: "Wesley", date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baking"),
-        attendExperiences: Experience = Experience(id: 2, eventName: "Bake a Cake", host: "Sarah", date: Date.now, description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
+          currentExperience: Experience = Experience(id: 0, eventName: "make coffee", host: Profile(), attend: Profile(userKey:"wesleyhahn"), date: Date.now, description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
+          hostExperiences: Experience = Experience(id: 1, eventName: "Knitting a hat", host: Profile(userKey:"wesleyhahn"), attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baking"),
+        attendExperiences: Experience = Experience(id: 2, eventName: "Bake a Cake", host: Profile(), attend: Profile(userKey:"wesleyhahn"), date: Date.now, description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
         self.userKey = userKey;
+        self.profile = Profile(userKey: userKey)
         self.currentExperience = currentExperience;
         self.hostExperiences.append(hostExperiences);
         self.hostExperiences.append(attendExperiences);
         self.attendExperiences.append(attendExperiences);
-            self.firstName = Users[userKey]?["firstName"] ?? "John";
-            self.lastName = Users[userKey]?["lastName"] ?? "Smith";
-        self.imageName = "Baker";
-            self.about = Users[userKey]?["about"] ?? lorem;
-            self.age = Users[userKey]?["age"] ?? "25";
-            self.pronouns = Users[userKey]?["pronouns"] ?? "he/him";
-            self.location = Users[userKey]?["location"] ?? "Sydney, 2000";
     }
     
     func attend() {
         self.attendExperiences.append(currentExperience)
-        currentExperience = Experience(id: 0, eventName: "", host: "", date: Date.now, description: "", location: "", imageName: "")
+        currentExperience = Experience(id: 0, eventName: "", host: Profile(), attend: profile, date: Date.now, description: "", location: "", imageName: "")
     }
     
     func unattend(experience: Experience) {
@@ -51,7 +39,7 @@ class Downer {
     }
     
     func host(eventName: String, date: Date, description: String, location: String, imageName: String) {
-        self.hostExperiences.append(Experience(id: ID.newId(), eventName: eventName, host: self.firstName, date: date, description: description, location: location, imageName: imageName))
+        self.hostExperiences.append(Experience(id: ID.newId(), eventName: eventName, host: profile, attend: Profile(), date: date, description: description, location: location, imageName: imageName))
     }
     
     func unhost(experience: Experience) {

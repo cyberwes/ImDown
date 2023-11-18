@@ -11,19 +11,21 @@ import SwiftUI
 class Experience: Hashable {
     var id: Int
     var eventName: String
-    var host: String;
-    var date: Date;
-    var description: String;
-    var location: String;
-    var imageName: String;
+    var host: Profile
+    var attendee: Profile
+    var date: Date
+    var description: String
+    var location: String
+    var imageName: String
     var image: Image {
         Image(imageName)
     }
     
-    init(id: Int, eventName: String, host: String, date: Date, description: String, location: String, imageName: String) {
+    init(id: Int, eventName: String, host: Profile, attend: Profile, date: Date, description: String, location: String, imageName: String) {
         self.id = id;
         self.eventName = eventName
         self.host = host
+        self.attendee = attend
         self.date = date
         self.description = description
         self.location = location

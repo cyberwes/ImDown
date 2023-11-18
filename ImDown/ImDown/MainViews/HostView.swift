@@ -20,7 +20,7 @@ struct HostView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "Experience Name", host: Downer(userKey: "wesleyhahn").firstName, date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
+                    NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "Experience Name", host: Downer(userKey: "wesleyhahn").profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
                         Image(systemName: "square.and.pencil")
                             .foregroundColor(Color.black)
                             .frame(width: 40, height: 40)
@@ -44,7 +44,7 @@ struct HostView: View {
                                 }, label: {
                                     Text("Delete")
                                         .foregroundColor(Color.black)
-                                        .frame(width: 80, height: 40)
+                                        .frame(width: 80, height: 30)
                                         .background(Color.white)
                                         .cornerRadius(20)
                                         .shadow(radius: 10)
@@ -52,7 +52,7 @@ struct HostView: View {
                                 NavigationLink(destination: NewExperience(User: User, experience: experience)) {
                                     Text("Edit")
                                         .foregroundColor(Color.black)
-                                        .frame(width: 60, height: 40)
+                                        .frame(width: 60, height: 30)
                                         .background(Color.white)
                                         .cornerRadius(20)
                                         .shadow(radius: 10)
