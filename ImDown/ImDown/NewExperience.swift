@@ -23,12 +23,9 @@ struct NewExperience: View {
     var body: some View {
         ZStack {
             Rectangle().foregroundColor(Color("primary"))
+            Image(imageName).resizable().scaledToFill()
             VStack {
-                Image(imageName).resizable().scaledToFill()
-                Spacer()
-            }
-            VStack {
-                TextField("Experience Name".uppercased(), text: $name)
+                TextField(experience.eventName.uppercased(), text: $name)
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.00))
                     .foregroundColor(.white)
                     .padding([.top, .leading, .trailing])
@@ -45,15 +42,26 @@ struct NewExperience: View {
                 HStack {
                     Image(systemName: "location")
                         .foregroundColor(Color.white)
-                    TextField("LOCATION, 2000", text: $date)
+                    TextField(experience.location.uppercased(), text: $date)
                         .font(Font.custom("SFMono-Regular", size: 16.0))
                         .foregroundColor(.white)
                         .shadow(radius: 4)
                     Spacer()
                 }.padding(.horizontal)
                 Spacer()
-                Text("Upload a photo")
+                Text("Upload a photo").font(Font.custom("SFCompactDisplay-Bold", size: 36)).foregroundColor(.white)
                 Spacer()
+                HStack {
+                    Spacer()
+                    Text("Hosted by " + User.firstName.capitalized)
+                        .font(Font.custom("SFMono-Regular", size: 16.0))
+                        .foregroundColor(TextColor)
+                        .padding(12)
+                        .background(.black)
+                        .cornerRadius(30)
+                }
+                .frame(width: width)
+                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 TextField("Describe your event!", text: $description)
                     .padding(.horizontal)
                     .shadow(radius: 4)

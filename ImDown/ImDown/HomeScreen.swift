@@ -50,7 +50,7 @@ struct HomeScreen: View {
                         HStack {
                             Image(systemName: "location")
                                 .foregroundColor(Color.white)
-                            Text(User.currentExperience.location)
+                            Text(User.currentExperience.location.uppercased())
                                 .font(Font.custom("SFMono-Regular", size: 16.0))
                                 .foregroundColor(Color.white)
                             Spacer()
