@@ -25,7 +25,7 @@ struct MainView: View {
             ChatView().tabItem {
                 Label("Chat", systemImage: "message")
             }.tag(4)
-            ProfileView(User: User).tabItem {
+            ProfileView(User: User.profile).tabItem {
                 Label("Profile", systemImage: "person")
             }.tag(5)
         }

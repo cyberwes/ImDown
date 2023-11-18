@@ -18,9 +18,9 @@ class Downer {
     var hostExperiences: [Experience] = []
     var attendExperiences: [Experience] = []
     init( userKey: String,
-          currentExperience: Experience = Experience(id: 0, eventName: "make coffee", host: Profile(), attend: Profile(userKey:"wesleyhahn"), date: Date.now, description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
+          currentExperience: Experience = Experience(id: 0, eventName: "make coffee", host: Profile(userKey: "john_doe"), attend: Profile(), date: Date.now, description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
           hostExperiences: Experience = Experience(id: 1, eventName: "Knitting a hat", host: Profile(userKey:"wesleyhahn"), attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baking"),
-        attendExperiences: Experience = Experience(id: 2, eventName: "Bake a Cake", host: Profile(), attend: Profile(userKey:"wesleyhahn"), date: Date.now, description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
+          attendExperiences: Experience = Experience(id: 2, eventName: "Bake a Cake", host: Profile(userKey: "emily_smith"), attend: Profile(userKey:"wesleyhahn"), date: Date.now, description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
         self.userKey = userKey;
         self.profile = Profile(userKey: userKey)
         self.currentExperience = currentExperience;

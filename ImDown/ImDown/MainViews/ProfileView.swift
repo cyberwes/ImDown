@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    var User: Downer;
+    var User: Profile;
     
     var body: some View {
         VStack{
@@ -17,13 +17,13 @@ struct ProfileView: View {
             
             VStack{
                 
-                Text(User.profile.firstName.uppercased() + " " + User.profile.lastName.uppercased())
+                Text(User.firstName.capitalized + " " + User.lastName.capitalized)
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                     .foregroundColor(Color.white)
                 
                 HStack {
                     
-                    Text(User.profile.age + " | " + User.profile.pronouns + " | " + User.profile.location)
+                    Text(User.age + " | " + User.pronouns + " | " + User.location)
                         .font(Font.custom("SFMono-Regular", size: 16.0))
                         .foregroundColor(Color.white)
                     
@@ -52,7 +52,7 @@ struct ProfileView: View {
                         .font(Font.custom("SFCompactDisplay-Bold", size: 16.0))
                     Spacer()
                 }
-                Text(User.profile.about)
+                Text(User.about)
             }
             .padding()
             Spacer()
@@ -61,5 +61,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(User: Downer(userKey: "wesleyhahn"))
+    ProfileView(User: Profile(userKey: "wesleyhahn"))
 }

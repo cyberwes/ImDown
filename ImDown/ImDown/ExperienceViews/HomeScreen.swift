@@ -60,12 +60,14 @@ struct HomeScreen: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            Text("Hosted by " + User.currentExperience.host.firstName)
-                                .font(Font.custom("SFMono-Regular", size: 16.0))
-                                .foregroundColor(TextColor)
-                                .padding(12)
-                                .background(ButtonColor)
-                                .cornerRadius(30)
+                            NavigationLink(destination: ProfileView(User: User.currentExperience.host), label: {
+                                Text("Hosted by " + User.currentExperience.host.firstName.capitalized)
+                                    .font(Font.custom("SFMono-Regular", size: 16.0))
+                                    .foregroundColor(TextColor)
+                                    .padding(12)
+                                    .background(ButtonColor)
+                                    .cornerRadius(30)
+                            })
                         }
                         .frame(width: width)
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
