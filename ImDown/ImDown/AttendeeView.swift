@@ -65,5 +65,5 @@ struct AttendeeView: View {
 }
 
 #Preview {
-    AttendeeView(User: Downer())
+    AttendeeView(User: Downer(userKey: "wesleyhahn"))
 }

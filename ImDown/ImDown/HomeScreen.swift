@@ -28,7 +28,7 @@ struct HomeScreen: View {
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                             Spacer()
                             
-                            NavigationLink(destination: NewExperience(User: User)) {
+                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "", host: Downer(userKey: "wesleyhahn").firstName, date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
                                 Image(systemName: "square.and.pencil")
                                     .foregroundColor(Color.black)
                                     .frame(width: 40, height: 40)
@@ -82,7 +82,6 @@ struct HomeScreen: View {
                             }, label: {
                                 Text("I'm Down!")
                                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
-                                    .fontWeight(.semibold)
                                     .foregroundColor(TextColor)
                             })
                             .frame(width: width, height: 50)
@@ -103,7 +102,7 @@ struct HomeScreen: View {
                 VStack {
                     HStack {
                         Spacer()
-                        NavigationLink(destination: NewExperience(User: User)) {
+                        NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "", host: User.firstName, date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
                             Image(systemName: "square.and.pencil")
                                 .foregroundColor(Color.black)
                                 .frame(width: 40, height: 40)
@@ -117,7 +116,7 @@ struct HomeScreen: View {
                     Text("That experience has been added to your schedule.").foregroundColor(.white)
                     Spacer()
                 }
-                .background(Color.black)
+                .background(Color("primary"))
                 .padding()
             }
         }
@@ -127,6 +126,6 @@ struct HomeScreen: View {
 
 #Preview {
     HomeScreen(
-        User: Downer()
+        User: Downer(userKey: "wesleyhahn")
     )
 }

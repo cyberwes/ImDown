@@ -9,10 +9,15 @@ import SwiftUI
 
 @main
 struct ImDownApp: App {
+    var User: Downer;
+    
+    init() {
+        User = Downer(userKey: "wesleyhahn")
+    }
     
     var body: some Scene {
         WindowGroup {
-            MainView(User: Downer())
+            MainView(User: User)
         }
     }
 }

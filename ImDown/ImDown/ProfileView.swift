@@ -62,5 +62,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(User: Downer())
+    ProfileView(User: Downer(userKey: "wesleyhahn"))
 }

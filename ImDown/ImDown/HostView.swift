@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HostView: View {
     
-    var experienceArray: [Experience];
+    var User: Downer;
     
     var body: some View {
         VStack {
@@ -32,7 +32,7 @@ struct HostView: View {
             }
             .padding()
             ScrollView {
-                ForEach(experienceArray, id: \.self) {experience in
+                ForEach(User.hostExperiences, id: \.self) {experience in
                     
                     VStack {
                         HStack {
@@ -42,7 +42,7 @@ struct HostView: View {
                             Spacer()
                             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                                 Text("Edit")
-                            })
+                            }).foregroundColor(.white)
                         }
                         HStack {
                             Image(systemName: "calendar")
@@ -78,5 +78,5 @@ struct HostView: View {
 }
 
 #Preview {
-    HostView(experienceArray: Downer().hostExperiences)
+    HostView(User: Downer(userKey: "wesleyhahn"))
 }

@@ -19,7 +19,7 @@ struct MainView: View {
             AttendeeView(User: User).tabItem {
                 Label("Attending", systemImage: "calendar.badge.checkmark")
             }.tag(2)
-            HostView(experienceArray: User.hostExperiences).tabItem {
+            HostView(User: User).tabItem {
                 Label("Hosting", systemImage: "h.square.on.square")
             }.tag(3)
             ChatView().tabItem {
@@ -33,5 +33,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(User: Downer())
+    MainView(User: Downer(userKey: "wesleyhahn"))
 }

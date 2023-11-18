@@ -11,6 +11,7 @@ var lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Set do eiu
 
 @Observable
 class Downer {
+    var userKey: String
     var ID: IDGenerator = IDGenerator(id: 2)
     var firstName: String = "";
     var lastName: String = "";
@@ -22,21 +23,22 @@ class Downer {
     var currentExperience: Experience
     var hostExperiences: [Experience] = []
     var attendExperiences: [Experience] = []
-    init(
+    init( userKey: String,
         currentExperience: Experience = Experience(id: 0, eventName: "make coffee", host: "Wesley", date: Date.now, description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
         hostExperiences: Experience = Experience(id: 1, eventName: "Knitting a hat", host: "Wesley", date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baking"),
         attendExperiences: Experience = Experience(id: 2, eventName: "Bake a Cake", host: "Sarah", date: Date.now, description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
+        self.userKey = userKey;
         self.currentExperience = currentExperience;
         self.hostExperiences.append(hostExperiences);
         self.hostExperiences.append(attendExperiences);
         self.attendExperiences.append(attendExperiences);
-        self.firstName = "Wesley";
-        self.lastName = "Hahn";
+            self.firstName = Users[userKey]?["firstName"] ?? "John";
+            self.lastName = Users[userKey]?["lastName"] ?? "Smith";
         self.imageName = "Baker";
-        self.about = lorem;
-        self.age = "28";
-        self.pronouns = "he/him";
-        self.location = "Rosebery, 2018";
+            self.about = Users[userKey]?["about"] ?? lorem;
+            self.age = Users[userKey]?["age"] ?? "25";
+            self.pronouns = Users[userKey]?["pronouns"] ?? "he/him";
+            self.location = Users[userKey]?["location"] ?? "Sydney, 2000";
     }
     
     func attend() {

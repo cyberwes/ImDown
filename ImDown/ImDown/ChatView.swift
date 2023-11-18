@@ -33,7 +33,7 @@ struct ChatView: View {
                     }
                 }
                 .padding()
-                .background(Color.black)
+                .background(Color("primary"))
                 .cornerRadius(15.0)
             }
             .padding()
