@@ -18,15 +18,13 @@ struct ProfileView: View {
             VStack{
                 
                 Text(User.firstName + " " + User.lastName)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                     .foregroundColor(Color.white)
                 
                 HStack {
                     
                     Text(User.age + " | " + User.pronouns + " | " + User.location)
-                        .font(.body)
-                        .fontWeight(.light)
+                        .font(Font.custom("SFMono-Regular", size: 16.0))
                         .foregroundColor(Color.white)
                     
                     Image(systemName: "location.fill")
@@ -47,13 +45,12 @@ struct ProfileView: View {
                 }
             }
             .frame(width: 400, height: 150)
-            .background(Color.black)
+            .background(Color("primary"))
             VStack {
                 HStack {
                     Text("ABOUT")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .padding(.leading, 25.0)
+                        .font(Font.custom("SFCompactDisplay-Bold", size: 16.0))
+                        .padding(.leading, 20.0)
                     Spacer()
                 }
                 Text(User.about)

@@ -12,8 +12,7 @@ struct ChatView: View {
         VStack {
             HStack {
                 Text("CHAT")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                 
                 Spacer()
             }
@@ -22,8 +21,7 @@ struct ChatView: View {
                 VStack {
                     HStack {
                         Text("First Last")
-                            .font(.title2)
-                            .fontWeight(.bold)
+                            .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
                             .foregroundColor(Color.white)
                         Spacer()
                     }

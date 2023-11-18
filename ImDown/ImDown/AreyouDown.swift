@@ -9,18 +9,14 @@ import SwiftUI
 
 struct AreyouDown: View {
     var body: some View {
-        VStack{
+        NavigationLink(destination: AreyouDownFill()) {
             Text("ARE YOU DOWN?")
                 .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
-                .frame(maxWidth: .infinity, alignment: .center)
                 .foregroundColor(.white)
-            
+                .frame(width: 1000, height: 2000)
+                .background(Color("primary"))
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("primary"))
-       
-        }
-    
+    }
 }
 
 #Preview {
