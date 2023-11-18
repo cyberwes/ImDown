@@ -46,6 +46,10 @@ class Downer {
         currentExperience = Experience(id: 0, eventName: "", host: "", date: Date.now, description: "", location: "", imageName: "")
     }
     
+    func unattend(experience: Experience) {
+        self.attendExperiences.removeAll { $0.id == experience.id }
+    }
+    
     func host(eventName: String, date: Date, description: String, location: String, imageName: String) {
         self.hostExperiences.append(Experience(id: ID.newId(), eventName: eventName, host: self.firstName, date: date, description: description, location: location, imageName: imageName))
     }
