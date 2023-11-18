@@ -15,7 +15,6 @@ struct NewExperience: View {
     var experience: Experience;
     @State private var name: String = ""
     @State private var date: String = ""
-    @State private var time: String = ""
     @State private var location: String = ""
     @State private var imageName: String = "Baking"
     @State private var description: String = ""
@@ -42,7 +41,7 @@ struct NewExperience: View {
                 HStack {
                     Image(systemName: "location")
                         .foregroundColor(Color.white)
-                    TextField(experience.location.uppercased(), text: $date)
+                    TextField(experience.location.uppercased(), text: $location)
                         .font(Font.custom("SFMono-Regular", size: 16.0))
                         .foregroundColor(.white)
                         .shadow(radius: 4)
@@ -62,19 +61,24 @@ struct NewExperience: View {
                 }
                 .frame(width: width)
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                TextField("Describe your event!", text: $description)
+                TextField(experience.description, text: $description)
                     .padding(.horizontal)
                     .shadow(radius: 4)
                 HStack {
                     Spacer()
                     Button(action: {
-                        User.host(eventName: name, date: Date.now, description: description, location: location, imageName: imageName)
+                        User.unhost(experience: experience)
+                        User.host(
+                            eventName: (self.name != "") ? self.name : experience.eventName,
+                            date: (self.date != "") ? Formatter.stringToDate(self.date) : experience.date,
+                            description: (self.description != "") ? self.description : experience.description,
+                            location: (self.location != "") ? self.location : experience.location,
+                            imageName: (self.imageName != "") ? self.imageName : experience.imageName)
                         print(name)
-                        name = ""
-                        date = ""
-                        time = ""
-                        description = ""
-                        location = ""
+                        name = experience.eventName
+                        date = Formatter.formatDate(experience.date)
+                        description = experience.description
+                        location = experience.location
                         imageName = "Baking"
                     }, label: {
                         Text("Confirm")

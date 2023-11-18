@@ -39,6 +39,16 @@ struct HostView: View {
                                     .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
                                     .foregroundColor(Color.white)
                                 Spacer()
+                                Button(action: {
+                                    User.unhost(experience: experience)
+                                }, label: {
+                                    Text("Delete")
+                                        .foregroundColor(Color.black)
+                                        .frame(width: 80, height: 40)
+                                        .background(Color.white)
+                                        .cornerRadius(20)
+                                        .shadow(radius: 10)
+                                })
                                 NavigationLink(destination: NewExperience(User: User, experience: experience)) {
                                     Text("Edit")
                                         .foregroundColor(Color.black)

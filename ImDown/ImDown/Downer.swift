@@ -53,4 +53,8 @@ class Downer {
     func host(eventName: String, date: Date, description: String, location: String, imageName: String) {
         self.hostExperiences.append(Experience(id: ID.newId(), eventName: eventName, host: self.firstName, date: date, description: description, location: location, imageName: imageName))
     }
+    
+    func unhost(experience: Experience) {
+        self.hostExperiences.removeAll { $0.id == experience.id }
+    }
 }

@@ -15,7 +15,7 @@ class Experience: Hashable {
     var date: Date;
     var description: String;
     var location: String;
-    private var imageName: String;
+    var imageName: String;
     var image: Image {
         Image(imageName)
     }

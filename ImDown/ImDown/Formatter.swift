@@ -14,4 +14,8 @@ class Formatter {
             dateFormatter.dateFormat = "H:mm | d/M/y"
             return dateFormatter.string(from: date)
         }
+    
+    public static func stringToDate(_ string: String) -> Date {
+        return Date.now;
+    }
 }
