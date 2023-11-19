@@ -14,7 +14,6 @@
 		4C16B9C52B08252400C21228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
 		4C16B9C72B08258A00C21228 /* SF-Mono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */; };
 		4C16B9D32B082C5700C21228 /* SF-Compact-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C16B9D22B082BF800C21228 /* SF-Compact-Display-Bold.otf */; };
-		4C2E4CFA2B082F2100280A2F /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C2E4CF92B082F2100280A2F /* SF-Mono-Regular.otf */; };
 		4C2E4CFC2B08335E00280A2F /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E4CFB2B08335E00280A2F /* Formatter.swift */; };
 		4C301F3B2B084925002013A1 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C301F3A2B084925002013A1 /* UserData.swift */; };
 		4C301F3D2B08492F002013A1 /* MysterycardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C301F3C2B08492F002013A1 /* MysterycardLayout.swift */; };
@@ -33,6 +32,9 @@
 		4C4304B62B0476B100C34098 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304B52B0476B100C34098 /* ProfileView.swift */; };
 		4C55748E2B04C3ED00252E36 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55748D2B04C3ED00252E36 /* Experience.swift */; };
 		4C5574902B04C64100252E36 /* Downer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55748F2B04C64100252E36 /* Downer.swift */; };
+		4C93763A2B0AC3F500899BB3 /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C9376392B0AC3BF00899BB3 /* SF-Mono-Regular.otf */; };
+		4C93763B2B0AC3F600899BB3 /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C9376392B0AC3BF00899BB3 /* SF-Mono-Regular.otf */; };
+		4C93763C2B0AC3F700899BB3 /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C9376392B0AC3BF00899BB3 /* SF-Mono-Regular.otf */; };
 		4CC231AE2B087D700010560F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC231AD2B087D700010560F /* Profile.swift */; };
 		4CFB05B42B05ADAE0076F956 /* NewExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB05B32B05ADAE0076F956 /* NewExperience.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +63,6 @@
 		4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Light.otf"; sourceTree = "<group>"; };
 		4C16B9D02B082A7500C21228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4C16B9D22B082BF800C21228 /* SF-Compact-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Bold.otf"; sourceTree = "<group>"; };
-		4C2E4CF92B082F2100280A2F /* SF-Mono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Mono-Regular.otf"; path = "../../../../../../Library/Fonts/SF-Mono-Regular.otf"; sourceTree = "<group>"; };
 		4C2E4CFB2B08335E00280A2F /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		4C301F3A2B084925002013A1 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		4C301F3C2B08492F002013A1 /* MysterycardLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MysterycardLayout.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		4C4304B52B0476B100C34098 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4C55748D2B04C3ED00252E36 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		4C55748F2B04C64100252E36 /* Downer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downer.swift; sourceTree = "<group>"; };
+		4C9376392B0AC3BF00899BB3 /* SF-Mono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Mono-Regular.otf"; path = "../../../../../../../../Library/Fonts/SF-Mono-Regular.otf"; sourceTree = "<group>"; };
 		4CC231AD2B087D700010560F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		4CFB05B32B05ADAE0076F956 /* NewExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExperience.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +117,7 @@
 		4C16B9D12B082BEF00C21228 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				4C2E4CF92B082F2100280A2F /* SF-Mono-Regular.otf */,
+				4C9376392B0AC3BF00899BB3 /* SF-Mono-Regular.otf */,
 				4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */,
 				4C16B9D22B082BF800C21228 /* SF-Compact-Display-Bold.otf */,
 			);
@@ -334,7 +336,7 @@
 			files = (
 				4C16B9C72B08258A00C21228 /* SF-Mono-Light.otf in Resources */,
 				4C4304882B046A4400C34098 /* Preview Assets.xcassets in Resources */,
-				4C2E4CFA2B082F2100280A2F /* SF-Mono-Regular.otf in Resources */,
+				4C93763A2B0AC3F500899BB3 /* SF-Mono-Regular.otf in Resources */,
 				4C16B9D32B082C5700C21228 /* SF-Compact-Display-Bold.otf in Resources */,
 				4C4304852B046A4400C34098 /* Assets.xcassets in Resources */,
 			);
@@ -344,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C93763B2B0AC3F600899BB3 /* SF-Mono-Regular.otf in Resources */,
 				4C16B9C42B08252400C21228 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C93763C2B0AC3F700899BB3 /* SF-Mono-Regular.otf in Resources */,
 				4C16B9C52B08252400C21228 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
