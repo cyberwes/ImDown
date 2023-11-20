@@ -14,14 +14,16 @@ import SwiftUI
 struct HomeScreen: View {
     
     var User: Downer
-    @State var timer: Int = 0
+    @State var timer: Int = 60;
     
     @State var feedbackHeading: String = "Are You Down?"
     @State var feedbackText: String = "More Experiences coming soon!"
     
+    @State var timerRunning = false
+    
     var body: some View {
         NavigationView {
-            if (timer > 0) {
+            if (timer > 0 && User.currentExperience.eventName != "") {
                 ZStack{
                     User.currentExperience.image.resizable().scaledToFill()
                     VStack{
@@ -95,6 +97,14 @@ struct HomeScreen: View {
                                         .padding(.horizontal)
                                         .background(Color("Tertiary"))
                                         .cornerRadius(25.0)
+                                        .onAppear {
+                                            if (timerRunning == false) {
+                                                timerRunning = true
+                                                let timerAnim = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                                                    self.timer = self.timer - 1
+                                                }
+                                            }
+                                        }
                                 }
                                 .padding(.leading, 50.0)
                                 .padding(.trailing, 5.0)
@@ -129,19 +139,18 @@ struct HomeScreen: View {
                         }.padding()
                     }
                     Spacer()
-                    Text(feedbackHeading).font(.largeTitle).fontWeight(.bold).foregroundColor(.white)
-                    Text(feedbackText).foregroundColor(.white)
+                    Text(feedbackHeading)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                    Text(feedbackText)
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
                     Spacer()
                 }
                 .background(Color("primary"))
-                .padding()
             }
-        } .onAppear {
-            self.timer = 60
-            let timerAnim = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                timer = timer - 1;
-            }
-            RunLoop.main.add(timerAnim, forMode: .common)
         }
     }
 }
