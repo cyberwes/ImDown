@@ -102,7 +102,7 @@ struct HomeScreen: View {
                                         .onAppear {
                                             if (timerRunning == false) {
                                                 timerRunning = true
-                                                let timerAnim = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                                                let timerAnim = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
                                                     self.timer = self.timer - 1
                                                 }
                                             }
