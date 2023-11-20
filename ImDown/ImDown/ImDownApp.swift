@@ -20,7 +20,7 @@ struct ImDownApp: App {
     var body: some Scene {
         WindowGroup {
             if (stateManager.currentState == StateManager.State.HomeScreen) {
-                MainView(User: User, stateManager: stateManager)
+                MainView(User: User, stateManager: stateManager).background(Color.black)
             } else {
                 AreyouDown(User: User, stateManager: stateManager)
             }
@@ -34,8 +34,11 @@ class StateManager {
     enum State {
         case AreYouDown
         case HomeScreen
+        case Carosel
+        case SelectedCard
+        case Experience
     }
     
     var currentState: State = State.AreYouDown
-    
+
 }

@@ -16,6 +16,8 @@ struct ExperienceView: View {
             if (experience.eventName != "") {
                 ZStack{
                     experience.image.resizable().scaledToFill()
+                    Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
+                        .opacity(0.5)
                     VStack{
                         VStack{
                             HStack {

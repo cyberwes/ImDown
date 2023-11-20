@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AreyouDownFill: View {
     
+    var User: Downer
+    var stateManager: StateManager;
     @State private var down="ATTEND"
     @State private var date = Date.now
     @State private var timestart = Date.now
@@ -25,8 +27,7 @@ struct AreyouDownFill: View {
                 Spacer()
                     .frame(height: 100)
                 Text("ARE YOU DOWN?")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                     .frame(maxWidth: .infinity, alignment: .center)
                     .foregroundColor(.white)
                     .shadow(radius: 10)
@@ -54,11 +55,6 @@ struct AreyouDownFill: View {
                             .background(Color.white)
                             .cornerRadius(8)
                             .shadow(radius: 10)
-                        //                           .frame(width: 121.5, height: 30)
-                        
-                        
-                        //                            .padding(.vertical, 4)
-                        //
                     }.padding(.horizontal)
                     
                     HStack{
@@ -135,45 +131,47 @@ struct AreyouDownFill: View {
                     } 
                     Spacer()
                     VStack{
-                        Text("Let's Go!!")
-                            .fontWeight(.bold)
-                            .font(.title)
-                            .foregroundColor(Color("primary"))
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color .white)
-                            .cornerRadius(10)
-                            .padding(.horizontal, 20)
-                            .shadow(radius: 10)
+                        Button(action: {
+                            stateManager.currentState = StateManager.State.Carosel
+                        }, label: {
+                            Text("Let's Go!!")
+                                .fontWeight(.bold)
+                                .font(.title)
+                                .foregroundColor(Color("primary"))
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color .white)
+                                .cornerRadius(10)
+                                .padding(.horizontal, 20)
+                                .shadow(radius: 10)
+                        })
                     }.padding()
                 }
                 else {
                     Spacer()
                     
                     VStack{
-                        Text("Create a new Event!!")
-                            .fontWeight(.bold)
-                            .font(.title)
-                            .foregroundColor(Color("primary"))
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color .white)
-                            .cornerRadius(10)
-                            .padding(.horizontal, 20)
-                            .shadow(radius: 10)
-                    
+                        Button(action: {
+                            
+                        }, label: {
+                            Text("CREATE AN EXPERIENCE!")
+                                .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
+                                .foregroundColor(Color("primary"))
+                                .padding()
+                                .frame(width: 360)
+                                .background(Color .white)
+                                .cornerRadius(10)
+                                .padding(.horizontal, 20)
+                                .shadow(radius: 10)
+                        })
                         Text("Share your skills and inspire others by hosting an event, your knowledge can light up someone's learning journey!")
                             .multilineTextAlignment(.center)
                             .padding(30)
                             .foregroundColor(.white)
                             
                     }
-                    
                     Spacer()
-                    Spacer()
-                    
                 }
-               
             }
         }
     }
@@ -181,5 +179,5 @@ struct AreyouDownFill: View {
 
 
 #Preview {
-    AreyouDownFill()
+    AreyouDownFill(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }

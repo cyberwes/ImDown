@@ -26,6 +26,8 @@ struct HomeScreen: View {
             if (timer > 0 && User.currentExperience.eventName != "") {
                 ZStack{
                     User.currentExperience.image.resizable().scaledToFill()
+                    Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
+                        .opacity(0.5)
                     VStack{
                         HStack {
                             Text(User.currentExperience.eventName.uppercased())
@@ -34,7 +36,7 @@ struct HomeScreen: View {
                                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                             Spacer()
                             
-                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "", host: Downer(userKey: "wesleyhahn").profile,attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
+                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: Downer(userKey: "wesleyhahn").profile,attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
                                 Image(systemName: "square.and.pencil")
                                     .foregroundColor(Color.black)
                                     .frame(width: 40, height: 40)
@@ -129,7 +131,7 @@ struct HomeScreen: View {
                 VStack {
                     HStack {
                         Spacer()
-                        NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
+                        NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
                             Image(systemName: "square.and.pencil")
                                 .foregroundColor(Color.black)
                                 .frame(width: 40, height: 40)
