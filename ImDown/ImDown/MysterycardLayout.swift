@@ -14,7 +14,8 @@ struct MysterycardLayout: View {
 //            Rectangle().frame(width:240, height:320)
             RoundedRectangle(cornerRadius: 10).frame(width:240, height:320).foregroundStyle(Color("primary"))
             VStack {
-                Text("You're In!")
+                Text("You're On!").foregroundStyle(.blue)
+                Text("Stepping out of your comfort zone is huge. We’re proud of you.")
                 HStack
                 {
                     Spacer()
