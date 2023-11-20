@@ -34,14 +34,25 @@ class Profile {
     }
     
     init(userKey: String) {
-        self.email = Users[userKey]!["email"]!
-        self.password = Users[userKey]!["password"]!
-        self.firstName = Users[userKey]!["firstName"]!
-        self.lastName = Users[userKey]!["lastName"]!
-        self.age = Users[userKey]!["age"]!
-        self.pronouns = Users[userKey]!["pronouns"]!
-        self.location = Users[userKey]!["location"]!
-        self.about = Users[userKey]!["about"]!
+        if (userKey != "") {
+            self.email = Users[userKey]!["email"]!
+            self.password = Users[userKey]!["password"]!
+            self.firstName = Users[userKey]!["firstName"]!
+            self.lastName = Users[userKey]!["lastName"]!
+            self.age = Users[userKey]!["age"]!
+            self.pronouns = Users[userKey]!["pronouns"]!
+            self.location = Users[userKey]!["location"]!
+            self.about = Users[userKey]!["about"]!
+        } else {
+            self.email = ""
+            self.password = ""
+            self.firstName = ""
+            self.lastName = ""
+            self.age = ""
+            self.pronouns = ""
+            self.location = ""
+            self.about = ""
+        }
     }
     
     init() {
