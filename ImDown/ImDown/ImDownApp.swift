@@ -19,7 +19,7 @@ struct ImDownApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if (stateManager.currentState == StateManager.State.HomeScreen) {
+            if (stateManager.currentState != StateManager.State.AreYouDown) {
                 MainView(User: User, stateManager: stateManager).background(Color.black)
             } else {
                 AreyouDown(User: User, stateManager: stateManager)
