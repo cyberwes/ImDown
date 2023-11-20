@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     var User: Downer;
+    var stateManager: StateManager;
     
     var body: some View {
         TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
@@ -33,5 +34,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(User: Downer(userKey: "wesleyhahn"))
+    MainView(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }

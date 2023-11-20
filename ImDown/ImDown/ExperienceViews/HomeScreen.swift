@@ -14,10 +14,14 @@ import SwiftUI
 struct HomeScreen: View {
     
     var User: Downer
+    @State var timer: Int = 0
+    
+    @State var feedbackHeading: String = "Are You Down?"
+    @State var feedbackText: String = "More Experiences coming soon!"
     
     var body: some View {
         NavigationView {
-            if (User.currentExperience.eventName != "") {
+            if (timer > 0) {
                 ZStack{
                     User.currentExperience.image.resizable().scaledToFill()
                     VStack{
@@ -81,10 +85,21 @@ struct HomeScreen: View {
                             .shadow(radius: 4.0)
                             Button(action: {
                                 User.attend()
+                                feedbackHeading = "Have Fun! 🎉"
+                                feedbackText = "That experience has been added to your schedule."
                             }, label: {
-                                Text("I'm Down!")
-                                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
-                                    .foregroundColor(TextColor)
+                                HStack {
+                                    Text("I'm Down!")
+                                    Spacer()
+                                    Text(String(timer))
+                                        .padding(.horizontal)
+                                        .background(Color("Tertiary"))
+                                        .cornerRadius(25.0)
+                                }
+                                .padding(.leading, 50.0)
+                                .padding(.trailing, 5.0)
+                                .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
+                                .foregroundColor(TextColor)
                             })
                             .frame(width: width, height: 50)
                             .background(ButtonColor)
@@ -114,13 +129,19 @@ struct HomeScreen: View {
                         }.padding()
                     }
                     Spacer()
-                    Text("Have Fun! 🎉").font(.largeTitle).fontWeight(.bold).foregroundColor(.white)
-                    Text("That experience has been added to your schedule.").foregroundColor(.white)
+                    Text(feedbackHeading).font(.largeTitle).fontWeight(.bold).foregroundColor(.white)
+                    Text(feedbackText).foregroundColor(.white)
                     Spacer()
                 }
                 .background(Color("primary"))
                 .padding()
             }
+        } .onAppear {
+            self.timer = 60
+            let timerAnim = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                timer = timer - 1;
+            }
+            RunLoop.main.add(timerAnim, forMode: .common)
         }
     }
 }
