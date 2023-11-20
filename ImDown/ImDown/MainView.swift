@@ -10,22 +10,23 @@ import SwiftUI
 struct MainView: View {
     
     var User: Downer;
+    var stateManager: StateManager;
     
     var body: some View {
         TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
-            AreyouDownFill().tabItem {
+            HomeScreen(User: User).tabItem {
                 Label("Home", systemImage: "house")
             }.tag(1)
             AttendeeView(User: User).tabItem {
                 Label("Attending", systemImage: "calendar.badge.checkmark")
             }.tag(2)
-            HostView(experienceArray: User.hostExperiences).tabItem {
+            HostView(User: User).tabItem {
                 Label("Hosting", systemImage: "h.square.on.square")
             }.tag(3)
             ChatView().tabItem {
                 Label("Chat", systemImage: "message")
             }.tag(4)
-            ProfileView(User: User).tabItem {
+            ProfileView(User: User.profile).tabItem {
                 Label("Profile", systemImage: "person")
             }.tag(5)
         }
@@ -33,5 +34,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(User: Downer())
+    MainView(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }
