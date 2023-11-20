@@ -173,7 +173,11 @@ struct AreyouDownFill: View {
                     Spacer()
                     
                 }
+<<<<<<< HEAD:ImDown/ImDown/AreyouDownFill.swift
                
+=======
+                Spacer()
+>>>>>>> main:ImDown/ImDown/CardsViews/AreyouDownFill.swift
             }
         }
     }
