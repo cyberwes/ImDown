@@ -54,12 +54,8 @@ struct AreyouDownFill: View {
                             .background(Color.white)
                             .cornerRadius(8)
                             .shadow(radius: 10)
-                        //                           .frame(width: 121.5, height: 30)
-                        
-                        
-                        //                            .padding(.vertical, 4)
-                        //
-                    }.padding(.horizontal)
+                       
+                            }.padding(.horizontal)
                     
                     HStack{
                         
@@ -76,7 +72,7 @@ struct AreyouDownFill: View {
                                 .cornerRadius(5)
                                 .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
                             
-                        }
+                              }
                         
                         
                         Spacer()
@@ -135,6 +131,11 @@ struct AreyouDownFill: View {
                     } 
                     Spacer()
                     VStack{
+                        
+                        Button("Let's Go") {
+                            
+                        }
+
                         Text("Let's Go!!")
                             .fontWeight(.bold)
                             .font(.title)
@@ -151,7 +152,7 @@ struct AreyouDownFill: View {
                     Spacer()
                     
                     VStack{
-                        Text("Create a new Event!!")
+                        Text("Create a New Event!!")
                             .fontWeight(.bold)
                             .font(.title)
                             .foregroundColor(Color("primary"))
@@ -173,11 +174,10 @@ struct AreyouDownFill: View {
                     Spacer()
                     
                 }
-<<<<<<< HEAD:ImDown/ImDown/AreyouDownFill.swift
-               
-=======
+
+
                 Spacer()
->>>>>>> main:ImDown/ImDown/CardsViews/AreyouDownFill.swift
+
             }
         }
     }
