@@ -12,7 +12,7 @@ struct MainView: View {
     var User: Downer;
     
     var body: some View {
-        TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
+        TabView(selection: .constant(1)) {
             HomeScreen(User: User).tabItem {
                 Label("Home", systemImage: "house")
             }.tag(1)

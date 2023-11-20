@@ -13,7 +13,28 @@ struct ProfileView: View {
     
     var body: some View {
         VStack{
-            Image("Baking").resizable().padding(.vertical, -10.0).scaledToFit()
+            ZStack{
+                
+                Image("Baking").resizable().padding(-10.0).scaledToFit()
+                Spacer()
+                HStack {
+                    Spacer()
+                    VStack {
+                        Button(action: {}, label: {
+                            VStack{
+                                Image(systemName: "square.and.pencil")
+                                    .foregroundColor(Color.black)
+                                    .frame(width: 40, height: 40)
+                                ;
+                            }
+                        } )
+                        .background(Color.white)
+                        .cornerRadius(20)
+                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        Spacer()
+                    }.frame(height: 230)
+                }.padding()
+            }
             
             VStack{
                 
@@ -32,22 +53,9 @@ struct ProfileView: View {
                     Image(systemName: "location.fill")
                         .foregroundColor(Color.white)
                 }
-                HStack {
-                    Button(action: {}, label: {
-                        VStack{
-                            Image(systemName: "square.and.pencil")
-                                .foregroundColor(Color.black)
-                                .frame(width: 40, height: 40)
-                            ;
-                        }
-                    } )
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                }
             }
             .frame(width: 400, height: 150)
-            .background(Color.black)
+            .background(Color("primary"))
             VStack {
                 HStack {
                     Text("ABOUT")
