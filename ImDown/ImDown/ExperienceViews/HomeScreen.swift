@@ -14,6 +14,7 @@ import SwiftUI
 struct HomeScreen: View {
     
     var User: Downer
+    var stateManager: StateManager;
     @State var timer: Int = 60;
     
     @State var feedbackHeading: String = "Are You Down?"
@@ -151,6 +152,6 @@ struct HomeScreen: View {
 
 #Preview {
     HomeScreen(
-        User: Downer(userKey: "wesleyhahn")
+        User: Downer(userKey: "wesleyhahn"), stateManager: StateManager()
     )
 }

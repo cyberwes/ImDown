@@ -9,8 +9,9 @@ import SwiftUI
 
 struct MainView: View {
     
-    var User: Downer;
-    var stateManager: StateManager;
+    var User: Downer
+    var stateManager: StateManager
+    var homeStateManager = StateManager()
     
     init(User: Downer, stateManager: StateManager) {
         self.User = User
@@ -19,12 +20,12 @@ struct MainView: View {
     
     var body: some View {
         TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
-            if stateManager.currentState == StateManager.State.HomeScreen {
-                HomeScreen(User: User).cornerRadius(25.0).tabItem {
+            if homeStateManager.currentState == StateManager.State.HomeScreen {
+                HomeScreen(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
                     Label("Home", systemImage: "house")
                 }.tag(1)
             } else {
-                AreyouDownFill(User: User, stateManager: stateManager).cornerRadius(25.0).tabItem {
+                AreyouDownFill(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
                     Label("Home", systemImage: "house")
                 }.tag(1)
             }
