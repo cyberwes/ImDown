@@ -75,7 +75,7 @@ struct AttendeeView: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                            stateManager.currentState = StateManager.State.HomeScreen
+                            stateManager.currentState = StateManager.State.Empty
                         }, label: {
                             Text("Back to upcoming")
                                 .foregroundColor(.white)
