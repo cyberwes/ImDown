@@ -23,6 +23,8 @@ struct NewExperience: View {
         ZStack {
             Rectangle().foregroundColor(Color("primary"))
             Image(imageName).resizable().scaledToFill()
+            Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
+                .opacity(0.5)
             VStack {
                 TextField(experience.eventName.uppercased(), text: $name)
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.00))

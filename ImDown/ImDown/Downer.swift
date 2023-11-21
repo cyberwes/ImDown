@@ -18,15 +18,18 @@ class Downer {
     var hostExperiences: [Experience] = []
     var attendExperiences: [Experience] = []
     init( userKey: String,
-          currentExperience: Experience = Experience(id: 0, eventName: "make coffee", host: Profile(userKey: "john_doe"), attend: Profile(), date: Date.now, description: lorem, location: "Rosebery, 2018", imageName: "Baking"),
-          hostExperiences: Experience = Experience(id: 1, eventName: "Knitting a hat", host: Profile(userKey:"wesleyhahn"), attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baking"),
-          attendExperiences: Experience = Experience(id: 2, eventName: "Bake a Cake", host: Profile(userKey: "emily_smith"), attend: Profile(userKey:"wesleyhahn"), date: Date.now, description: lorem, location: "Norwest, 2153", imageName: "Baking") ) {
+          currentExperience: Experience = Experience(id: 0, eventName: " ", host: Profile(), attend: Profile(), date: Date.now, description: lorem, location: " ", imageName: " "),
+          hostExperiences: [Experience] = [Experience(id: 0, eventName: " ", host: Profile(), attend: Profile(), date: Date.now, description: lorem, location: " ", imageName: " ")],
+          attendExperiences: [Experience] = [Experience(id: 0, eventName: " ", host: Profile(), attend: Profile(), date: Date.now, description: lorem, location: " ", imageName: " ")]
+    ) {
         self.userKey = userKey;
         self.profile = Profile(userKey: userKey)
         self.currentExperience = currentExperience;
-        self.hostExperiences.append(hostExperiences);
-        self.hostExperiences.append(attendExperiences);
-        self.attendExperiences.append(attendExperiences);
+        self.hostExperiences = hostExperiences;
+        self.attendExperiences = attendExperiences;
+        self.currentExperience = getCurrentExperience()
+        self.hostExperiences = getHostExperience()
+        self.attendExperiences = getAttendExpereince()
     }
     
     func attend() {
@@ -44,5 +47,31 @@ class Downer {
     
     func unhost(experience: Experience) {
         self.hostExperiences.removeAll { $0.id == experience.id }
+    }
+    
+    func getCurrentExperience() -> Experience {
+        let randExp = ExperienceData.randomElement()
+        let current = Experience(id: ID.newId(), eventName: randExp!["eventName"] as! String, host: Profile(userKey: randExp!["host"] as! String), attend: Profile(userKey: randExp!["attendee"] as! String), date: randExp!["date"] as! Date, description: randExp!["description"] as! String, location: randExp!["location"] as! String, imageName: randExp!["imageName"] as! String)
+        return current
+    }
+    
+    func getAttendExpereince() -> [Experience] {
+        var attending: [Experience] = []
+        for e in ExperienceData {
+            if (e["attendee"] as! String == userKey) {
+                attending.append(Experience(id: ID.newId(), eventName: e["eventName"] as! String, host: Profile(userKey: e["host"] as! String), attend: Profile(userKey: e["attendee"] as! String), date: e["date"] as! Date, description: e["description"] as! String, location: e["location"] as! String, imageName: e["imageName"] as! String))
+            }
+        }
+        return attending
+    }
+    
+    func getHostExperience() -> [Experience] {
+        var hosting: [Experience] = []
+        for e in ExperienceData {
+            if (e["host"] as! String == userKey) {
+                hosting.append(Experience(id: ID.newId(), eventName: e["eventName"] as! String, host: Profile(userKey: e["host"] as! String), attend: Profile(userKey: e["attendee"] as! String), date: e["date"] as! Date, description: e["description"] as! String, location: e["location"] as! String, imageName: e["imageName"] as! String))
+            }
+        }
+        return hosting
     }
 }

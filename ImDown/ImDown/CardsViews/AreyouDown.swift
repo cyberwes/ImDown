@@ -15,9 +15,9 @@ struct AreyouDown: View {
     var body: some View {
         VStack {
             Button(action: {
-                stateManager.currentState = StateManager.State.HomeScreen
+                stateManager.currentState = StateManager.State.Experience
             }, label: {
-                Text("ARE YOU DOWN?")
+                Text("ARE YOU DOWN?!")
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                     .foregroundColor(.white)
                     .frame(width: 1000, height: 2000)
