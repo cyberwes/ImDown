@@ -40,6 +40,7 @@
 		4C5574902B04C64100252E36 /* Downer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55748F2B04C64100252E36 /* Downer.swift */; };
 		4CC231AE2B087D700010560F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC231AD2B087D700010560F /* Profile.swift */; };
 		4CFB05B42B05ADAE0076F956 /* NewExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB05B32B05ADAE0076F956 /* NewExperience.swift */; };
+		CF821EF42B0D6B04003D85F5 /* ExperienceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF821EF32B0D6B04003D85F5 /* ExperienceData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		4C55748F2B04C64100252E36 /* Downer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downer.swift; sourceTree = "<group>"; };
 		4CC231AD2B087D700010560F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		4CFB05B32B05ADAE0076F956 /* NewExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExperience.swift; sourceTree = "<group>"; };
+		CF821EF32B0D6B04003D85F5 /* ExperienceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				4C301F3A2B084925002013A1 /* UserData.swift */,
+				CF821EF32B0D6B04003D85F5 /* ExperienceData.swift */,
 			);
 			path = TemporaryBackend;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				4C4304B62B0476B100C34098 /* ProfileView.swift in Sources */,
 				2386C6432B06EB6F00004EE8 /* AreyouDown.swift in Sources */,
 				4C4304AD2B04728A00C34098 /* HomeScreen.swift in Sources */,
+				CF821EF42B0D6B04003D85F5 /* ExperienceData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
