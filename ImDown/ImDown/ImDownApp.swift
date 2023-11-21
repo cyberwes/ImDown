@@ -37,6 +37,7 @@ class StateManager {
         case Carosel
         case SelectedCard
         case Experience
+        case AttendExperience
     }
     
     var currentState: State = State.AreYouDown

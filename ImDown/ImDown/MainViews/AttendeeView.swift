@@ -10,9 +10,11 @@ import SwiftUI
 struct AttendeeView: View {
     
     @State var User: Downer;
+    @State var stateManager: StateManager;
+    @State var currentExperience: Experience = Experience();
     
     var body: some View {
-        NavigationView {
+        if stateManager.currentState != StateManager.State.AttendExperience {
             VStack {
                 HStack {
                     Text("UPCOMING")
@@ -23,7 +25,10 @@ struct AttendeeView: View {
                 .padding()
                 ScrollView {
                     ForEach(User.attendExperiences, id: \.self) {experience in
-                        NavigationLink(destination: ExperienceView(experience: experience, User: User), label: {
+                        Button(action: {
+                            currentExperience = experience
+                            stateManager.currentState = StateManager.State.AttendExperience
+                        }, label: {
                             VStack(alignment: .leading) {
                                 HStack {
                                     Text(experience.eventName.uppercased())
@@ -63,9 +68,30 @@ struct AttendeeView: View {
                 Spacer()
             }
         }
+        else {
+            ZStack {
+                ExperienceView(experience: currentExperience, User: User)
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            stateManager.currentState = StateManager.State.HomeScreen
+                        }, label: {
+                            Text("Back to upcoming")
+                                .foregroundColor(.white)
+                                .padding(10.0)
+                                .background(Color("primary"))
+                                .cornerRadius(20)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        })
+                    }
+                    Spacer()
+                }.padding()
+            }
+        }
     }
 }
 
 #Preview {
-    AttendeeView(User: Downer(userKey: "wesleyhahn"))
+    AttendeeView(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }
