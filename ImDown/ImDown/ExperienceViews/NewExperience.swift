@@ -23,6 +23,8 @@ struct NewExperience: View {
         ZStack {
             Rectangle().foregroundColor(Color("primary"))
             Image(imageName).resizable().scaledToFill()
+            Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
+                .opacity(0.5)
             VStack {
                 TextField(experience.eventName.uppercased(), text: $name)
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.00))
@@ -98,5 +100,5 @@ struct NewExperience: View {
 }
 
 #Preview {
-    NewExperience(User: Downer(userKey: "wesleyhahn"), experience: Experience(id: 10, eventName: "New Experience", host: Profile(userKey: "wesleyhahn"), attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))
+    NewExperience(User: Downer(userKey: "wesleyhahn"), experience: Experience(id: 10, eventName: "New Experience", host: Profile(userKey: "wesleyhahn"), attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "", hint: "New Hint"))
 }

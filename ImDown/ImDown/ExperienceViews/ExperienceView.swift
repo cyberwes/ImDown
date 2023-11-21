@@ -16,6 +16,8 @@ struct ExperienceView: View {
             if (experience.eventName != "") {
                 ZStack{
                     experience.image.resizable().scaledToFill()
+                    Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
+                        .opacity(0.5)
                     VStack{
                         VStack{
                             HStack {
@@ -70,7 +72,7 @@ struct ExperienceView: View {
                             .shadow(radius: 4.0)
                             Button(action: {
                                 User.unattend(experience: experience)
-                                self.experience = Experience(id: User.ID.newId(), eventName: "", host: Profile(), attend: Profile(), date: Date.now, description: "", location: "", imageName: "")
+                                self.experience = Experience()
                             }, label: {
                                 Text("I'm Out 😔")
                                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
