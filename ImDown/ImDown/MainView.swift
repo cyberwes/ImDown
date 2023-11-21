@@ -24,6 +24,11 @@ struct MainView: View {
                 HomeScreen(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
                     Label("Home", systemImage: "house")
                 }.tag(1)
+            } else if homeStateManager.currentState == StateManager.State.Carosel {
+                CarouselAttemptTwo(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
+                    Label("Home", systemImage: "house")
+                }.tag(1)
+                    
             } else {
                 AreyouDownFill(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
                     Label("Home", systemImage: "house")

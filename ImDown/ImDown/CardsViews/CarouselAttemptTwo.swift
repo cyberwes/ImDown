@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct CarouselAttemptTwo: View {
+    var User: Downer
+    var stateManager: StateManager
     @State private var zoomScale: CGFloat = 1.0
     @State private var selectedIndex = 1 // Initial focus on the center card
     
-    var randomExperiences: [Experience] = []
+    var randomExperiences: [Experience]
+    
+    init (User: Downer, stateManager: StateManager) {
+        self.User = User
+        self.stateManager = stateManager
+        self.randomExperiences = User.potentialExperiences
+    }
     
     var body: some View {
         VStack {
@@ -53,7 +61,8 @@ struct CarouselAttemptTwo: View {
                 )
             }
             Button(action: {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                User.currentExperience = randomExperiences[selectedIndex]
+                stateManager.currentState = StateManager.State.HomeScreen
             },
                    label: {
                 ZStack {
@@ -123,5 +132,5 @@ struct CardAltView: View {
 }
 
 #Preview{
-    CarouselAttemptTwo(randomExperiences: [Experience(location: "1.7km away", hint: "You eat what you make"), Experience(location: "3m away", hint: "You learn while you play"), Experience(location: "5km away", hint: "Messi the GOAT")])
+    CarouselAttemptTwo(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }

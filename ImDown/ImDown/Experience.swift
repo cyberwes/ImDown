@@ -36,7 +36,7 @@ class Experience: Hashable {
     
     init () {
         self.id = 0;
-        self.eventName = "eventName"
+        self.eventName = ""
         self.host = Profile()
         self.attendee = Profile()
         self.date = Date.now
@@ -48,7 +48,7 @@ class Experience: Hashable {
     
     init (location: String, hint: String) {
         self.id = 0;
-        self.eventName = "eventName"
+        self.eventName = ""
         self.host = Profile()
         self.attendee = Profile()
         self.date = Date.now

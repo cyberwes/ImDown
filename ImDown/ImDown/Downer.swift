@@ -17,17 +17,23 @@ class Downer {
     var currentExperience: Experience
     var hostExperiences: [Experience] = []
     var attendExperiences: [Experience] = []
+    var potentialExperiences: [Experience] = []
     init( userKey: String,
           currentExperience: Experience = Experience(),
           hostExperiences: [Experience] = [Experience()],
-          attendExperiences: [Experience] = [Experience()]
+          attendExperiences: [Experience] = [Experience()],
+          potentialExperiences: [Experience] = [Experience()]
     ) {
-        self.userKey = userKey;
+        self.userKey = userKey
         self.profile = Profile(userKey: userKey)
-        self.currentExperience = currentExperience;
-        self.hostExperiences = hostExperiences;
-        self.attendExperiences = attendExperiences;
-        self.currentExperience = getCurrentExperience()
+        self.currentExperience = currentExperience
+        self.hostExperiences = hostExperiences
+        self.attendExperiences = attendExperiences
+        self.potentialExperiences = potentialExperiences
+        self.potentialExperiences.append(getCurrentExperience())
+        self.potentialExperiences.append(getCurrentExperience())
+        self.potentialExperiences.append(getCurrentExperience())
+        self.currentExperience = self.potentialExperiences.randomElement()!
         self.hostExperiences = getHostExperience()
         self.attendExperiences = getAttendExpereince()
     }
@@ -52,7 +58,11 @@ class Downer {
     func getCurrentExperience() -> Experience {
         let randExp = ExperienceData.randomElement()
         let current = Experience(id: ID.newId(), eventName: randExp!["eventName"] as! String, host: Profile(userKey: randExp!["host"] as! String), attend: Profile(userKey: randExp!["attendee"] as! String), date: randExp!["date"] as! Date, description: randExp!["description"] as! String, location: randExp!["location"] as! String, imageName: randExp!["imageName"] as! String, hint: randExp!["hint"] as! String)
-        return current
+        if !potentialExperiences.contains(current) && current.attendee.email != profile.email && current.host.email != profile.email {
+            return current
+        } else {
+            return getCurrentExperience()
+        }
     }
     
     func getAttendExpereince() -> [Experience] {

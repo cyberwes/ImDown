@@ -133,7 +133,7 @@ struct AreyouDownFill: View {
                         Spacer()
                         VStack{
                             Button(action: {
-                                stateManager.currentState = StateManager.State.HomeScreen
+                                stateManager.currentState = StateManager.State.Carosel
                             }, label: {
                                 Text("Let's Go!!")
                                     .fontWeight(.bold)
