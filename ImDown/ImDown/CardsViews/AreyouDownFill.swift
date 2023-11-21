@@ -21,7 +21,6 @@ struct AreyouDownFill: View {
 
 
     var body: some View {
-<<<<<<< HEAD
         NavigationView {
             ZStack {
                 Rectangle().foregroundColor(Color("primary"))
@@ -33,45 +32,6 @@ struct AreyouDownFill: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .foregroundColor(.white)
                         .shadow(radius: 10)
-=======
-        ZStack {
-            Rectangle().foregroundColor(Color("primary"))
-            VStack{
-                Spacer()
-                    .frame(height: 100)
-                Text("ARE YOU DOWN?")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .foregroundColor(.white)
-                    .shadow(radius: 10)
-                
-                Picker("ATTEND", selection:$down){
-                    Text("ATTEND").tag("ATTEND")
-                    Text("HOST").tag("HOST") }
-                
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                .environment(\.colorScheme, .dark)
-                
-                if(down=="ATTEND"){
-                    HStack {
-                        Text("Date")
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .font(.title3)
-                        
-                        Spacer()
-                        
-                        DatePicker(selection: $date, displayedComponents: .date) {}
-                            .labelsHidden()
-                            .datePickerStyle(.automatic)
-                            .background(Color.white)
-                            .cornerRadius(8)
-                            .shadow(radius: 10)
-                       
-                            }.padding(.horizontal)
->>>>>>> 4425e0685634eb43af60d1166d2040fa58b5da41
                     
                     Picker("ATTEND", selection:$down){
                         Text("ATTEND").tag("ATTEND")
@@ -90,7 +50,6 @@ struct AreyouDownFill: View {
                             
                             Spacer()
                             
-<<<<<<< HEAD
                             DatePicker(selection: $date, displayedComponents: .date) {}
                                 .labelsHidden()
                                 .datePickerStyle(.automatic)
@@ -98,9 +57,6 @@ struct AreyouDownFill: View {
                                 .cornerRadius(8)
                                 .shadow(radius: 10)
                         }.padding(.horizontal)
-=======
-                              }
->>>>>>> 4425e0685634eb43af60d1166d2040fa58b5da41
                         
                         HStack{
                             
@@ -166,61 +122,12 @@ struct AreyouDownFill: View {
                                     .padding(.horizontal)
                                 
                                 Stepper("Distance", value: $distance, in: minDistance...maxDistance, step: 5)
-<<<<<<< HEAD
                                     .foregroundColor(.white)
                                     .background(Color.white)
                                     .labelsHidden()
                                 
                             }
                             .padding()
-=======
-                                          .foregroundColor(.white)
-                                          .background(Color.white)
-                                          .labelsHidden()
-                                      
-                                  }
-                                  .padding()
-                                                            
-                    } 
-                    Spacer()
-                    VStack{
-                        
-                        Button("Let's Go") {
-                            
-                        }
-
-                        Text("Let's Go!!")
-                            .fontWeight(.bold)
-                            .font(.title)
-                            .foregroundColor(Color("primary"))
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color .white)
-                            .cornerRadius(10)
-                            .padding(.horizontal, 20)
-                            .shadow(radius: 10)
-                    }.padding()
-                }
-                else {
-                    Spacer()
-                    
-                    VStack{
-                        Text("Create a New Event!!")
-                            .fontWeight(.bold)
-                            .font(.title)
-                            .foregroundColor(Color("primary"))
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color .white)
-                            .cornerRadius(10)
-                            .padding(.horizontal, 20)
-                            .shadow(radius: 10)
-                    
-                        Text("Share your skills and inspire others by hosting an event, your knowledge can light up someone's learning journey!")
-                            .multilineTextAlignment(.center)
-                            .padding(30)
-                            .foregroundColor(.white)
->>>>>>> 4425e0685634eb43af60d1166d2040fa58b5da41
                             
                         }
                         Spacer()
@@ -265,13 +172,6 @@ struct AreyouDownFill: View {
                         Spacer()
                     }
                 }
-<<<<<<< HEAD
-=======
-
-
-                Spacer()
-
->>>>>>> 4425e0685634eb43af60d1166d2040fa58b5da41
             }
         }
     }
