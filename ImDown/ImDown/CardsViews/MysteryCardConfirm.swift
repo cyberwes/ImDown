@@ -10,7 +10,7 @@ import SwiftUI
 struct MysterycardLayout: View {
     var body: some View {
         VStack {
-            Text("You're in!").font(.system(size: 40)).foregroundStyle(Color("primary")).padding(2).fontWeight(.bold)
+            Text("You're in!".uppercased()).font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundStyle(Color("primary")).padding(2)
             Text("Stepping out of your comfort").font(.system(size: 20)).multilineTextAlignment(.center)
             Text("zone is huge. We’re proud of you.").font(.system(size: 20)).multilineTextAlignment(.center)
             ZStack {
