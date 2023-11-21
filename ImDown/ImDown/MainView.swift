@@ -28,10 +28,10 @@ struct MainView: View {
                     Label("Home", systemImage: "house")
                 }.tag(1)
             }
-            AttendeeView(User: User).background(Color.white).cornerRadius(25.0).tabItem {
+            AttendeeView(User: User, stateManager: stateManager).background(Color.white).cornerRadius(25.0).tabItem {
                 Label("Attending", systemImage: "calendar.badge.checkmark")
             }.tag(2)
-            HostView(User: User).background(Color.white).cornerRadius(25.0).tabItem {
+            HostView(User: User, stateManager: stateManager).background(Color.white).cornerRadius(25.0).tabItem {
                 Label("Hosting", systemImage: "h.square.on.square")
             }.tag(3)
             ChatView().background(Color.white).cornerRadius(25.0).tabItem {
