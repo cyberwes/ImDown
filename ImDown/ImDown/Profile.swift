@@ -17,6 +17,7 @@ class Profile {
     var pronouns: String = ""
     var location: String = ""
     var about: String = ""
+    var interests: String = ""
     
     init(email: String, password: String) {
         for user in Users {
@@ -29,6 +30,7 @@ class Profile {
                 self.pronouns = Users[user.key]!["pronouns"]!
                 self.location = Users[user.key]!["location"]!
                 self.about = Users[user.key]!["about"]!
+                self.interests = Users[user.key]!["interests"]!
             }
         }
     }
@@ -43,6 +45,8 @@ class Profile {
             self.pronouns = Users[userKey]!["pronouns"]!
             self.location = Users[userKey]!["location"]!
             self.about = Users[userKey]!["about"]!
+            self.interests = Users[userKey]!["interests"]!
+
         } else {
             self.email = ""
             self.password = ""
@@ -52,9 +56,10 @@ class Profile {
             self.pronouns = ""
             self.location = ""
             self.about = ""
+            self.interests = ""
         }
     }
-    
+     
     init() {
         self.email = ""
         self.password = ""
@@ -64,5 +69,6 @@ class Profile {
         self.pronouns = ""
         self.location = ""
         self.about = ""
+        self.interests = ""
     }
 }

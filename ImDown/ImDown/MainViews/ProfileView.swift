@@ -14,7 +14,6 @@ struct ProfileView: View {
     var body: some View {
         VStack{
             ZStack{
-                
                 Image("Baking").resizable().padding(-10.0).scaledToFit()
                 Spacer()
                 HStack {
@@ -22,7 +21,7 @@ struct ProfileView: View {
                     VStack {
                         Button(action: {}, label: {
                             VStack{
-                                Image(systemName: "square.and.pencil")
+                                Image(systemName: "gear")
                                     .foregroundColor(Color.black)
                                     .frame(width: 40, height: 40)
                                 ;
@@ -37,30 +36,47 @@ struct ProfileView: View {
             }
             
             VStack{
-                
+                Image("ProfilePicture").resizable().scaledToFit().clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    .overlay(
+                                        Circle()
+                                            .stroke(Color("primary"), style: StrokeStyle(lineWidth: 8))
+                                    )
                 Text(User.firstName.capitalized + " " + User.lastName.capitalized)
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color.white).padding(.bottom, 10)
                 
                 HStack {
                     
-                    Text(User.age + " | " + User.pronouns.capitalized + " | " + User.location.uppercased())
-                        .font(Font.custom("SFMono-Regular", size: 16.0))
-                        .foregroundColor(Color.white)
-                    
+                    Text(User.age + " | " + User.pronouns.capitalized + " | ").foregroundColor(Color.white)
                     Image(systemName: "location.fill")
+                        .foregroundColor(Color.white)
+                    Text(User.location.uppercased())
+                        .font(Font.custom("SFMono-Regular", size: 16.0))
                         .foregroundColor(Color.white)
                 }
             }
-            .frame(width: 400, height: 150)
+            .offset(y:-55)
+            .frame(width: 400, height: 200)
             .background(Color("primary"))
             VStack {
                 HStack {
-                    Text("ABOUT")
-                        .font(Font.custom("SFCompactDisplay-Bold", size: 16.0))
+                    Text("BIO")
+                        .font(Font.custom("SFCompactDisplay-Bold", size: 20.0))
                     Spacer()
                 }
                 Text(User.about)
+            }
+            .padding()
+         
+            
+            VStack {
+                HStack {
+                    Text("INTERESTS")
+                        .font(Font.custom("SFCompactDisplay-Bold", size: 20.0))
+                        .foregroundColor(Color.primary)
+                    Spacer()
+                }
+                Text(User.interests)
             }
             .padding()
             Spacer()
