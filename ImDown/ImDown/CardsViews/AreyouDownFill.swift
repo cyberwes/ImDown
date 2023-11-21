@@ -152,7 +152,7 @@ struct AreyouDownFill: View {
                         Spacer()
                         
                         VStack{
-                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baker")), label: {
+                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baker", hint: "provide a hint")), label: {
                                 Text("CREATE AN EXPERIENCE!")
                                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                                     .foregroundColor(Color("primary"))

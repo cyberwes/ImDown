@@ -122,7 +122,7 @@ struct HomeScreen: View {
                 VStack {
                     HStack {
                         Spacer()
-                        NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
+                        NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "", hint: "New Hint"))) {
                             Image(systemName: "square.and.pencil")
                                 .foregroundColor(Color.black)
                                 .frame(width: 40, height: 40)
