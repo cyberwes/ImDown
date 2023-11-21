@@ -16,7 +16,8 @@ var Users = [
         "age" : "28",
         "pronouns" : "he/him",
         "location" : "Rosebery, 2018",
-        "about" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "about" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "interests": "Baking, dog walking, skiing, event planning"
     ],
     "john_doe": [
         "email": "johndoe@gmail.com",
@@ -26,7 +27,8 @@ var Users = [
         "age": "25",
         "pronouns": "he/him",
         "location": "Cityville, 1234",
-        "about": "John is a passionate software developer with a love for hiking and photography. He enjoys experimenting with new technologies and contributing to open-source projects in his free time."
+        "about": "John is a passionate software developer with a love for hiking and photography. He enjoys experimenting with new technologies and contributing to open-source projects in his free time.",
+        "interests": "Coding, hiking, photography, mathematics"
     ],
     "emily_smith": [
         "email": "emilysmith@gmail.com",
@@ -36,7 +38,8 @@ var Users = [
         "age": "22",
         "pronouns": "she/her",
         "location": "Gardentown, 5678",
-        "about": "Emily is a student studying graphic design. She loves creating beautiful and meaningful designs that tell a story. In her free time, she enjoys reading novels and exploring new art galleries."
+        "about": "Emily is a student studying graphic design. She loves creating beautiful and meaningful designs that tell a story. In her free time, she enjoys reading novels and exploring new art galleries.",
+        "interests": "Graphic design, photoshop, book club, origami"
     ],
     "alex_turner": [
         "email": "alexturner@gmail.com",
@@ -46,7 +49,8 @@ var Users = [
         "age": "30",
         "pronouns": "they/them",
         "location": "Harbor City, 9876",
-        "about": "Alex is a nature enthusiast and a wildlife photographer. They love capturing the beauty of the outdoors and sharing it with the world."
+        "about": "Alex is a nature enthusiast and a wildlife photographer. They love capturing the beauty of the outdoors and sharing it with the world.",
+        "interests": "Photography, rock climbing, homebrewing, skydiving"
     ],
     "olivia_jones": [
         "email": "oliviajones@gmail.com",
@@ -56,7 +60,8 @@ var Users = [
         "age": "27",
         "pronouns": "she/her",
         "location": "Meadowville, 5432",
-        "about": "Olivia is a fitness trainer and nutritionist. She is dedicated to helping others achieve their health and wellness goals through personalized training programs and dietary guidance."
+        "about": "Olivia is a fitness trainer and nutritionist. She is dedicated to helping others achieve their health and wellness goals through personalized training programs and dietary guidance.",
+        "interests": "Pilates, watercolour painting, yoga, martial arts"
     ],
     "michael_brown": [
         "email": "michaelbrown@gmail.com",
@@ -66,7 +71,8 @@ var Users = [
         "age": "35",
         "pronouns": "he/him",
         "location": "Riverside, 2468",
-        "about": "Michael is a travel blogger and adventure seeker. He loves exploring new cultures, trying exotic foods, and sharing his experiences with his followers."
+        "about": "Michael is a travel blogger and adventure seeker. He loves exploring new cultures, trying exotic foods, and sharing his experiences with his followers.",
+        "interests": "Hiking, marine biology, homebrewing, blogging."
     ],
 ]
 

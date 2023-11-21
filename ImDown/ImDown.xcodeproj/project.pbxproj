@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		23404D202B07014E00B3B165 /* AreyouDownFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23404D1F2B07014E00B3B165 /* AreyouDownFill.swift */; };
 		2386C6432B06EB6F00004EE8 /* AreyouDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2386C6422B06EB6F00004EE8 /* AreyouDown.swift */; };
-		3644A0402B0ACABD003C5728 /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3644A03F2B0ACABD003C5728 /* SF-Mono-Regular.otf */; };
-		3644A0412B0ACABD003C5728 /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3644A03F2B0ACABD003C5728 /* SF-Mono-Regular.otf */; };
-		3644A0422B0ACABD003C5728 /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3644A03F2B0ACABD003C5728 /* SF-Mono-Regular.otf */; };
 		368F31162B06FEAC0045912E /* MysteryCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F31152B06FEAC0045912E /* MysteryCards.swift */; };
 		4C16B9C42B08252400C21228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
 		4C16B9C52B08252400C21228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
@@ -23,7 +20,6 @@
 		4C301F432B085D21002013A1 /* ExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C301F422B085D21002013A1 /* ExperienceView.swift */; };
 		4C4304812B046A4300C34098 /* ImDownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304802B046A4300C34098 /* ImDownApp.swift */; };
 		4C4304832B046A4300C34098 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304822B046A4300C34098 /* MainView.swift */; };
-		4C4304852B046A4400C34098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
 		4C4304882B046A4400C34098 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304872B046A4400C34098 /* Preview Assets.xcassets */; };
 		4C4304922B046A4400C34098 /* ImDownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304912B046A4400C34098 /* ImDownTests.swift */; };
 		4C43049C2B046A4400C34098 /* ImDownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43049B2B046A4400C34098 /* ImDownUITests.swift */; };
@@ -38,6 +34,8 @@
 		4C93763E2B0AF62000899BB3 /* ExperienceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C93763D2B0AF62000899BB3 /* ExperienceData.swift */; };
 		4CC231AE2B087D700010560F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC231AD2B087D700010560F /* Profile.swift */; };
 		4CFB05B42B05ADAE0076F956 /* NewExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB05B32B05ADAE0076F956 /* NewExperience.swift */; };
+		D70510482B0C1A4700AC4E9E /* SF-Mono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D70510472B0C1A4700AC4E9E /* SF-Mono-Regular.otf */; };
+		D70510492B0C320E00AC4E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +58,6 @@
 /* Begin PBXFileReference section */
 		23404D1F2B07014E00B3B165 /* AreyouDownFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreyouDownFill.swift; sourceTree = "<group>"; };
 		2386C6422B06EB6F00004EE8 /* AreyouDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreyouDown.swift; sourceTree = "<group>"; };
-		3644A03F2B0ACABD003C5728 /* SF-Mono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Mono-Regular.otf"; path = "../../../../../../../../../Library/Fonts/SF-Mono-Regular.otf"; sourceTree = "<group>"; };
 		368F31152B06FEAC0045912E /* MysteryCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryCards.swift; sourceTree = "<group>"; };
 		4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Light.otf"; sourceTree = "<group>"; };
 		4C16B9D02B082A7500C21228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +86,7 @@
 		4C93763D2B0AF62000899BB3 /* ExperienceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceData.swift; sourceTree = "<group>"; };
 		4CC231AD2B087D700010560F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		4CFB05B32B05ADAE0076F956 /* NewExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExperience.swift; sourceTree = "<group>"; };
+		D70510472B0C1A4700AC4E9E /* SF-Mono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +117,7 @@
 		4C16B9D12B082BEF00C21228 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				3644A03F2B0ACABD003C5728 /* SF-Mono-Regular.otf */,
+				D70510472B0C1A4700AC4E9E /* SF-Mono-Regular.otf */,
 				4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */,
 				4C16B9D22B082BF800C21228 /* SF-Compact-Display-Bold.otf */,
 			);
@@ -339,9 +337,9 @@
 			files = (
 				4C16B9C72B08258A00C21228 /* SF-Mono-Light.otf in Resources */,
 				4C4304882B046A4400C34098 /* Preview Assets.xcassets in Resources */,
-				3644A0402B0ACABD003C5728 /* SF-Mono-Regular.otf in Resources */,
 				4C16B9D32B082C5700C21228 /* SF-Compact-Display-Bold.otf in Resources */,
-				4C4304852B046A4400C34098 /* Assets.xcassets in Resources */,
+				D70510482B0C1A4700AC4E9E /* SF-Mono-Regular.otf in Resources */,
+				D70510492B0C320E00AC4E9E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +347,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3644A0412B0ACABD003C5728 /* SF-Mono-Regular.otf in Resources */,
 				4C16B9C42B08252400C21228 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +355,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3644A0422B0ACABD003C5728 /* SF-Mono-Regular.otf in Resources */,
 				4C16B9C52B08252400C21228 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
