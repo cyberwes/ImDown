@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HostView: View {
     
-    var User: Downer;
+    @State var User: Downer;
+    @State var stateManager: StateManager;
     
     var body: some View {
         NavigationView {
@@ -93,5 +94,5 @@ struct HostView: View {
 }
 
 #Preview {
-    HostView(User: Downer(userKey: "wesleyhahn"))
+    HostView(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }

@@ -32,6 +32,17 @@ class Experience: Hashable {
         self.imageName = imageName
     }
     
+    init () {
+        self.id = 0;
+        self.eventName = "eventName"
+        self.host = Profile()
+        self.attendee = Profile()
+        self.date = Date.now
+        self.description = "description"
+        self.location = "location"
+        self.imageName = ""
+    }
+    
     func hash(into hasher: inout Hasher) {
             hasher.combine(id)
         }
