@@ -16,7 +16,7 @@ var Users = [
         "age" : "28",
         "pronouns" : "he/him",
         "location" : "Rosebery, 2018",
-        "about" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+        "about" : "Wesley, an avid photographer in his free time, finds joy in capturing moments that tell compelling stories. His passion for travel fuels his exploration of diverse cultures. As a dedicated software engineer, Wesley channels his analytical skills into creating innovative solutions for complex problems."
     ],
     "john_doe": [
         "email": "johndoe@gmail.com",

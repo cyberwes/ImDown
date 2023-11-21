@@ -169,15 +169,8 @@ struct AreyouDownFill: View {
                             
                     }
                     
-                    Spacer()
-                    Spacer()
-                    
+                    Spacer()                    
                 }
-<<<<<<< HEAD:ImDown/ImDown/AreyouDownFill.swift
-               
-=======
-                Spacer()
->>>>>>> main:ImDown/ImDown/CardsViews/AreyouDownFill.swift
             }
         }
     }
