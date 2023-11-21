@@ -16,17 +16,16 @@ struct MysterycardLayout: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 10).frame(width:240, height:320).foregroundStyle(Color("primary")).shadow(radius: 5, x: 5, y: 10)
                 VStack {
-                    HStack
-                    {
+                    HStack {
                         Spacer()
                         Text ("1.7km away").foregroundStyle(Color("Secondary")).font(.system(size: 14))
-                    }.padding(20)
-                        Image("MysteryIcon")
+                    }.padding(.trailing, 10)
+                    Image("MysteryIcon").padding(.top, 10).padding(.bottom, 20)
                     VStack {
                         Text("Hint:").foregroundStyle(.white)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         Text("You can eat what you make").foregroundStyle(.white)
-                    }.frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .top).padding()
+                    }.frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .top).padding(.leading, 22).padding(.trailing, 22).multilineTextAlignment(.center)
                 }.frame(width:240, height:320)
             }.padding(40)
             Button(action: {
