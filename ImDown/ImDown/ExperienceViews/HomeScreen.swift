@@ -26,7 +26,8 @@ struct HomeScreen: View {
         NavigationView {
             if (timer > 0 && User.currentExperience.eventName != "") {
                 ZStack{
-                    User.currentExperience.image.resizable().scaledToFill()
+                    Rectangle().fill(.black)
+                    User.currentExperience.image.resizable().scaledToFill().opacity(0.75)
                     Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
                         .opacity(0.5)
                     VStack{
