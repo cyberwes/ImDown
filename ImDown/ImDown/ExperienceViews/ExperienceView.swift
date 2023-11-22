@@ -51,8 +51,8 @@ struct ExperienceView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            NavigationLink(destination: ProfileView(LoggedInUser: User, User: User.currentExperience.host), label: {
-                                Text("Hosted by " + User.currentExperience.host.firstName.capitalized)
+                            NavigationLink(destination: ProfileView(LoggedInUser: User, User: experience.host), label: {
+                                Text("Hosted by " + experience.host.firstName.capitalized)
                                     .font(Font.custom("SFMono-Regular", size: 16.0))
                                     .foregroundColor(TextColor)
                                     .padding(12)

@@ -265,7 +265,7 @@ var ExperienceData = [
     
     [
         "eventName" : "Learn Guitar",
-         "host" : "",
+         "host" : "emily_smith",
          "attendee" : "",
          "date" : Date.now,
          "description" : "Beginner or pro, our guitar workshop offers fun, interactive lessons. Discover the joy of music in a supportive environment. Unleash your inner guitarist!",
