@@ -25,53 +25,11 @@ struct AreyouDownFill: View {
             ZStack {
                 Rectangle().foregroundColor(Color("primary"))
                 VStack{
-                    Spacer()
-                        .frame(height: 100)
                     Text("ARE YOU DOWN?")
                         .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .foregroundColor(.white)
                         .shadow(radius: 10)
-//=======
-//        ZStack {
-//            Rectangle().foregroundColor(Color("primary"))
-//            VStack{
-//                Spacer()
-//                    .frame(height: 100)
-//                Text("ARE YOU DOWN?")
-//                    .font(.largeTitle)
-//                    .fontWeight(.bold)
-//                    .frame(maxWidth: .infinity, alignment: .center)
-//                    .foregroundColor(.white)
-//                    .shadow(radius: 10)
-//                
-//                Picker("ATTEND", selection:$down){
-//                    Text("ATTEND").tag("ATTEND")
-//                    Text("HOST").tag("HOST") }
-//                
-//                .pickerStyle(SegmentedPickerStyle())
-//                .padding()
-//                .environment(\.colorScheme, .dark)
-//                
-//                if(down=="ATTEND"){
-//                    HStack {
-//                        Text("Date")
-//                            .foregroundColor(.white)
-//                            .fontWeight(.bold)
-//                            .font(.title3)
-//                        
-//                        Spacer()
-//                        
-//                        DatePicker(selection: $date, displayedComponents: .date) {}
-//                            .labelsHidden()
-//                            .datePickerStyle(.automatic)
-//                            .background(Color.white)
-//                            .cornerRadius(8)
-//                            .shadow(radius: 10)
-//                       
-//                            }.padding(.horizontal)
-//>>>>>>> 4425e0685634eb43af60d1166d2040fa58b5da41
-                    
                     Picker("ATTEND", selection:$down){
                         Text("ATTEND").tag("ATTEND")
                         Text("HOST").tag("HOST") }
@@ -86,10 +44,7 @@ struct AreyouDownFill: View {
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)
                                 .font(.title3)
-                            
                             Spacer()
-                            
-//<<<<<<< HEAD
                             DatePicker(selection: $date, displayedComponents: .date) {}
                                 .labelsHidden()
                                 .datePickerStyle(.automatic)
@@ -97,10 +52,6 @@ struct AreyouDownFill: View {
                                 .cornerRadius(8)
                                 .shadow(radius: 10)
                         }.padding(.horizontal)
-//=======
-//                              }
-//>>>>>>> 4425e0685634eb43af60d1166d2040fa58b5da41
-                        
                         HStack{
                             
                             VStack{
@@ -117,10 +68,9 @@ struct AreyouDownFill: View {
                                     .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
                                 
                             }
-                            
-                            
                             Spacer()
-                            
+                            Text("TO").font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundColor(.white)
+                            Spacer()
                             VStack{
                                 Text("End Time")
                                     .foregroundColor(.white)
@@ -132,7 +82,6 @@ struct AreyouDownFill: View {
                                     .background(Color.white)
                                     .cornerRadius(5)
                                     .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
-                                
                             }
                         }.padding()
                         
@@ -165,71 +114,19 @@ struct AreyouDownFill: View {
                                     .padding(.horizontal)
                                 
                                 Stepper("Distance", value: $distance, in: minDistance...maxDistance, step: 5)
-//<<<<<<< HEAD
                                     .foregroundColor(.white)
                                     .background(Color.white)
                                     .labelsHidden()
                                 
                             }
                             .padding()
-////=======
-//                                          .foregroundColor(.white)
-//                                          .background(Color.white)
-//                                          .labelsHidden()
-//                                      
-//                                  }
-//                                  .padding()
-//                                                            
-//                    } 
-//                    Spacer()
-//                    VStack{
-//                        
-//                        Button("Let's Go") {
-//                            
-//                        }
-//
-//                        Text("Let's Go!!")
-//                            .fontWeight(.bold)
-//                            .font(.title)
-//                            .foregroundColor(Color("primary"))
-//                            .padding()
-//                            .frame(maxWidth: .infinity)
-//                            .background(Color .white)
-//                            .cornerRadius(10)
-//                            .padding(.horizontal, 20)
-//                            .shadow(radius: 10)
-//                    }.padding()
-//                }
-//                else {
-//                    Spacer()
-//                    
-//                    VStack{
-//                        Text("Create a New Event!!")
-//                            .fontWeight(.bold)
-//                            .font(.title)
-//                            .foregroundColor(Color("primary"))
-//                            .padding()
-//                            .frame(maxWidth: .infinity)
-//                            .background(Color .white)
-//                            .cornerRadius(10)
-//                            .padding(.horizontal, 20)
-//                            .shadow(radius: 10)
-//                    
-//                        Text("Share your skills and inspire others by hosting an event, your knowledge can light up someone's learning journey!")
-//                            .multilineTextAlignment(.center)
-//                            .padding(30)
-//                            .foregroundColor(.white)
-//>>>>>>> 4425e0685634eb43af60d1166d2040fa58b5da41
-                            
                         }
-                        Spacer()
                         VStack{
                             Button(action: {
-                                stateManager.currentState = StateManager.State.HomeScreen
+                                stateManager.currentState = StateManager.State.Carosel
                             }, label: {
-                                Text("Let's Go!!")
-                                    .fontWeight(.bold)
-                                    .font(.title)
+                                Text("LET'S GO!")
+                                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                                     .foregroundColor(Color("primary"))
                                     .padding()
                                     .frame(maxWidth: .infinity)
@@ -244,7 +141,7 @@ struct AreyouDownFill: View {
                         Spacer()
                         
                         VStack{
-                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baker")), label: {
+                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baker", hint: "")), label: {
                                 Text("CREATE AN EXPERIENCE!")
                                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                                     .foregroundColor(Color("primary"))
