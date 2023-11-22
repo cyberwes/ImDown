@@ -67,7 +67,8 @@ struct MainView: View {
             HostView(User: User, stateManager: stateManager).background(Color.white).cornerRadius(25.0).tabItem {
                 Label("Hosting", systemImage: "h.square.on.square")
             }.tag(3)
-            ChatView().background(Color.white).cornerRadius(25.0).tabItem {
+            ChatView(User: User)
+                .background(Color.white).cornerRadius(25.0).tabItem {
                 Label("Chat", systemImage: "message")
             }.tag(4)
             ProfileView(LoggedInUser: User, User: User.profile).background(Color.white).cornerRadius(25.0).tabItem {

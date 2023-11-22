@@ -34,7 +34,7 @@ var ExperienceData = [
     
     [
         "eventName" : "Learn Spanish",
-         "host" : "",
+         "host" : "john_doe",
          "attendee" : "wesleyhahn",
          "date" : Date.now,
          "description" : "Dive into Spanish at our immersive workshop! Learn with engaging instructors, meet language enthusiasts, and open doors to a world of possibilities!",
