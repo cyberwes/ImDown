@@ -25,16 +25,24 @@ struct ChatView: View {
                 ForEach(User.attendExperiences, id: \.self) {experience in
                     VStack {
                         HStack {
-                            Text(experience.host.firstName.uppercased())
-                                .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
-                                .foregroundColor(Color.white)
-                            Spacer()
-                        }
-                        HStack {
-                            Text(experience.eventName)
-                                .font(.body)
-                                .foregroundColor(Color.white)
-                            Spacer()
+                            VStack{
+                                HStack {
+                                    Text((experience.host.firstName == "") ? "NO ATTENDEE YET" : experience.host.firstName.uppercased())
+                                        .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
+                                        .foregroundColor(Color.white)
+                                    Spacer()
+                                }
+                                HStack {
+                                    Text(experience.eventName)
+                                        .font(.body)
+                                        .foregroundColor(Color.white)
+                                    Spacer()
+                                }
+                            }
+                            Image("ProfilePicture").resizable()
+                                .scaledToFit()
+                                .frame(height: 50)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         }
                     }
                     .padding()
@@ -46,16 +54,24 @@ struct ChatView: View {
                 ForEach(User.hostExperiences, id: \.self) {experience in
                     VStack {
                         HStack {
-                            Text((experience.attendee.firstName == "") ? "NO ATTENDEE YET" : experience.attendee.firstName.uppercased())
-                                .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
-                                .foregroundColor(Color.white)
-                            Spacer()
-                        }
-                        HStack {
-                            Text(experience.eventName)
-                                .font(.body)
-                                .foregroundColor(Color.white)
-                            Spacer()
+                            VStack{
+                                HStack {
+                                    Text((experience.attendee.firstName == "") ? "NO ATTENDEE YET" : experience.attendee.firstName.uppercased())
+                                        .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
+                                        .foregroundColor(Color.white)
+                                    Spacer()
+                                }
+                                HStack {
+                                    Text(experience.eventName)
+                                        .font(.body)
+                                        .foregroundColor(Color.white)
+                                    Spacer()
+                                }
+                            }
+                            Image("ProfilePicture").resizable()
+                                .scaledToFit()
+                                .frame(height: 50)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         }
                     }
                     .padding()

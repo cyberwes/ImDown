@@ -101,7 +101,6 @@ struct AreyouDownFill: View {
                                 .accentColor(Color("Tertiary"))
                                 .padding(.vertical, 5)
                                 .padding(.horizontal)
-                                .background(Color.white)
                                 .cornerRadius(5.0)
                                 .padding(.horizontal)
                                 .shadow(radius: 10)
