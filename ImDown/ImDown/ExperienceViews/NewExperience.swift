@@ -132,5 +132,5 @@ struct NewExperience: View {
 }
 
 #Preview {
-    NewExperience(User: Downer(userKey: "wesleyhahn"), experience: Experience(id: 10, eventName: "New Experience", host: Profile(userKey: "wesleyhahn"), attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))
+    NewExperience(User: Downer(userKey: "wesleyhahn"), experience: Experience(id: 10, eventName: "New Experience", host: Profile(userKey: "wesleyhahn"), attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "", hint: "New Hint"))
 }

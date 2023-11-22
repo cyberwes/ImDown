@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HostView: View {
     
-    var User: Downer;
+    @State var User: Downer;
+    @State var stateManager: StateManager;
     
     var body: some View {
         NavigationView {
@@ -20,7 +21,7 @@ struct HostView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "Experience Name", host: Downer(userKey: "wesleyhahn").profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: ""))) {
+                    NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "Experience Name", host: Downer(userKey: "wesleyhahn").profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "", hint: "new hint"))) {
                         Image(systemName: "square.and.pencil")
                             .foregroundColor(Color.black)
                             .frame(width: 40, height: 40)
@@ -93,5 +94,5 @@ struct HostView: View {
 }
 
 #Preview {
-    HostView(User: Downer(userKey: "wesleyhahn"))
+    HostView(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }

@@ -10,23 +10,22 @@ import SwiftUI
 struct MysterycardLayout: View {
     var body: some View {
         VStack {
-            Text("You're in!").font(.system(size: 40)).foregroundStyle(Color("primary")).padding(2).fontWeight(.bold)
+            Text("You're in!".uppercased()).font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundStyle(Color("primary")).padding(2)
             Text("Stepping out of your comfort").font(.system(size: 20)).multilineTextAlignment(.center)
             Text("zone is huge. We’re proud of you.").font(.system(size: 20)).multilineTextAlignment(.center)
             ZStack {
                 RoundedRectangle(cornerRadius: 10).frame(width:240, height:320).foregroundStyle(Color("primary")).shadow(radius: 5, x: 5, y: 10)
                 VStack {
-                    HStack
-                    {
+                    HStack {
                         Spacer()
                         Text ("1.7km away").foregroundStyle(Color("Secondary")).font(.system(size: 14))
-                    }.padding(20)
-                        Image("MysteryIcon")
+                    }.padding(.trailing, 10)
+                    Image("MysteryIcon").padding(.top, 10).padding(.bottom, 20)
                     VStack {
                         Text("Hint:").foregroundStyle(.white)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         Text("You can eat what you make").foregroundStyle(.white)
-                    }.frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .top).padding()
+                    }.frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .top).padding(.leading, 22).padding(.trailing, 22).multilineTextAlignment(.center)
                 }.frame(width:240, height:320)
             }.padding(40)
             Button(action: {

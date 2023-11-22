@@ -20,8 +20,9 @@ class Experience: Hashable {
     var image: Image {
         Image(imageName)
     }
+    var hint: String
     
-    init(id: Int, eventName: String, host: Profile, attend: Profile, date: Date, description: String, location: String, imageName: String) {
+    init(id: Int, eventName: String, host: Profile, attend: Profile, date: Date, description: String, location: String, imageName: String, hint: String) {
         self.id = id;
         self.eventName = eventName
         self.host = host
@@ -30,6 +31,31 @@ class Experience: Hashable {
         self.description = description
         self.location = location
         self.imageName = imageName
+        self.hint = hint
+    }
+    
+    init () {
+        self.id = 0;
+        self.eventName = ""
+        self.host = Profile()
+        self.attendee = Profile()
+        self.date = Date.now
+        self.description = "description"
+        self.location = "location"
+        self.imageName = ""
+        self.hint = ""
+    }
+    
+    init (location: String, hint: String) {
+        self.id = 0;
+        self.eventName = ""
+        self.host = Profile()
+        self.attendee = Profile()
+        self.date = Date.now
+        self.description = "description"
+        self.location = location
+        self.imageName = ""
+        self.hint = hint
     }
     
     func hash(into hasher: inout Hasher) {

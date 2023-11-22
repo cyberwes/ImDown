@@ -9,50 +9,89 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    var User: Profile;
+    var LoggedInUser: Downer
+    var User: Profile
     
     var body: some View {
         VStack{
-            Image("Baking").resizable().padding(.vertical, -10.0).scaledToFit()
+            ZStack{
+                Image("Baking").resizable().padding(-10.0).scaledToFit()
+                Spacer()
+                HStack {
+                    Spacer()
+                    VStack {
+                        if LoggedInUser.profile.email == User.email {
+                            Button(action: {}, label: {
+                                VStack{
+                                    Image(systemName: "gear")
+                                        .foregroundColor(Color.black)
+                                        .frame(width: 40, height: 40)
+                                    ;
+                                }
+                            } )
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        } else {
+                            Button(action: {}, label: {
+                                VStack{
+                                    Image(systemName: "message")
+                                        .foregroundColor(Color.black)
+                                        .frame(width: 40, height: 40)
+                                    ;
+                                }
+                            } )
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        }
+                        Spacer()
+                    }.frame(height: 230)
+                }.padding()
+            }
             
             VStack{
-                
+                Image("ProfilePicture").resizable().scaledToFit().clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    .overlay(
+                                        Circle()
+                                            .stroke(Color("primary"), style: StrokeStyle(lineWidth: 8))
+                                    )
                 Text(User.firstName.capitalized + " " + User.lastName.capitalized)
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color.white).padding(.bottom, 10)
                 
                 HStack {
                     
-                    Text(User.age + " | " + User.pronouns.capitalized + " | " + User.location.uppercased())
-                        .font(Font.custom("SFMono-Regular", size: 16.0))
-                        .foregroundColor(Color.white)
-                    
+                    Text(User.age + " | " + User.pronouns.capitalized + " | ").foregroundColor(Color.white)
                     Image(systemName: "location.fill")
                         .foregroundColor(Color.white)
-                }
-                HStack {
-                    Button(action: {}, label: {
-                        VStack{
-                            Image(systemName: "square.and.pencil")
-                                .foregroundColor(Color.black)
-                                .frame(width: 40, height: 40)
-                            ;
-                        }
-                    } )
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    Text(User.location.uppercased())
+                        .font(Font.custom("SFMono-Regular", size: 16.0))
+                        .foregroundColor(Color.white)
                 }
             }
-            .frame(width: 400, height: 150)
+            .offset(y:-55)
+            .frame(width: 400, height: 200)
             .background(Color("primary"))
             VStack {
                 HStack {
-                    Text("ABOUT")
-                        .font(Font.custom("SFCompactDisplay-Bold", size: 16.0))
+                    Text("BIO")
+                        .font(Font.custom("SFCompactDisplay-Bold", size: 20.0))
                     Spacer()
                 }
                 Text(User.about)
+            }
+            .padding()
+         
+            
+            VStack {
+                HStack {
+                    Text("INTERESTS")
+                        .font(Font.custom("SFCompactDisplay-Bold", size: 20.0))
+                        .foregroundColor(Color.primary)
+                    Spacer()
+                }
+                Text(User.interests)
             }
             .padding()
             Spacer()
@@ -61,5 +100,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(User: Profile(userKey: "wesleyhahn"))
+    ProfileView(LoggedInUser: Downer(userKey: "wesleyhahn"), User: Profile(userKey: "wesleyhahn"))
 }

@@ -10,9 +10,11 @@ import SwiftUI
 struct AttendeeView: View {
     
     @State var User: Downer;
+    @State var stateManager: StateManager
+    @State var currentExperience: Experience = Experience();
+    @State var selection: Int
     
     var body: some View {
-        NavigationView {
             VStack {
                 HStack {
                     Text("UPCOMING")
@@ -23,7 +25,11 @@ struct AttendeeView: View {
                 .padding()
                 ScrollView {
                     ForEach(User.attendExperiences, id: \.self) {experience in
-                        NavigationLink(destination: ExperienceView(experience: experience, User: User), label: {
+                        Button(action: {
+                            stateManager.currentExperience = experience
+                            stateManager.attend = false
+                            selection = 2
+                        }, label: {
                             VStack(alignment: .leading) {
                                 HStack {
                                     Text(experience.eventName.uppercased())
@@ -51,6 +57,7 @@ struct AttendeeView: View {
                                 }
                                 Text(experience.description)
                                     .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.leading)
                                     .padding(.vertical, 2.0);
                             }
                             .padding()
@@ -63,9 +70,8 @@ struct AttendeeView: View {
                 Spacer()
             }
         }
-    }
 }
 
 #Preview {
-    AttendeeView(User: Downer(userKey: "wesleyhahn"))
+    AttendeeView(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager(), selection: 2)
 }
