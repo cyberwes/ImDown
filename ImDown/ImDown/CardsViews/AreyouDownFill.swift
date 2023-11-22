@@ -34,10 +34,10 @@ struct AreyouDownFill: View {
                     Picker("ATTEND", selection:$down){
                         Text("ATTEND").tag("ATTEND")
                         Text("HOST").tag("HOST") }
-                    
+                    .background()
+                    .cornerRadius(15.0)
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
-                    .environment(\.colorScheme, .dark)
                     
                     if(down=="ATTEND"){
                         HStack {
@@ -51,7 +51,7 @@ struct AreyouDownFill: View {
                                 .datePickerStyle(.automatic)
                                 .background(Color.white)
                                 .cornerRadius(8)
-                                .shadow(radius: 10)
+                                .shadow(radius: 15)
                         }.padding(.horizontal)
                         HStack{
                             
@@ -65,7 +65,7 @@ struct AreyouDownFill: View {
                                     .labelsHidden()
                                     .border(Color.white, width: 180)
                                     .background(Color.white)
-                                    .cornerRadius(5)
+                                    .cornerRadius(10)
                                     .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
                                 
                             }
@@ -81,7 +81,7 @@ struct AreyouDownFill: View {
                                     .labelsHidden()
                                     .border(Color.white, width: 180)
                                     .background(Color.white)
-                                    .cornerRadius(5)
+                                    .cornerRadius(10)
                                     .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
                             }
                         }.padding()
@@ -117,6 +117,7 @@ struct AreyouDownFill: View {
                                     .foregroundColor(.white)
                                     .background(Color.white)
                                     .labelsHidden()
+                                    .cornerRadius(10.0)
                                 
                             }
                             .padding()
