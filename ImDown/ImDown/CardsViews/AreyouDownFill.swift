@@ -126,7 +126,7 @@ struct AreyouDownFill: View {
                                 stateManager.currentState = StateManager.State.Carosel
                             }, label: {
                                 Text("LET'S GO!")
-                                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
+                                    .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
                                     .foregroundColor(Color("primary"))
                                     .padding()
                                     .frame(maxWidth: .infinity)
@@ -143,7 +143,7 @@ struct AreyouDownFill: View {
                         VStack{
                             NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baker", hint: "")), label: {
                                 Text("CREATE AN EXPERIENCE!")
-                                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
+                                    .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
                                     .foregroundColor(Color("primary"))
                                     .padding()
                                     .frame(width: 360)
