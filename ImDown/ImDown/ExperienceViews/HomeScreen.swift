@@ -158,7 +158,5 @@ struct HomeScreen: View {
         
 
 #Preview {
-    HomeScreen(
-        User: Downer(userKey: "wesleyhahn"), stateManager: StateManager()
-    )
+    HomeScreen(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }

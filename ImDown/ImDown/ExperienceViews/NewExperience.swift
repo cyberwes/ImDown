@@ -23,8 +23,11 @@ struct NewExperience: View {
     var body: some View {
         ZStack {
             Rectangle().fill(.black)
-            Rectangle().foregroundColor(Color("primary")).opacity(0.75)
-            Image(imageName).resizable().scaledToFill()
+            if(experience.imageName != "") {
+                Image(experience.imageName).resizable().scaledToFill().opacity(0.75)
+            } else {
+                Rectangle().foregroundColor(Color("primary")).opacity(0.75)
+            }
             Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
                 .opacity(0.5)
             VStack {

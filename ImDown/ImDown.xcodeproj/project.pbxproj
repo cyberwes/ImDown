@@ -207,12 +207,12 @@
 				4C55748F2B04C64100252E36 /* Downer.swift */,
 				4C55748D2B04C3ED00252E36 /* Experience.swift */,
 				4C2E4CFB2B08335E00280A2F /* Formatter.swift */,
+				4CC231AD2B087D700010560F /* Profile.swift */,
 				4C4304842B046A4400C34098 /* Assets.xcassets */,
 				4C4304862B046A4400C34098 /* Preview Content */,
 				4C301F3F2B085C03002013A1 /* ExperienceViews */,
 				4C301F412B085C50002013A1 /* MainViews */,
 				4C301F402B085C31002013A1 /* CardsViews */,
-				4CC231AD2B087D700010560F /* Profile.swift */,
 			);
 			path = ImDown;
 			sourceTree = "<group>";
