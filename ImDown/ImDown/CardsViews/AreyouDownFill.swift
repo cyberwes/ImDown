@@ -25,6 +25,7 @@ struct AreyouDownFill: View {
             ZStack {
                 Rectangle().foregroundColor(Color("primary"))
                 VStack{
+                    Spacer().frame(height: 100)
                     Text("ARE YOU DOWN?")
                         .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -138,9 +139,8 @@ struct AreyouDownFill: View {
                         }.padding()
                     }
                     else {
-                        Spacer()
-                        
                         VStack{
+                            Spacer()
                             NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baker", hint: "")), label: {
                                 Text("CREATE AN EXPERIENCE!")
                                     .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
@@ -156,10 +156,10 @@ struct AreyouDownFill: View {
                                 .multilineTextAlignment(.center)
                                 .padding(30)
                                 .foregroundColor(.white)
-                            
+                            Spacer()
                         }
-                        Spacer()
                     }
+                    Spacer()
                 }
             }
         }
