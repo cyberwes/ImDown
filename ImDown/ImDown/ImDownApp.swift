@@ -41,6 +41,10 @@ class StateManager {
         case Empty
     }
     
+    var attend: Bool = true
+    
+    var currentExperience = Experience()
+    
     var currentState: State = State.AreYouDown
 
 }

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    var User: Profile;
+    var LoggedInUser: Downer
+    var User: Profile
     
     var body: some View {
         VStack{
@@ -19,17 +20,31 @@ struct ProfileView: View {
                 HStack {
                     Spacer()
                     VStack {
-                        Button(action: {}, label: {
-                            VStack{
-                                Image(systemName: "gear")
-                                    .foregroundColor(Color.black)
-                                    .frame(width: 40, height: 40)
-                                ;
-                            }
-                        } )
-                        .background(Color.white)
-                        .cornerRadius(20)
-                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        if LoggedInUser.profile.email == User.email {
+                            Button(action: {}, label: {
+                                VStack{
+                                    Image(systemName: "gear")
+                                        .foregroundColor(Color.black)
+                                        .frame(width: 40, height: 40)
+                                    ;
+                                }
+                            } )
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        } else {
+                            Button(action: {}, label: {
+                                VStack{
+                                    Image(systemName: "message")
+                                        .foregroundColor(Color.black)
+                                        .frame(width: 40, height: 40)
+                                    ;
+                                }
+                            } )
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                        }
                         Spacer()
                     }.frame(height: 230)
                 }.padding()
@@ -85,5 +100,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(User: Profile(userKey: "wesleyhahn"))
+    ProfileView(LoggedInUser: Downer(userKey: "wesleyhahn"), User: Profile(userKey: "wesleyhahn"))
 }
