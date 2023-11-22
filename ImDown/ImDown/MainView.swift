@@ -24,7 +24,7 @@ struct MainView: View {
                     Label("Home", systemImage: "house")
                 }.tag(1)
             } else {
-                AreyouDownFill(User: User, stateManager: stateManager).cornerRadius(25.0).tabItem {
+                AreyouDownFillSarah(User: User, stateManager: stateManager).cornerRadius(25.0).tabItem {
                     Label("Home", systemImage: "house")
                 }.tag(1)
             }

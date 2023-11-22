@@ -71,7 +71,7 @@ struct HomeScreen: View {
                             NavigationLink(destination: ProfileView(User: User.currentExperience.host), label: {
                                 Text("Hosted by " + User.currentExperience.host.firstName.capitalized)
                                     .font(Font.custom("SFMono-Regular", size: 16.0))
-                                    .foregroundColor(TextColor)
+                                    .foregroundColor(.white)
                                     .padding(12)
                                     .background(ButtonColor)
                                     .cornerRadius(30)
