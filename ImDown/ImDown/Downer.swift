@@ -29,7 +29,7 @@ class Downer {
         self.currentExperience = currentExperience
         self.hostExperiences = hostExperiences
         self.attendExperiences = attendExperiences
-        self.potentialExperiences = potentialExperiences
+        self.potentialExperiences = []
         self.potentialExperiences.append(getCurrentExperience())
         self.potentialExperiences.append(getCurrentExperience())
         self.potentialExperiences.append(getCurrentExperience())
