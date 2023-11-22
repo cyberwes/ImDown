@@ -44,4 +44,5 @@ struct ChatView: View {
 
 #Preview {
     ChatView()
+    
 }

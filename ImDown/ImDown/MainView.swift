@@ -46,6 +46,10 @@ struct MainView: View {
             ProfileView(User: User.profile).background(Color.white).cornerRadius(25.0).tabItem {
                 Label("Profile", systemImage: "person")
             }.tag(5)
+            
+            
+            
+            
         }
     }
 }
