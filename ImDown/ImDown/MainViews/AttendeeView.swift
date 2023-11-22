@@ -10,11 +10,11 @@ import SwiftUI
 struct AttendeeView: View {
     
     @State var User: Downer;
-    @State var stateManager: StateManager;
+    @State var stateManager: StateManager
     @State var currentExperience: Experience = Experience();
+    @State var selection: Int
     
     var body: some View {
-        if stateManager.currentState != StateManager.State.AttendExperience {
             VStack {
                 HStack {
                     Text("UPCOMING")
@@ -26,8 +26,9 @@ struct AttendeeView: View {
                 ScrollView {
                     ForEach(User.attendExperiences, id: \.self) {experience in
                         Button(action: {
-                            currentExperience = experience
-                            stateManager.currentState = StateManager.State.AttendExperience
+                            stateManager.currentExperience = experience
+                            stateManager.attend = false
+                            selection = 2
                         }, label: {
                             VStack(alignment: .leading) {
                                 HStack {
@@ -56,6 +57,7 @@ struct AttendeeView: View {
                                 }
                                 Text(experience.description)
                                     .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.leading)
                                     .padding(.vertical, 2.0);
                             }
                             .padding()
@@ -68,30 +70,8 @@ struct AttendeeView: View {
                 Spacer()
             }
         }
-        else {
-            ZStack {
-                ExperienceView(experience: currentExperience, User: User)
-                VStack {
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            stateManager.currentState = StateManager.State.Empty
-                        }, label: {
-                            Text("Back to upcoming")
-                                .foregroundColor(.white)
-                                .padding(10.0)
-                                .background(Color("primary"))
-                                .cornerRadius(20)
-                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                        })
-                    }
-                    Spacer()
-                }.padding()
-            }
-        }
-    }
 }
 
 #Preview {
-    AttendeeView(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
+    AttendeeView(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager(), selection: 2)
 }
