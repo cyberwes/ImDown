@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ChatView: View {
+    
+    var User: Downer
+    
     var body: some View {
         VStack {
             HStack {
@@ -18,23 +21,44 @@ struct ChatView: View {
             }
             .padding()
             ScrollView {
-                VStack {
-                    HStack {
-                        Text("First Last")
-                            .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
-                            .foregroundColor(Color.white)
-                        Spacer()
+                ForEach(User.attendExperiences, id: \.self) {experience in
+                    VStack {
+                        HStack {
+                            Text(experience.host.firstName.uppercased())
+                                .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
+                        HStack {
+                            Text(experience.eventName)
+                                .font(.body)
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
                     }
-                    HStack {
-                        Text("Event Hosting/Attending")
-                            .font(.body)
-                            .foregroundColor(Color.white)
-                        Spacer()
-                    }
+                    .padding()
+                    .background(Color("primary"))
+                    .cornerRadius(15.0)
                 }
-                .padding()
-                .background(Color("primary"))
-                .cornerRadius(15.0)
+                ForEach(User.hostExperiences, id: \.self) {experience in
+                    VStack {
+                        HStack {
+                            Text(experience.attendee.firstName.uppercased())
+                                .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
+                        HStack {
+                            Text(experience.eventName)
+                                .font(.body)
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
+                    }
+                    .padding()
+                    .background(Color("primary"))
+                    .cornerRadius(15.0)
+                }
             }
             .padding()
             Spacer()
@@ -43,5 +67,5 @@ struct ChatView: View {
 }
 
 #Preview {
-    ChatView()
+    ChatView(User: Downer(userKey: "wesleyhahn"))
 }

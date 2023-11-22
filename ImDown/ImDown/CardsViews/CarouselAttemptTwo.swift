@@ -8,19 +8,29 @@
 import SwiftUI
 
 struct CarouselAttemptTwo: View {
+    var User: Downer
+    var stateManager: StateManager
     @State private var zoomScale: CGFloat = 1.0
     @State private var selectedIndex = 1 // Initial focus on the center card
-
+    
+    var randomExperiences: [Experience]
+    
+    init (User: Downer, stateManager: StateManager) {
+        self.User = User
+        self.stateManager = stateManager
+        self.randomExperiences = User.potentialExperiences
+    }
+    
     var body: some View {
         VStack {
-            Text("Attend").font(.system(size: 40)).foregroundStyle(Color("primary")).padding(2).fontWeight(.bold)
+            Text("Attend".uppercased()).font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundStyle(Color("primary")).padding(2).fontWeight(.bold)
             Text("Select a card based on the hints").font(.system(size: 20)).multilineTextAlignment(.center)
             Text("Careful! You can only choose one. ").font(.system(size: 20)).multilineTextAlignment(.center)
             ScrollViewReader { scrollView in
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         ForEach(0..<3) { index in
-                            CardAltView()
+                            CardAltView(experience: randomExperiences[index])
                                 .tag(index)
                                 .scaleEffect(zoomScale)
                                 .animation(.easeInOut)
@@ -33,7 +43,7 @@ struct CarouselAttemptTwo: View {
                     }
                     .padding(40)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-//                    .offset(x: -CGFloat(1) * (240 - 20)) // Initial center card position
+                    //                    .offset(x: -CGFloat(1) * (240 - 20)) // Initial center card position
                 }
                 .onAppear {
                     scrollView.scrollTo(selectedIndex)
@@ -51,7 +61,8 @@ struct CarouselAttemptTwo: View {
                 )
             }
             Button(action: {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                User.currentExperience = randomExperiences[selectedIndex]
+                stateManager.currentState = StateManager.State.HomeScreen
             },
                    label: {
                 ZStack {
@@ -64,7 +75,7 @@ struct CarouselAttemptTwo: View {
             })
         }
     }
-
+    
     private func swapCards(index: Int, scrollView: ScrollViewProxy) {
         if index != selectedIndex {
             withAnimation {
@@ -76,6 +87,9 @@ struct CarouselAttemptTwo: View {
 }
 
 struct CardAltView: View {
+    
+    var experience: Experience
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
@@ -86,7 +100,10 @@ struct CardAltView: View {
             VStack {
                 HStack {
                     Spacer()
-                    Text("1.7km away")
+                    //                    Text("1.7km away")
+                    //                        .foregroundStyle(Color("Secondary"))
+                    //                        .font(.system(size: 14))
+                    Text(experience.location)
                         .foregroundStyle(Color("Secondary"))
                         .font(.system(size: 14))
                 }
@@ -101,7 +118,7 @@ struct CardAltView: View {
                         .foregroundStyle(.white)
                         .fontWeight(.bold)
                     
-                    Text("You can eat what you make")
+                    Text(experience.hint)
                         .foregroundStyle(.white)
                 }
                 .frame(height: 100, alignment: .top)
@@ -115,5 +132,5 @@ struct CardAltView: View {
 }
 
 #Preview{
-    CarouselAttemptTwo()
+    CarouselAttemptTwo(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }
