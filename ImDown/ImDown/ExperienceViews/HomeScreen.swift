@@ -17,7 +17,7 @@ struct HomeScreen: View {
     var stateManager: StateManager;
     @State var timer: Int = 60;
     
-    @State var feedbackHeading: String = "Are You Down?"
+    @State var feedbackHeading: String = "ARE YOU DOWN?"
     @State var feedbackText: String = "More Experiences coming soon!"
     
     @State var timerRunning = false
@@ -26,7 +26,8 @@ struct HomeScreen: View {
         NavigationView {
             if (timer > 0 && User.currentExperience.eventName != "") {
                 ZStack{
-                    User.currentExperience.image.resizable().scaledToFill()
+                    Rectangle().fill(.black)
+                    User.currentExperience.image.resizable().scaledToFill().opacity(0.75)
                     Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
                         .opacity(0.5)
                     VStack{
@@ -60,10 +61,10 @@ struct HomeScreen: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            NavigationLink(destination: ProfileView(User: User.currentExperience.host), label: {
+                            NavigationLink(destination: ProfileView(LoggedInUser: User, User: User.currentExperience.host), label: {
                                 Text("Hosted by " + User.currentExperience.host.firstName.capitalized)
                                     .font(Font.custom("SFMono-Regular", size: 16.0))
-                                    .foregroundColor(TextColor)
+                                    .foregroundColor(.white)
                                     .padding(12)
                                     .background(ButtonColor)
                                     .cornerRadius(30)
@@ -81,6 +82,7 @@ struct HomeScreen: View {
                             .shadow(radius: 4.0)
                             Button(action: {
                                 User.attend()
+                                timer = 0
                                 feedbackHeading = "Have Fun! 🎉"
                                 feedbackText = "That experience has been added to your schedule."
                             }, label: {
@@ -120,30 +122,35 @@ struct HomeScreen: View {
                 .padding(.horizontal)
             }
             else {
-                VStack {
+                Button(action: {
+                    stateManager.currentState = StateManager.State.AreYouDown
+                }, label: {
                     HStack {
                         Spacer()
-                        NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "", hint: "New Hint"))) {
-                            Image(systemName: "square.and.pencil")
-                                .foregroundColor(Color.black)
-                                .frame(width: 40, height: 40)
-                                .background(Color.white)
-                                .cornerRadius(20)
-                                .shadow(radius: 10)
-                        }.padding()
+                        VStack {
+                            Spacer()
+                            Text(feedbackHeading)
+                                .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
+                                .foregroundColor(.white)
+                                .padding(.horizontal)
+                            Text(feedbackText)
+                                .foregroundColor(.white)
+                                .padding(.horizontal)
+                            Spacer()
+                        }
+                        Spacer()
                     }
-                    Spacer()
-                    Text(feedbackHeading)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.horizontal)
-                    Text(feedbackText)
-                        .foregroundColor(.white)
-                        .padding(.horizontal)
-                    Spacer()
-                }
-                .background(Color("primary"))
+                    .background(Color("primary"))
+                    .onAppear {
+                        if (timerRunning == true) {
+                            let returnCheck = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
+                                if timer == -10 && stateManager.currentState == StateManager.State.HomeScreen {
+                                    stateManager.currentState = StateManager.State.AreYouDown
+                                }
+                            }
+                        }
+                    }
+                })
             }
         }
     }
@@ -151,7 +158,5 @@ struct HomeScreen: View {
         
 
 #Preview {
-    HomeScreen(
-        User: Downer(userKey: "wesleyhahn"), stateManager: StateManager()
-    )
+    HomeScreen(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }

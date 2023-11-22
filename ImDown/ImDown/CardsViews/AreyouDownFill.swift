@@ -25,14 +25,12 @@ struct AreyouDownFill: View {
             ZStack {
                 Rectangle().foregroundColor(Color("primary"))
                 VStack{
-                    Spacer()
-                        .frame(height: 100)
+                    Spacer().frame(height: 100)
                     Text("ARE YOU DOWN?")
                         .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .foregroundColor(.white)
                         .shadow(radius: 10)
-                    
                     Picker("ATTEND", selection:$down){
                         Text("ATTEND").tag("ATTEND")
                         Text("HOST").tag("HOST") }
@@ -47,9 +45,7 @@ struct AreyouDownFill: View {
                                 .foregroundColor(.white)
                                 .fontWeight(.bold)
                                 .font(.title3)
-                            
                             Spacer()
-                            
                             DatePicker(selection: $date, displayedComponents: .date) {}
                                 .labelsHidden()
                                 .datePickerStyle(.automatic)
@@ -57,7 +53,6 @@ struct AreyouDownFill: View {
                                 .cornerRadius(8)
                                 .shadow(radius: 10)
                         }.padding(.horizontal)
-                        
                         HStack{
                             
                             VStack{
@@ -74,10 +69,9 @@ struct AreyouDownFill: View {
                                     .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
                                 
                             }
-                            
-                            
                             Spacer()
-                            
+                            Text("TO").font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundColor(.white)
+                            Spacer()
                             VStack{
                                 Text("End Time")
                                     .foregroundColor(.white)
@@ -89,7 +83,6 @@ struct AreyouDownFill: View {
                                     .background(Color.white)
                                     .cornerRadius(5)
                                     .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
-                                
                             }
                         }.padding()
                         
@@ -128,16 +121,13 @@ struct AreyouDownFill: View {
                                 
                             }
                             .padding()
-                            
                         }
-                        Spacer()
                         VStack{
                             Button(action: {
                                 stateManager.currentState = StateManager.State.Carosel
                             }, label: {
-                                Text("Let's Go!!")
-                                    .fontWeight(.bold)
-                                    .font(.title)
+                                Text("LET'S GO!")
+                                    .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
                                     .foregroundColor(Color("primary"))
                                     .padding()
                                     .frame(maxWidth: .infinity)
@@ -149,12 +139,11 @@ struct AreyouDownFill: View {
                         }.padding()
                     }
                     else {
-                        Spacer()
-                        
                         VStack{
-                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baker", hint: "provide a hint")), label: {
+                            Spacer()
+                            NavigationLink(destination: NewExperience(User: User, experience: Experience(id: User.ID.newId(), eventName: "New Experience", host: User.profile, attend: Profile(), date: Date.now, description: lorem, location: "Sydney, 2000", imageName: "Baker", hint: "")), label: {
                                 Text("CREATE AN EXPERIENCE!")
-                                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
+                                    .font(Font.custom("SFCompactDisplay-Bold", size: 24.0))
                                     .foregroundColor(Color("primary"))
                                     .padding()
                                     .frame(width: 360)
@@ -167,10 +156,10 @@ struct AreyouDownFill: View {
                                 .multilineTextAlignment(.center)
                                 .padding(30)
                                 .foregroundColor(.white)
-                            
+                            Spacer()
                         }
-                        Spacer()
                     }
+                    Spacer()
                 }
             }
         }

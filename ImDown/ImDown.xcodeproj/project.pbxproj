@@ -15,10 +15,6 @@
 		3644A0442B0AFDF3003C5728 /* CarouselAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644A0432B0AFDF3003C5728 /* CarouselAttempt.swift */; };
 		3644A04A2B0C112D003C5728 /* ProfileFigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644A0492B0C112D003C5728 /* ProfileFigView.swift */; };
 		3644A04C2B0C1ABC003C5728 /* CarouselAttemptTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644A04B2B0C1ABC003C5728 /* CarouselAttemptTwo.swift */; };
-		3644A0562B0D8549003C5728 /* LocationAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644A0552B0D8549003C5728 /* LocationAttempt.swift */; };
-		3644A0582B0D8588003C5728 /* LocationAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644A0572B0D8588003C5728 /* LocationAttempt.swift */; };
-		3644A0592B0D8588003C5728 /* LocationAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644A0572B0D8588003C5728 /* LocationAttempt.swift */; };
-		3644A05A2B0D8588003C5728 /* LocationAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644A0572B0D8588003C5728 /* LocationAttempt.swift */; };
 		368F31162B06FEAC0045912E /* MysteryCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F31152B06FEAC0045912E /* MysteryCards.swift */; };
 		4C16B9C42B08252400C21228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
 		4C16B9C52B08252400C21228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4304842B046A4400C34098 /* Assets.xcassets */; };
@@ -71,8 +67,6 @@
 		3644A0432B0AFDF3003C5728 /* CarouselAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselAttempt.swift; sourceTree = "<group>"; };
 		3644A0492B0C112D003C5728 /* ProfileFigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFigView.swift; sourceTree = "<group>"; };
 		3644A04B2B0C1ABC003C5728 /* CarouselAttemptTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselAttemptTwo.swift; sourceTree = "<group>"; };
-		3644A0552B0D8549003C5728 /* LocationAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAttempt.swift; sourceTree = "<group>"; };
-		3644A0572B0D8588003C5728 /* LocationAttempt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAttempt.swift; sourceTree = "<group>"; };
 		368F31152B06FEAC0045912E /* MysteryCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryCards.swift; sourceTree = "<group>"; };
 		4C16B9C62B08258A00C21228 /* SF-Mono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Light.otf"; sourceTree = "<group>"; };
 		4C16B9D02B082A7500C21228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -211,16 +205,14 @@
 				4C4304802B046A4300C34098 /* ImDownApp.swift */,
 				4C4304822B046A4300C34098 /* MainView.swift */,
 				4C55748F2B04C64100252E36 /* Downer.swift */,
-				3644A0572B0D8588003C5728 /* LocationAttempt.swift */,
 				4C55748D2B04C3ED00252E36 /* Experience.swift */,
 				4C2E4CFB2B08335E00280A2F /* Formatter.swift */,
+				4CC231AD2B087D700010560F /* Profile.swift */,
 				4C4304842B046A4400C34098 /* Assets.xcassets */,
 				4C4304862B046A4400C34098 /* Preview Content */,
 				4C301F3F2B085C03002013A1 /* ExperienceViews */,
 				4C301F412B085C50002013A1 /* MainViews */,
 				4C301F402B085C31002013A1 /* CardsViews */,
-				4CC231AD2B087D700010560F /* Profile.swift */,
-				3644A0552B0D8549003C5728 /* LocationAttempt.swift */,
 			);
 			path = ImDown;
 			sourceTree = "<group>";
@@ -401,9 +393,7 @@
 				4CFB05B42B05ADAE0076F956 /* NewExperience.swift in Sources */,
 				4C301F3D2B08492F002013A1 /* MysteryCardConfirm.swift in Sources */,
 				4C4304B02B04769A00C34098 /* AttendeeView.swift in Sources */,
-				3644A0562B0D8549003C5728 /* LocationAttempt.swift in Sources */,
 				4C5574902B04C64100252E36 /* Downer.swift in Sources */,
-				3644A0582B0D8588003C5728 /* LocationAttempt.swift in Sources */,
 				368F31162B06FEAC0045912E /* MysteryCards.swift in Sources */,
 				4C4304B42B0476A900C34098 /* ChatView.swift in Sources */,
 				4C2E4CFC2B08335E00280A2F /* Formatter.swift in Sources */,
@@ -418,7 +408,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3644A0592B0D8588003C5728 /* LocationAttempt.swift in Sources */,
 				4C4304922B046A4400C34098 /* ImDownTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +417,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C43049E2B046A4400C34098 /* ImDownUITestsLaunchTests.swift in Sources */,
-				3644A05A2B0D8588003C5728 /* LocationAttempt.swift in Sources */,
 				4C43049C2B046A4400C34098 /* ImDownUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,7 +564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ImDown/Preview Content\"";
-				DEVELOPMENT_TEAM = 3K4XN64RQA;
+				DEVELOPMENT_TEAM = RHDH3SJ292;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImDown/Info.plist;
@@ -588,13 +576,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = au.edu.rahul.ImDown;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.ImDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -610,7 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ImDown/Preview Content\"";
-				DEVELOPMENT_TEAM = 3K4XN64RQA;
+				DEVELOPMENT_TEAM = RHDH3SJ292;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImDown/Info.plist;
@@ -622,13 +609,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = au.edu.rahul.ImDown;
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.ImDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

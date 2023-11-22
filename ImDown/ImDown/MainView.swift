@@ -9,17 +9,20 @@ import SwiftUI
 
 struct MainView: View {
     
-    var User: Downer
-    var stateManager: StateManager
-    var homeStateManager = StateManager()
+    @State var User: Downer
+    @State var stateManager: StateManager
+    @State var homeStateManager = StateManager()
+    @State var attend = true
+    @State var selection: Int
     
     init(User: Downer, stateManager: StateManager) {
         self.User = User
         self.stateManager = stateManager
+        self.selection = 1
     }
     
     var body: some View {
-        TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
+        TabView(selection: $selection) {
             if homeStateManager.currentState == StateManager.State.HomeScreen {
                 HomeScreen(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
                     Label("Home", systemImage: "house")
@@ -34,16 +37,41 @@ struct MainView: View {
                     Label("Home", systemImage: "house")
                 }.tag(1)
             }
-            AttendeeView(User: User, stateManager: stateManager).background(Color.white).cornerRadius(25.0).tabItem {
-                Label("Attending", systemImage: "calendar.badge.checkmark")
-            }.tag(2)
+            if stateManager.attend {
+                AttendeeView(User: User, stateManager: stateManager, selection: selection).background(Color.white).cornerRadius(25.0).tabItem {
+                    Label("Upcoming", systemImage: "calendar.badge.checkmark")
+                }.tag(2)
+            } else {
+                ZStack {
+                    ExperienceView(experience: stateManager.currentExperience, User: User)
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                stateManager.attend = true
+                            }, label: {
+                                Text("Back to upcoming")
+                                    .foregroundColor(.white)
+                                    .padding(10.0)
+                                    .background(Color("primary"))
+                                    .cornerRadius(20)
+                                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                            })
+                        }
+                        Spacer()
+                    }.padding()
+                }.background(Color.white).cornerRadius(25.0).tabItem {
+                    Label("Upcoming", systemImage: "calendar.badge.checkmark")
+                }.tag(2)
+            }
             HostView(User: User, stateManager: stateManager).background(Color.white).cornerRadius(25.0).tabItem {
                 Label("Hosting", systemImage: "h.square.on.square")
             }.tag(3)
-            ChatView().background(Color.white).cornerRadius(25.0).tabItem {
+            ChatView(User: User)
+                .background(Color.white).cornerRadius(25.0).tabItem {
                 Label("Chat", systemImage: "message")
             }.tag(4)
-            ProfileView(User: User.profile).background(Color.white).cornerRadius(25.0).tabItem {
+            ProfileView(LoggedInUser: User, User: User.profile).background(Color.white).cornerRadius(25.0).tabItem {
                 Label("Profile", systemImage: "person")
             }.tag(5)
             

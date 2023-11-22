@@ -15,7 +15,8 @@ struct ExperienceView: View {
         NavigationView {
             if (experience.eventName != "") {
                 ZStack{
-                    experience.image.resizable().scaledToFill()
+                    Rectangle().fill(.black)
+                    experience.image.resizable().scaledToFill().opacity(0.75)
                     Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
                         .opacity(0.5)
                     VStack{
@@ -51,8 +52,8 @@ struct ExperienceView: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            NavigationLink(destination: ProfileView(User: User.currentExperience.host), label: {
-                                Text("Hosted by " + User.currentExperience.host.firstName.capitalized)
+                            NavigationLink(destination: ProfileView(LoggedInUser: User, User: experience.host), label: {
+                                Text("Hosted by " + experience.host.firstName.capitalized)
                                     .font(Font.custom("SFMono-Regular", size: 16.0))
                                     .foregroundColor(TextColor)
                                     .padding(12)
