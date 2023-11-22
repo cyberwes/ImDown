@@ -15,7 +15,8 @@ struct ExperienceView: View {
         NavigationView {
             if (experience.eventName != "") {
                 ZStack{
-                    experience.image.resizable().scaledToFill()
+                    Rectangle().fill(.black)
+                    experience.image.resizable().scaledToFill().opacity(0.75)
                     Rectangle().fill(Gradient(colors: [Color.black, Color.clear, Color.clear, Color.clear, Color.black]))
                         .opacity(0.5)
                     VStack{
