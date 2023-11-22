@@ -4,14 +4,16 @@
 //
 //  Created by sarah Ahmad Burney on 17/11/2023.
 //
+//
 
 import SwiftUI
 
 struct AreyouDown: View {
     
-    var User: Downer
+    @State private var isAnimating = false
+    var user: Downer
     var stateManager: StateManager
-    
+
     var body: some View {
         VStack {
             Button(action: {
@@ -19,16 +21,26 @@ struct AreyouDown: View {
             }, label: {
                 Text("ARE YOU DOWN?!")
                     .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
-                    .foregroundColor(.white)
-                    .frame(width: 1000, height: 2000)
-                    .background(Color("primary"))
+                    .foregroundColor(Color("primary"))
+                    .frame(width: 330, height: 60)
+                    .background(Color.white)
+                    .cornerRadius(15)
+                    .shadow(radius: isAnimating ? 20 : 10)
+                    .scaleEffect(isAnimating ? 1.1 : 1.0)
+                    .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true), value: isAnimating)
             })
+            .onAppear {
+                isAnimating = true
+            }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("primary"))
     }
 }
 
 #Preview {
-    AreyouDown(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
+        AreyouDown(user: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
+    
 }
 
 
