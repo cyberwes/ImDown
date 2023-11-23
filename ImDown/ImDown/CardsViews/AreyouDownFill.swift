@@ -70,7 +70,9 @@ struct AreyouDownFill: View {
                                 
                             }
                             Spacer()
-                            Text("TO").font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundColor(.white)
+                            VStack {
+                                Text("to").font(Font.custom("SFCompactDisplay-Bold", size: 32.0)).foregroundColor(.white)
+                            }
                             Spacer()
                             VStack{
                                 Text("End Time")
