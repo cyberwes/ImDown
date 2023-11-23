@@ -34,14 +34,17 @@ struct NewExperience: View {
                 HStack {
                     TextField(experience.eventName.uppercased(), text: $name)
                         .font(Font.custom("SFCompactDisplay-Bold", size: 35.00))
-                        .foregroundColor(.white)
-                        .padding([.top, .leading, .trailing])
+                        .foregroundColor(.black)
+                        .padding(5.0)
                         .shadow(radius: 4)
+                        .background(.white)
+                        .cornerRadius(10.0)
+                        .padding([.top, .leading, .trailing])
                     Button(action: {
                         name = ""
                     }, label: {
                         Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .padding(.horizontal, 20)
                             .frame(width: 50, alignment: .leading)
                             
@@ -74,6 +77,9 @@ struct NewExperience: View {
                         .foregroundColor(Color.white)
                     TextField(experience.location.uppercased(), text: $location)
                         .font(Font.custom("SFMono-Regular", size: 16.0))
+                        .padding(5.0)
+                        .background(.white)
+                        .cornerRadius(10.0)
 
                        // .shadow(radius: 4)
                     
@@ -96,6 +102,10 @@ struct NewExperience: View {
                     .padding(.horizontal)
                     .shadow(radius: 4)
                     .foregroundColor(.white)
+                    .padding()
+                    .background(.white)
+                    .cornerRadius(10.0)
+                    .padding(.horizontal)
 
                 HStack {
                     Spacer()
