@@ -30,16 +30,11 @@ struct MainView: View {
                     HomeScreen(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
                         Label("Home", systemImage: "house")
                     }.tag(1)
-                } else if homeStateManager.currentState == StateManager.State.Carosel{
+                } else if homeStateManager.timer > 0 && homeStateManager.currentState == StateManager.State.Carosel{
                     CarouselAttemptTwo(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
                         Label("Home", systemImage: "house")
                     }.tag(1)
-                        .onAppear{
-                            if homeStateManager.timer <= 0 {
-                                homeStateManager.timer = 60
-                            }
-                        }
-                } else if homeStateManager.currentState == StateManager.State.SelectedCard {
+                } else if homeStateManager.timer > 0 && homeStateManager.currentState == StateManager.State.SelectedCard {
                     MysterycardLayout(User: User, stateManager: homeStateManager).tabItem {
                         Label("Home", systemImage: "house")
                     }.tag(1)

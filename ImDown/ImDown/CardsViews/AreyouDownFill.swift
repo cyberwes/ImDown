@@ -149,6 +149,7 @@ struct AreyouDownFill: View {
                         VStack{
                             Spacer()
                             Button(action: {
+                                stateManager.timer = 60
                                 stateManager.currentState = StateManager.State.Carosel
                             }, label: {
                                 Text("LET'S GO!")

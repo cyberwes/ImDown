@@ -25,9 +25,8 @@ struct MysterycardLayout: View {
                 })
                 Spacer()
             }.padding()
-            Text("You're in!".uppercased()).font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundStyle(Color("primary")).padding(2)
-            Text("Stepping out of your comfort").font(.system(size: 20)).multilineTextAlignment(.center)
-            Text("zone is huge. We’re proud of you.").font(.system(size: 20)).multilineTextAlignment(.center)
+            Text("Your Choice".uppercased()).font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundStyle(Color("primary")).padding(2)
+            Text("Once you reveal this exerience you can't go back").font(.system(size: 20)).multilineTextAlignment(.center).padding(.horizontal, 60.0)
             ZStack {
                 RoundedRectangle(cornerRadius: 10).frame(width:240, height:320).foregroundStyle(Color("primary")).shadow(radius: 5, x: 5, y: 10)
                 VStack {

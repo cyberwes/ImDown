@@ -29,8 +29,7 @@ struct CarouselAttemptTwo: View {
         VStack {
             Spacer()
             Text("Attend".uppercased()).font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundStyle(Color("primary")).padding(2).fontWeight(.bold)
-            Text("Quick, select an experience before ").font(.system(size: 20)).multilineTextAlignment(.center)
-            Text("the timer runs down! ⚡️").font(.system(size: 20)).multilineTextAlignment(.center)
+            Text("Quick, you have 60 seconds to pick a mystery experience! ").font(.system(size: 20)).multilineTextAlignment(.center).padding(.horizontal, 50)
             ScrollViewReader { scrollView in
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
