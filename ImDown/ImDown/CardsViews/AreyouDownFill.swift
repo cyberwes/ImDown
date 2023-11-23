@@ -11,7 +11,7 @@ struct AreyouDownFill: View {
     
     var User: Downer
     var stateManager: StateManager;
-    @State private var down="ATTEND"
+    @State private var down = "ATTEND"
     @State private var date = Date.now
     @State private var timestart = Date.now
     @State private var timeend = Date.now
@@ -19,6 +19,12 @@ struct AreyouDownFill: View {
     let maxDistance = 60.0
     let minDistance = 5.0
 
+    init(User: Downer, stateManager: StateManager) {
+        self.User = User
+        self.stateManager = stateManager
+        self.down = (stateManager.currentMode == StateManager.HostState.Attend) ? "ATTEND" : "HOST";
+        print(self.down)
+    }
 
     var body: some View {
         NavigationView {
@@ -31,16 +37,16 @@ struct AreyouDownFill: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                         .foregroundColor(.white)
                         .shadow(radius: 10)
-                    Picker("ATTEND", selection:$down){
-                        Text("ATTEND").tag("ATTEND")
-                        Text("HOST").tag("HOST") }
-                    .background()
-                    .cornerRadius(15.0)
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding()
-                    .padding(.bottom, 20)
+//                    Picker("ATTEND", selection:$down){
+//                        Text("ATTEND").tag("ATTEND")
+//                        Text("HOST").tag("HOST") }
+//                    .background()
+//                    .cornerRadius(15.0)
+//                    .pickerStyle(SegmentedPickerStyle())
+//                    .padding()
+//                    .padding(.bottom, 20)
                     
-                    if(down=="ATTEND"){
+                    if(stateManager.currentMode == StateManager.HostState.Attend){
                         HStack {
                             Text("Date")
                                 .foregroundColor(.white)

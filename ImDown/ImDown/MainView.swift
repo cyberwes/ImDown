@@ -19,6 +19,7 @@ struct MainView: View {
         self.User = User
         self.stateManager = stateManager
         self.selection = 1
+        homeStateManager.currentMode = stateManager.currentMode
     }
     
     var body: some View {

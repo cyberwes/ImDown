@@ -22,7 +22,7 @@ struct ImDownApp: App {
             if (stateManager.currentState != StateManager.State.AreYouDown) {
                 MainView(User: User, stateManager: stateManager).background(Color.black)
             } else {
-                AreyouDown(User: User, stateManager: stateManager)
+                AreyouDown(user: User, stateManager: stateManager)
             }
         }
     }
@@ -40,6 +40,13 @@ class StateManager {
         case AttendExperience
         case Empty
     }
+    
+    enum HostState {
+        case Attend
+        case Host
+    }
+    
+    var currentMode = HostState.Attend
     
     var attend: Bool = true
     
