@@ -30,15 +30,21 @@ struct MainView: View {
                     HomeScreen(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
                         Label("Home", systemImage: "house")
                     }.tag(1)
-                } else if homeStateManager.currentState == StateManager.State.Carosel {
+                } else if homeStateManager.currentState == StateManager.State.Carosel{
                     CarouselAttemptTwo(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
                         Label("Home", systemImage: "house")
                     }.tag(1)
                         .onAppear{
-                            homeStateManager.timer = 60
+                            if homeStateManager.timer <= 0 {
+                                homeStateManager.timer = 60
+                            }
                         }
+                } else if homeStateManager.currentState == StateManager.State.SelectedCard {
+                    MysterycardLayout(User: User, stateManager: homeStateManager).tabItem {
+                        Label("Home", systemImage: "house")
+                    }.tag(1)
                 } else {
-                    AreyouDownFill(User: User, stateManager: homeStateManager).cornerRadius(25.0).tabItem {
+                    AreyouDownFill(User: User, stateManager: homeStateManager, superStateManager: stateManager).cornerRadius(25.0).tabItem {
                         Label("Home", systemImage: "house")
                     }.tag(1)
                 }
@@ -88,10 +94,14 @@ struct MainView: View {
                 HStack {
                     Spacer()
                     if (homeStateManager.timer > 0 && homeStateManager.timer < 61) {
-                        Text(String(homeStateManager.timer))
-                            .font(Font.custom("SFCompactDisplay-Bold", size: 48.0))
+                        HStack {
+                            Image(systemName: "stopwatch")
+                            Text(String(homeStateManager.timer))
+                        }
+                            .font(Font.custom("SFCompactDisplay-Bold", size: 26))
                             .foregroundColor(.white)
                             .padding(.horizontal)
+                            .padding(.vertical,5)
                             .background(Color("Tertiary"))
                             .cornerRadius(25.0)
                             .onAppear {
@@ -103,6 +113,7 @@ struct MainView: View {
                                 }
                             }
                     }
+                    Spacer()
                 }
                 Spacer()
             }.padding()

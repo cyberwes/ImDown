@@ -11,6 +11,7 @@ struct AreyouDownFill: View {
     
     var User: Downer
     var stateManager: StateManager;
+    var superStateManager: StateManager;
     @State private var down = "ATTEND"
     @State private var date = Date.now
     @State private var timestart = Date.now
@@ -19,9 +20,10 @@ struct AreyouDownFill: View {
     let maxDistance = 60.0
     let minDistance = 5.0
 
-    init(User: Downer, stateManager: StateManager) {
+    init(User: Downer, stateManager: StateManager, superStateManager: StateManager) {
         self.User = User
         self.stateManager = stateManager
+        self.superStateManager = superStateManager
         self.down = (stateManager.currentMode == StateManager.HostState.Attend) ? "ATTEND" : "HOST";
     }
 
@@ -30,6 +32,17 @@ struct AreyouDownFill: View {
             ZStack {
                 Rectangle().foregroundColor(Color("primary"))
                 VStack{
+                    HStack {
+                        Button(action: {
+                            superStateManager.currentState = StateManager.State.AreYouDown
+                        }, label: {
+                            Image(systemName: "chevron.left")
+                            Text("Back")
+                        })
+                        .foregroundColor(.white)
+                        .padding([.top, .leading])
+                        Spacer()
+                    }
                     Spacer().frame(height: 100)
                     Text("ARE YOU DOWN?")
                         .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
@@ -180,5 +193,5 @@ struct AreyouDownFill: View {
 
 
 #Preview {
-    AreyouDownFill(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
+    AreyouDownFill(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager(), superStateManager: StateManager())
 }

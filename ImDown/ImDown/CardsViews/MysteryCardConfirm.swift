@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct MysterycardLayout: View {
+    
+    var User: Downer
+    var stateManager: StateManager
+    
     var body: some View {
         VStack {
+            HStack {
+                Button(action: {
+                    stateManager.currentState = StateManager.State.Carosel
+                }, label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                })
+                Spacer()
+            }.padding()
             Text("You're in!".uppercased()).font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundStyle(Color("primary")).padding(2)
             Text("Stepping out of your comfort").font(.system(size: 20)).multilineTextAlignment(.center)
             Text("zone is huge. We’re proud of you.").font(.system(size: 20)).multilineTextAlignment(.center)
@@ -18,18 +33,19 @@ struct MysterycardLayout: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Text ("1.7km away").foregroundStyle(Color("Secondary")).font(.system(size: 14))
+                        Text (User.currentExperience.location).foregroundStyle(Color("Secondary")).font(.system(size: 14))
                     }.padding(.trailing, 10)
                     Image("MysteryIcon").padding(.top, 10).padding(.bottom, 20)
                     VStack {
                         Text("Hint:").foregroundStyle(.white)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        Text("You can eat what you make").foregroundStyle(.white)
+                        Text(User.currentExperience.hint).foregroundStyle(.white)
                     }.frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .top).padding(.leading, 22).padding(.trailing, 22).multilineTextAlignment(.center)
                 }.frame(width:240, height:320)
             }.padding(40)
             Button(action: {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                stateManager.timer = 0
+                stateManager.currentState = StateManager.State.HomeScreen
             },
                    label: {
                 ZStack {
@@ -45,5 +61,5 @@ struct MysterycardLayout: View {
 }
 
 #Preview {
-    MysterycardLayout()
+    MysterycardLayout(User: Downer(userKey: "wesleyhahn"), stateManager: StateManager())
 }

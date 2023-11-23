@@ -23,7 +23,7 @@ struct HomeScreen: View {
     
     var body: some View {
         NavigationView {
-            if (stateManager.timer > 0 && User.currentExperience.eventName != "") {
+            if (stateManager.timer > -60 && User.currentExperience.eventName != "") {
                 ZStack{
                     Rectangle().fill(.black)
                     User.currentExperience.image.resizable().scaledToFill().opacity(0.75)
@@ -108,7 +108,7 @@ struct HomeScreen: View {
             else {
                 Button(action: {
                     stateManager.currentState = StateManager.State.AreYouDown
-                    stateManager.timer = 0
+                    stateManager.timer = -60
                 }, label: {
                     HStack {
                         Spacer()

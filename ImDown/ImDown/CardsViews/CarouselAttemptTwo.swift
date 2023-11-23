@@ -27,9 +27,10 @@ struct CarouselAttemptTwo: View {
     
     var body: some View {
         VStack {
+            Spacer()
             Text("Attend".uppercased()).font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundStyle(Color("primary")).padding(2).fontWeight(.bold)
-            Text("Select a card based on the hints").font(.system(size: 20)).multilineTextAlignment(.center)
-            Text("Careful! You can only choose one. ").font(.system(size: 20)).multilineTextAlignment(.center)
+            Text("Quick, select an experience before ").font(.system(size: 20)).multilineTextAlignment(.center)
+            Text("the timer runs down! ⚡️").font(.system(size: 20)).multilineTextAlignment(.center)
             ScrollViewReader { scrollView in
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
@@ -66,7 +67,7 @@ struct CarouselAttemptTwo: View {
             }
             Button(action: {
                 User.currentExperience = randomExperiences[selectedIndex]
-                stateManager.currentState = StateManager.State.HomeScreen
+                stateManager.currentState = StateManager.State.SelectedCard
             },
                    label: {
                 ZStack {
