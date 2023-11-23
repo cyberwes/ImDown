@@ -11,9 +11,13 @@ struct CarouselAttemptTwo: View {
     var User: Downer
     var stateManager: StateManager
     @State private var zoomScale: CGFloat = 1.0
-    @State private var selectedIndex = 1 // Initial focus on the center card
+    @State private var selectedIndex: Int = -1 // Initial focus on the center card
     
     var randomExperiences: [Experience]
+    
+    var isButtonEnabled: Bool {
+        return selectedIndex >= 0 && selectedIndex < 3
+    }
     
     init (User: Downer, stateManager: StateManager) {
         self.User = User
@@ -30,7 +34,7 @@ struct CarouselAttemptTwo: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         ForEach(0..<3) { index in
-                            CardAltView(experience: randomExperiences[index])
+                            CardAltView(experience: randomExperiences[index], isSelected: index == selectedIndex)
                                 .tag(index)
                                 .scaleEffect(zoomScale)
                                 .animation(.easeInOut)
@@ -66,13 +70,14 @@ struct CarouselAttemptTwo: View {
             },
                    label: {
                 ZStack {
-                    RoundedRectangle(cornerRadius: 35).frame(width: 150, height: 50).foregroundColor(Color("primary")).shadow(radius: 5, x: 2, y: 4)
+                    RoundedRectangle(cornerRadius: 35).frame(width: 150, height: 50).foregroundColor((isButtonEnabled ? Color("Tertiary") : Color("Secondary"))).shadow(radius: 5, x: 2, y: 4)
                     HStack {
                         Text("I'm Down!").foregroundColor(.white).font(.system(size: 20))
                         Image(systemName: "arrow.right").foregroundColor(.white)
                     }
                 }.padding(20)
             })
+            .disabled(!isButtonEnabled)
         }
     }
     
@@ -89,20 +94,18 @@ struct CarouselAttemptTwo: View {
 struct CardAltView: View {
     
     var experience: Experience
+    var isSelected: Bool
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 240, height: 320)
-                .foregroundStyle(Color("primary"))
+                .foregroundColor(isSelected ? Color("Tertiary") : Color("primary"))
                 .shadow(radius: 5, x: 5, y: 10)
             
             VStack {
                 HStack {
                     Spacer()
-                    //                    Text("1.7km away")
-                    //                        .foregroundStyle(Color("Secondary"))
-                    //                        .font(.system(size: 14))
                     Text(experience.location)
                         .foregroundStyle(Color("Secondary"))
                         .font(.system(size: 14))

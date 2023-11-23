@@ -38,6 +38,7 @@ struct AreyouDownFill: View {
                     .cornerRadius(15.0)
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
+                    .padding(.bottom, 20)
                     
                     if(down=="ATTEND"){
                         HStack {
@@ -71,7 +72,7 @@ struct AreyouDownFill: View {
                             }
                             Spacer()
                             VStack {
-                                Text("to").font(Font.custom("SFCompactDisplay-Bold", size: 32.0)).foregroundColor(.white)
+                                Text("to").font(Font.custom("SFCompactDisplay", size: 28.0)).foregroundColor(.white)
                             }
                             Spacer()
                             VStack{
@@ -99,32 +100,36 @@ struct AreyouDownFill: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.horizontal)
                             
-                            Slider(value: $distance, in: minDistance...maxDistance, step: 5)
-                                .accentColor(Color("Tertiary"))
-                                .padding(.vertical, 5)
-                                .padding(.horizontal)
-                                .cornerRadius(5.0)
-                                .padding(.horizontal)
-                                .shadow(radius: 10)
-                            
-                            
-                            
                             HStack {
-                                Text("\(Int(distance)) km")
-                                    .frame(width: 50, alignment: .leading)
-                                    .foregroundColor(.white)
+                                Slider(value: $distance, in: minDistance...maxDistance, step: 5)
+                                    .accentColor(Color("Secondary"))
+                                    .padding(.vertical, 5)
                                     .padding(.horizontal)
-                                
+                                    .cornerRadius(5.0)
+                                    .shadow(radius: 10)
+                                    .background(RoundedRectangle(cornerRadius: 5.0)
+                                        .fill(Color("Secondary"))
+                                        .shadow(radius: 5)
+                                        .frame(width: 230, height: 1)
+                                    )
                                 Stepper("Distance", value: $distance, in: minDistance...maxDistance, step: 5)
                                     .foregroundColor(.white)
                                     .background(Color.white)
                                     .labelsHidden()
-                                    .cornerRadius(10.0)
+                                    .cornerRadius(10.0).padding(.trailing,10)
+                            }.padding(.horizontal, 7)
+                            
+                            
+                            HStack {
+                                Spacer()
+                                Text("\(Int(distance)) km").font(Font.custom("SFCompactDisplay-Bold", size: 22.0)).foregroundColor(.white)
+                                Spacer()
                                 
                             }
                             .padding()
                         }
                         VStack{
+                            Spacer()
                             Button(action: {
                                 stateManager.currentState = StateManager.State.Carosel
                             }, label: {
@@ -138,7 +143,7 @@ struct AreyouDownFill: View {
                                     .padding(.horizontal, 20)
                                     .shadow(radius: 10)
                             })
-                        }.padding()
+                        }.padding().padding(.bottom, 40)
                     }
                     else {
                         VStack{
