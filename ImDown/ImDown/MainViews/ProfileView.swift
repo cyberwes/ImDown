@@ -73,27 +73,27 @@ struct ProfileView: View {
             .offset(y:-55)
             .frame(width: 400, height: 200)
             .background(Color("primary"))
-            VStack {
-                HStack {
-                    Text("BIO")
-                        .font(Font.custom("SFCompactDisplay-Bold", size: 20.0))
-                    Spacer()
+            ScrollView {
+                VStack {
+                    HStack {
+                        Text("INTERESTS")
+                            .font(Font.custom("SFCompactDisplay-Bold", size: 20.0))
+                            .foregroundColor(Color.primary)
+                        Spacer()
+                    }
+                    Text(User.interests)
                 }
-                Text(User.about)
-            }
-            .padding()
-         
-            
-            VStack {
-                HStack {
-                    Text("INTERESTS")
-                        .font(Font.custom("SFCompactDisplay-Bold", size: 20.0))
-                        .foregroundColor(Color.primary)
-                    Spacer()
+                .padding()
+                VStack {
+                    HStack {
+                        Text("BIO")
+                            .font(Font.custom("SFCompactDisplay-Bold", size: 20.0))
+                        Spacer()
+                    }
+                    Text(User.about)
                 }
-                Text(User.interests)
+                .padding()
             }
-            .padding()
             Spacer()
         }
     }
