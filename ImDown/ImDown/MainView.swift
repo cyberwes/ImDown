@@ -50,12 +50,16 @@ struct MainView: View {
                             Button(action: {
                                 stateManager.attend = true
                             }, label: {
-                                Text("Back to upcoming")
-                                    .foregroundColor(.white)
-                                    .padding(10.0)
-                                    .background(Color("primary"))
-                                    .cornerRadius(20)
-                                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                HStack {
+                                    Image(systemName: "chevron.left")
+                                        
+                                    Text("Back")
+                                }
+                                .foregroundColor(.white)
+                                .padding(10.0)
+                                .background(Color("primary"))
+                                .cornerRadius(20)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                             })
                         }
                         Spacer()
