@@ -68,7 +68,7 @@ struct ChatView: View {
                                     Spacer()
                                 }
                             }
-                            Image("ProfilePicture").resizable()
+                            Image("MysteryIcon").resizable()
                                 .scaledToFit()
                                 .frame(height: 50)
                                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
