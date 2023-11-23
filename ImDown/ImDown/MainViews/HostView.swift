@@ -43,17 +43,17 @@ struct HostView: View {
                                 Button(action: {
                                     User.unhost(experience: experience)
                                 }, label: {
-                                    Text("Delete")
+                                    Image(systemName:"trash")
                                         .foregroundColor(Color.black)
-                                        .frame(width: 80, height: 30)
+                                        .frame(width: 40, height: 40)
                                         .background(Color.white)
                                         .cornerRadius(20)
                                         .shadow(radius: 10)
                                 })
                                 NavigationLink(destination: NewExperience(User: User, experience: experience)) {
-                                    Text("Edit")
+                                    Image(systemName:"pencil")
                                         .foregroundColor(Color.black)
-                                        .frame(width: 60, height: 30)
+                                        .frame(width: 40, height: 40)
                                         .background(Color.white)
                                         .cornerRadius(20)
                                         .shadow(radius: 10)
