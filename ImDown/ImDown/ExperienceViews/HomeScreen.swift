@@ -15,16 +15,15 @@ struct HomeScreen: View {
     
     var User: Downer
     var stateManager: StateManager;
-    @State var timer: Int = 60;
     
     @State var feedbackHeading: String = "ARE YOU DOWN?"
     @State var feedbackText: String = "More experiences coming soon!"
     
-    @State var timerRunning = false
+    @State var timerRunning = true
     
     var body: some View {
         NavigationView {
-            if (timer > 0 && User.currentExperience.eventName != "") {
+            if (stateManager.timer > 0 && User.currentExperience.eventName != "") {
                 ZStack{
                     Rectangle().fill(.black)
                     User.currentExperience.image.resizable().scaledToFill().opacity(0.75)
@@ -82,28 +81,13 @@ struct HomeScreen: View {
                             .shadow(radius: 4.0)
                             Button(action: {
                                 User.attend()
-                                timer = 0
+                                stateManager.timer = 0
                                 feedbackHeading = "Have Fun! 🎉"
                                 feedbackText = "That experience has been added to your schedule."
                             }, label: {
                                 HStack {
-                                    Text("I'm Down!")
-                                    Spacer()
-                                    Text(String(timer))
-                                        .padding(.horizontal)
-                                        .background(Color("Tertiary"))
-                                        .cornerRadius(25.0)
-                                        .onAppear {
-                                            if (timerRunning == false) {
-                                                timerRunning = true
-                                                let timerAnim = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
-                                                    self.timer = self.timer - 1
-                                                }
-                                            }
-                                        }
+                                    Text("I'M DOWN!")
                                 }
-                                .padding(.leading, 50.0)
-                                .padding(.trailing, 5.0)
                                 .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
                                 .foregroundColor(TextColor)
                             })
@@ -124,6 +108,7 @@ struct HomeScreen: View {
             else {
                 Button(action: {
                     stateManager.currentState = StateManager.State.AreYouDown
+                    stateManager.timer = 0
                 }, label: {
                     HStack {
                         Spacer()
@@ -144,7 +129,7 @@ struct HomeScreen: View {
                     .onAppear {
                         if (timerRunning == true) {
                             let returnCheck = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {_ in
-                                if timer == -10 && stateManager.currentState == StateManager.State.HomeScreen {
+                                if stateManager.timer == -10 && stateManager.currentState == StateManager.State.HomeScreen {
                                     stateManager.currentState = StateManager.State.AreYouDown
                                 }
                             }

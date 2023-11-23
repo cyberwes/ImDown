@@ -48,6 +48,8 @@ class StateManager {
     
     var currentMode = HostState.Attend
     
+    var timer = 0
+    
     var attend: Bool = true
     
     var currentExperience = Experience()

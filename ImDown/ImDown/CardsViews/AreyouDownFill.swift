@@ -23,7 +23,6 @@ struct AreyouDownFill: View {
         self.User = User
         self.stateManager = stateManager
         self.down = (stateManager.currentMode == StateManager.HostState.Attend) ? "ATTEND" : "HOST";
-        print(self.down)
     }
 
     var body: some View {

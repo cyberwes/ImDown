@@ -71,19 +71,19 @@ struct ExperienceView: View {
                                     .padding(.vertical, 4.0);
                             }
                             .shadow(radius: 4.0)
-                            Button(action: {
-                                User.unattend(experience: experience)
-                                self.experience = Experience()
-                            }, label: {
-                                Text("I'm Out 😔")
-                                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
-                                    .foregroundColor(TextColor)
-                            })
-                            .frame(width: width, height: 50)
-                            .background(ButtonColor)
-                            .cornerRadius(25.0)
-                            .shadow(radius: 10)
-                            .padding(1.0)
+//                            Button(action: {
+//                                User.unattend(experience: experience)
+//                                self.experience = Experience()
+//                            }, label: {
+//                                Text("I'm Out 😔")
+//                                    .font(Font.custom("SFCompactDisplay-Bold", size: 36.0))
+//                                    .foregroundColor(TextColor)
+//                            })
+//                            .frame(width: width, height: 50)
+//                            .background(ButtonColor)
+//                            .cornerRadius(25.0)
+//                            .shadow(radius: 10)
+//                            .padding(1.0)
                         }
                         .padding()
                         .frame(width:width)
