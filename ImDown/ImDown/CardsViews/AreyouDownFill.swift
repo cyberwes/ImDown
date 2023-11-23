@@ -34,10 +34,10 @@ struct AreyouDownFill: View {
                     Picker("ATTEND", selection:$down){
                         Text("ATTEND").tag("ATTEND")
                         Text("HOST").tag("HOST") }
-                    
+                    .background()
+                    .cornerRadius(15.0)
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
-                    .environment(\.colorScheme, .dark)
                     
                     if(down=="ATTEND"){
                         HStack {
@@ -51,7 +51,7 @@ struct AreyouDownFill: View {
                                 .datePickerStyle(.automatic)
                                 .background(Color.white)
                                 .cornerRadius(8)
-                                .shadow(radius: 10)
+                                .shadow(radius: 15)
                         }.padding(.horizontal)
                         HStack{
                             
@@ -65,12 +65,14 @@ struct AreyouDownFill: View {
                                     .labelsHidden()
                                     .border(Color.white, width: 180)
                                     .background(Color.white)
-                                    .cornerRadius(5)
+                                    .cornerRadius(10)
                                     .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
                                 
                             }
                             Spacer()
-                            Text("TO").font(Font.custom("SFCompactDisplay-Bold", size: 36.0)).foregroundColor(.white)
+                            VStack {
+                                Text("to").font(Font.custom("SFCompactDisplay-Bold", size: 32.0)).foregroundColor(.white)
+                            }
                             Spacer()
                             VStack{
                                 Text("End Time")
@@ -81,7 +83,7 @@ struct AreyouDownFill: View {
                                     .labelsHidden()
                                     .border(Color.white, width: 180)
                                     .background(Color.white)
-                                    .cornerRadius(5)
+                                    .cornerRadius(10)
                                     .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 2)
                             }
                         }.padding()
@@ -101,7 +103,6 @@ struct AreyouDownFill: View {
                                 .accentColor(Color("Tertiary"))
                                 .padding(.vertical, 5)
                                 .padding(.horizontal)
-                                .background(Color.white)
                                 .cornerRadius(5.0)
                                 .padding(.horizontal)
                                 .shadow(radius: 10)
@@ -118,6 +119,7 @@ struct AreyouDownFill: View {
                                     .foregroundColor(.white)
                                     .background(Color.white)
                                     .labelsHidden()
+                                    .cornerRadius(10.0)
                                 
                             }
                             .padding()

@@ -18,7 +18,7 @@ struct HomeScreen: View {
     @State var timer: Int = 60;
     
     @State var feedbackHeading: String = "ARE YOU DOWN?"
-    @State var feedbackText: String = "More Experiences coming soon!"
+    @State var feedbackText: String = "More experiences coming soon!"
     
     @State var timerRunning = false
     
