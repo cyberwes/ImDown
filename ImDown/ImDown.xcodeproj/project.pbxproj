@@ -35,11 +35,11 @@
 		4C4304B22B0476A100C34098 /* HostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304B12B0476A100C34098 /* HostView.swift */; };
 		4C4304B42B0476A900C34098 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304B32B0476A900C34098 /* ChatView.swift */; };
 		4C4304B62B0476B100C34098 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4304B52B0476B100C34098 /* ProfileView.swift */; };
-		4C4B4F3C2B0EFE0D004F6DDF /* AreyouDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B4F3B2B0EFE0D004F6DDF /* AreyouDown.swift */; };
 		4C55748E2B04C3ED00252E36 /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55748D2B04C3ED00252E36 /* Experience.swift */; };
 		4C5574902B04C64100252E36 /* Downer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55748F2B04C64100252E36 /* Downer.swift */; };
 		4C9376402B0C399D00899BB3 /* ExperienceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C93763F2B0C399D00899BB3 /* ExperienceData.swift */; };
 		4CC231AE2B087D700010560F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC231AD2B087D700010560F /* Profile.swift */; };
+		4CD04A992B18100800860537 /* AreYouDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD04A982B18100800860537 /* AreYouDown.swift */; };
 		4CFB05B42B05ADAE0076F956 /* NewExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFB05B32B05ADAE0076F956 /* NewExperience.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,11 +89,11 @@
 		4C4304B12B0476A100C34098 /* HostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostView.swift; sourceTree = "<group>"; };
 		4C4304B32B0476A900C34098 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		4C4304B52B0476B100C34098 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		4C4B4F3B2B0EFE0D004F6DDF /* AreyouDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AreyouDown.swift; path = ../../../../../../Downloads/AreyouDown.swift; sourceTree = "<group>"; };
 		4C55748D2B04C3ED00252E36 /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		4C55748F2B04C64100252E36 /* Downer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downer.swift; sourceTree = "<group>"; };
 		4C93763F2B0C399D00899BB3 /* ExperienceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceData.swift; sourceTree = "<group>"; };
 		4CC231AD2B087D700010560F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		4CD04A982B18100800860537 /* AreYouDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreYouDown.swift; sourceTree = "<group>"; };
 		4CFB05B32B05ADAE0076F956 /* NewExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExperience.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +156,7 @@
 			children = (
 				368F31152B06FEAC0045912E /* MysteryCards.swift */,
 				4C301F3C2B08492F002013A1 /* MysteryCardConfirm.swift */,
-				4C4B4F3B2B0EFE0D004F6DDF /* AreyouDown.swift */,
+				4CD04A982B18100800860537 /* AreYouDown.swift */,
 				23404D1F2B07014E00B3B165 /* AreyouDownFill.swift */,
 				3644A0432B0AFDF3003C5728 /* CarouselAttempt.swift */,
 				3644A0492B0C112D003C5728 /* ProfileFigView.swift */,
@@ -380,10 +380,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C4304832B046A4300C34098 /* MainView.swift in Sources */,
+				4CD04A992B18100800860537 /* AreYouDown.swift in Sources */,
 				4C4304B22B0476A100C34098 /* HostView.swift in Sources */,
 				3644A04C2B0C1ABC003C5728 /* CarouselAttemptTwo.swift in Sources */,
 				4C4304812B046A4300C34098 /* ImDownApp.swift in Sources */,
-				4C4B4F3C2B0EFE0D004F6DDF /* AreyouDown.swift in Sources */,
 				4C301F432B085D21002013A1 /* ExperienceView.swift in Sources */,
 				4C301F3B2B084925002013A1 /* UserData.swift in Sources */,
 				23404D202B07014E00B3B165 /* AreyouDownFill.swift in Sources */,
@@ -581,7 +581,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.ImDown;
+				PRODUCT_BUNDLE_IDENTIFIER = wesleyhahn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -614,7 +614,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = au.edu.uts.ImDown;
+				PRODUCT_BUNDLE_IDENTIFIER = wesleyhahn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
